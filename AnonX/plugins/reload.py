@@ -2,7 +2,7 @@ import asyncio
 
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, Message
-from strings.filters import command
+from strings.filters import command
 from config import BANNED_USERS, MUSIC_BOT_NAME, adminlist, lyrical
 from strings import get_command
 from AnonX import app
