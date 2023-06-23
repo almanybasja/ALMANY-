@@ -1,7 +1,8 @@
 from config import API_HASH,  API_ID,  BOT_TOKEN
 import asyncio
-from pyrogram import Client, filters
+from pyrogram.type import Client
 from AnonX import app
+from pyrogram.type import filters
 import random
 from strings.filters import command
 
