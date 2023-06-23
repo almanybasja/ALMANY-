@@ -830,12 +830,13 @@ async def zahrafa(c: Client, m: Message):
     Text_Zhrfa = "1- `" + zhrf + random.choice(EmojeS) \
                  + "`\n\n` " + zhrf2 + random.choice(EmojeS) \
                  + "`\n\n` " + zhrf3 + random.choice(EmojeS) \
-                 + "•\n\n` " + zhrf4 + random.choice(EmojeS) \
+                 + "`•\n\n` " + zhrf4 + random.choice(EmojeS) \
                  + "`\n\n` " + zhrf5 + random.choice(EmojeS) \
                  + "`\n\n` " + zhrf6 + random.choice(EmojeS) \
                  + "`\n\n` " + zhrf7 + random.choice(EmojeS) \
                  + "`\n\n` " + zhrf8 + random.choice(Emoje) \
                  + "`\n\n` " + zhrf9 + random.choice(Emoje) \
-                 + "`\n\n` " + zhrf5 + random.choice(Emoje)
+                 + "`\n\n` " + zhrf5 + random.choice(Emoje) 
+          
     Text_Zhrfa = Text_Zhrfa + "`\n\n اضغط علـي الاسـم ليـتم النـسخ \n│ \n🐉"
-    await m.reply_text(Text_Zhrfa, reply_to_message_id=m.message_id, parse_mode="Markdown")
+    await m.reply_text(Text_Zhrfa, reply_to_message_id=m.message.chat.id, parse_mode="Markdown")
