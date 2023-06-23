@@ -1,5 +1,6 @@
 from typing import Union
 import random
+from AnonX import app
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import redis, re
 from config import OWNER_ID
