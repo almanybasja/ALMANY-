@@ -40,6 +40,6 @@ class AnonXBot(Client):
             )
         except:
             LOGGER(__name__).error(
-                "Bot has failed to access the log Group. Make sure that you have added your bot to your log channel and promoted as admin!"
+                "فشل في استدعاء البوت تأكد من اضافته في المجموعه وترقيتع كمسؤول"
             )
             sys.exit()
