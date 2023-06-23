@@ -1557,5 +1557,5 @@ async def memcommands__(c,m):
 			await app.send_message(chat,f"**تم الاذاعه بالتوجيه الي **: \n {gr} من المحظورين")
 
 		
-app.run()
+
 		
