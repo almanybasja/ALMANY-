@@ -40,7 +40,7 @@ async def maintenance(client, message: Message):
             await message.reply_text(_["maint_3"])
         else:
             await message.reply_text(
-                "ɪ ᴅᴏɴ'ᴛ ʀᴇᴍᴇᴍʙᴇʀ ᴛʜᴀᴛ ʏᴏᴜ ᴇɴᴀʙʟᴇᴅ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ᴍᴏᴅᴇ."
+                "**تم تمكيم وضع الصيانه انتظر بعض الوقت**"
             )
     else:
         await message.reply_text(usage)
