@@ -31,7 +31,7 @@ async def get_group_call(
     await app.send_message(f"**No group call Found** {err_msg}")
     return False
 
-@app.on_message(filters.regex("^افتح الكول$"))
+@app.on_message(filters.regex("^افتح المكالمه$"))
 async def start_group_call(c: Client, m: Message):
     chat_id = m.chat.id
     assistant = await get_assistant(chat_id)
@@ -52,7 +52,7 @@ async def start_group_call(c: Client, m: Message):
                 random_id=assistant.rnd_id() // 9000000000,
             )
         )
-        await msg.edit_text("تم فتح الكول بنجاح ⚡️~!")
+        await msg.edit_text("تم فتح المكالمه بنجاح ⚡️~!")
     except ChatAdminRequired:
       try:    
         await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
@@ -87,10 +87,10 @@ async def start_group_call(c: Client, m: Message):
             can_promote_members=False,
             ),
         )                              
-        await msg.edit_text("تم فتح الكول بنجاح ⚡️~!")
+        await msg.edit_text("تم فتح المكالمه بنجاح ⚡️~!")
       except:
          await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد رول وجرب ⚡")
-@app.on_message(filters.regex("^اقفل الكول$"))
+@app.on_message(filters.regex("^اقفل المكالمه$"))
 async def stop_group_call(c: Client, m: Message):
     chat_id = m.chat.id
     assistant = await get_assistant(chat_id)
@@ -141,7 +141,7 @@ async def stop_group_call(c: Client, m: Message):
             can_promote_members=False,
             ),
          )                              
-         await msg.edit_text("تم اغلاق الكول بنجاح ⚡️~!")
+         await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡️~!")
        except:
          await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد رول وجرب ⚡")
     
