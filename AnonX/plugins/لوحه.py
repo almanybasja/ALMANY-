@@ -60,7 +60,7 @@ except FileNotFoundError:
 	
 source_ch = "Y8830"
 
-app = Client("N00",api_id=api_id,api_hash=api_hash,bot_token=token)
+
 
 start_text = "**welcome {} , its just a test bot √**"
 
@@ -1558,5 +1558,5 @@ async def memcommands__(c,m):
 			await app.send_message(chat,f"**تم الاذاعه بالتوجيه الي **: \n {gr} من المحظورين")
 
 		
-app.run()
+
 		
