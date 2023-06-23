@@ -161,7 +161,7 @@ async def keyboard_for_admins(app, m):
       if m.text == 'تفعيل الاشتراك':
 
 
-      if r.get(f"enable_force_subscribe{OWNER_ID}"):
+        if r.get(f"enable_force_subscribe{OWNER_ID}"):
           return await m.reply('• تم تفعيل الاشتراك الاجباري مسبقاً',quote=True)
         await m.reply(f'• بواسطة ⟨ {m.from_user.mention} ⟩\n• تم تفعيل الاشتراك بنجاح', quote=True) 
         r.set(f"enable_force_subscribe{OWNER_ID}", 1)
@@ -233,7 +233,7 @@ async def keyboard_for_admins(app, m):
         r.delete(f"{m.from_user.id}gbroad{m.chat.id}{OWNER_ID}")
 
 
-r.delete(f"{m.from_user.id}gbroadpin{m.chat.id}{OWNER_ID}")
+        r.delete(f"{m.from_user.id}gbroadpin{m.chat.id}{OWNER_ID}")
         r.delete(f"{m.from_user.id}addchannel{m.chat.id}{OWNER_ID}")
         
       if m.text == 'اذاعة بالتوجيه':
