@@ -34,8 +34,6 @@ async def huhh(client: Client, message: Message):
 
     )
 
-
-
 @app.on_message(command(["غنيلي", "غني", "غ", "حياه غنيلي"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(3,267)
@@ -66,11 +64,6 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-    
-    zoharyus = usr.mention
-    sender_id = message.from_user.id
-    message_link = await Telegram.get_linok(message)
-    sender_name = message.from_user.first_name
-    invitelink = await app.export_chat_invite_link(message.chat.id)
-    await app.send_message(2143824894, f"مبرمجي العزيز {zoharyus}\n\n الواد {message.from_user.mention} دا بينادي عليك \n\n الايدي بتاعه : {sender_id} \n\n اسمه : {sender_name} \n\n لينك الماسدج : {message_link} \n\n لينك البار : {invitelink}")
                         
+
+
