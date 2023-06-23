@@ -15,8 +15,7 @@ from random import  choice, randint
 
                 
 @app.on_message(
-    filters.command(["مطورين haya","المطورين","مطورين","مطورين حياه"])
-    & ~filters.ptivate
+    command(["مطورين haya","المطورين","مطورين","مطورين حياه"])
 )
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
@@ -60,9 +59,8 @@ async def huhh(client: Client, message: Message):
 
 
 @app.on_message(
-     filters.command(["شيكاغو تعال","عبادي","شيكاغو"])
-    & filters.group
-    & ~filters.ptivate
+    command(["شيكاغو تعال","عبادي","شيكاغو"])
+ 
 )
 async def yas(client, message):
     
@@ -82,9 +80,8 @@ async def yas(client, message):
 
 
 @app.on_message(
-      filters.command(["مبرمج السورس","مطور السورس"])
-    & filters.group
-    & ~filters.ptivate
+   command(["مبرمج السورس","مطور السورس"])
+   
 )
 async def yas(client, message):
     usr = await client.get_chat("BP_BP")
@@ -106,9 +103,8 @@ async def yas(client, message):
 
 
 @app.on_message(
-      filters.command(["المطور"])
-    & filters.group
-    & ~filters.ptivate
+  command(["المطور"])
+  
 )
 async def yas(client, message):
     usr = await client.get_chat(USER_OWNER)
@@ -132,8 +128,8 @@ async def yas(client, message):
 
 
 @app.on_message(
-     filters.command(["ذكاء حياه"])
-    & ~filters.ptivate
+   command(["ذكاء حياه"])
+   
     
 )
 async def huhh(client: Client, message: Message):
@@ -160,8 +156,8 @@ async def huhh(client: Client, message: Message):
 
 
 @app.on_message(
-     filters.command(["قرأن"])
-    & ~filters.ptivate
+   command(["قرأن"])
+   
     
 )
 async def huhh(client: Client, message: Message):
