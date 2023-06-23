@@ -75,7 +75,7 @@ Keyboard = InlineKeyboardMarkup(
     [("نقل ملكية البوت")],
     [("الغاء")]
   ],
-  resize_keyboard=True
+ 
 )
 
 @app.on_message(command("start") & filters.private)
