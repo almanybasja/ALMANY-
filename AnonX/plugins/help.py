@@ -14,7 +14,7 @@ from AnonX.utils.decorators.language import (LanguageStart,
                                                   languageCB)
 from AnonX.utils.inline.help import (help_back_markup,
                                           private_help_panel)
-from pyrogram import Message
+
 ### Command
 HELP_COMMAND = get_command("HELP_COMMAND")
 
