@@ -1,9 +1,9 @@
 from typing import Union
-
+import random
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import redis, re
 from config import OWNER_ID
-
+from pyrogram.errors import PeerIdInvalid
 dev = (OWNER_ID)
 def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
