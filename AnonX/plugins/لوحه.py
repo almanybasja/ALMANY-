@@ -59,7 +59,7 @@ except FileNotFoundError:
 	
 source_ch = "Y8830"
 
-app = Client("N00",api_id=api_id,api_hash=api_hash,bot_token=token)
+
 
 start_text = "**welcome {} , its just a test bot √**"
 
