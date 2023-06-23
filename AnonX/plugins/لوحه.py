@@ -1,6 +1,5 @@
 from pyrogram import * 
 from pyrogram.types import * 
-from pyromod import listen
 import time
 import requests
 from AnonX import app
