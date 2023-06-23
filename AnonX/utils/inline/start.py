@@ -80,7 +80,7 @@ Keyboard = ReplyKeyboardMarkup(
 
 @app.on_message(command("start") & filters.private)
 async def for_users (app,m):
-   if not check(m.from_user.id):
+   if m.from_user.id not in dev:
      await check_sub(app, m)
    if not is_user(m.from_user.id):
      add_user(m.from_user.id)
