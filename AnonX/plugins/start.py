@@ -8,7 +8,7 @@ from youtubesearchpython.__future__ import VideosSearch
 from pyrogram.enums import ChatType, ParseMode
 import config
 from config import BANNED_USERS
-from config import OWNER_ID
+from config import OWNER_ID , USER_OWNER
 from strings import get_command, get_string
 from AnonX import Telegram, YouTube, app
 from AnonX.misc import SUDOERS, _boot_
@@ -42,7 +42,7 @@ async def start_comm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = help_pannel(_)
-            await message.reply_sticker("CAACAgUAAxkBAAJE8GK4EsoLVZC2SW5W5Q-QAkaoN8f_AAL9BQACiy14VGoQxOCDfE1KKQQ")
+            await message.reply_text(f"اهلا عزيزي {message.from_user.first_name}" في بوت الميوزك الخاص بي {USER_OWNER})
             return await message.reply_photo(
                        photo=config.START_IMG_URL,
                        caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard
@@ -153,16 +153,16 @@ async def start_comm(client, message: Message, _):
                 link = result["link"]
                 published = result["publishedTime"]
             searched_text = f"""
-😲**ᴛʀᴀᴄᴋ ɪɴғᴏʀɴᴀᴛɪᴏɴ**😲
+😲**جلب المعلومات**😲
 
-📌 **ᴛɪᴛʟᴇ:** {title}
+📌 **العنوان:** {title}
 
-⏳ **ᴅᴜʀᴀᴛɪᴏɴ:** {duration} ᴍɪɴᴜᴛᴇs
-👀 **ᴠɪᴇᴡs:** `{views}`
-⏰ **ᴩᴜʙʟɪsʜᴇᴅ ᴏɴ:** {published}
-🎥 **ᴄʜᴀɴɴᴇʟ:** {channel}
-📎 **ᴄʜᴀɴɴᴇʟ ʟɪɴᴋ:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
-🔗 **ʟɪɴᴋ:** [ᴡᴀᴛᴄʜ ᴏɴ ʏᴏᴜᴛᴜʙᴇ]({link})
+⏳ **المده:** {duration} دقيقه
+👀 **المشاهدات:** `{views}`
+⏰ **نشرت في:** {published}
+🎥 **القناه:** {channel}
+📎 **رابط القناه:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
+🔗 **الرابط:** [ᴡᴀᴛᴄʜ ᴏɴ ʏᴏᴜᴛᴜʙᴇ]({link})
 
 💖 sᴇᴀʀᴄʜ ᴩᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
             key = InlineKeyboardMarkup(
@@ -172,7 +172,7 @@ async def start_comm(client, message: Message, _):
                             text="• ʏᴏᴜᴛᴜʙᴇ •", url=f"{link}"
                         ),
                         InlineKeyboardButton(
-                            text="• sᴜᴩᴩᴏʀᴛ •", url="https://t.me/DevilsHeavenMF"
+                            text="• قناة السورس •", url="https://t.me/HL_BG"
                         ),
                     ],
                 ]
