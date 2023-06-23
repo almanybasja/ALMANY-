@@ -14,7 +14,7 @@ from AnonX.utils.decorators.language import (LanguageStart,
                                                   languageCB)
 from AnonX.utils.inline.help import (help_back_markup,
                                           private_help_panel)
-
+from pyrogram import Message
 ### Command
 HELP_COMMAND = get_command("HELP_COMMAND")
 
@@ -58,7 +58,7 @@ async def helper_private(
         language = await get_lang(chat_id)
         _ = get_string(language)
         keyboard = help_pannel(_)
-        await update.reply_sticker("CAACAgUAAxkBAAIjVmKPYTFByKZlCo9d8mUv8QVAJEw7AAL9BQACiy14VGoQxOCDfE1KJAQ")
+        await update.reply_text(f"مرحبا بك عزيزي {message.from_user.mention} في قائمة المساعده")
         await update.reply_photo(
             photo=config.START_IMG_URL,
             caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard)
