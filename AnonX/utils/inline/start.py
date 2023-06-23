@@ -57,7 +57,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
 
 r = redis.from_url('redis://')
 
-Keyboard = ReplyKeyboardMarkup(
+Keyboard = InlineKeyboardMarkup(
   [
     [("اخفاء الكيبورد")],
     [("الاحصائيات")],
