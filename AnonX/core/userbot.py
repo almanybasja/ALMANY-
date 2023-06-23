@@ -74,11 +74,11 @@ class Userbot(Client):
             )
             try:
                 await self.one.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴏɴᴇ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.one.id}`\n❄ ɴᴀᴍᴇ : {self.one.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.one.username}"
+                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} تم بدأ التشغيل :**\n\n✨ الايدي : `{self.one.id}`\n❄ الاسم : {self.one.name}\n💫 المعرف : @{self.one.username}"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"فشل حساب المساعد 1 في الوصول إلى مجموعة السجل. تأكد من إضافة مساعدك إلى مجموعة السجل الخاصة بك وترقيته كمسؤول ! "
                 )
                 sys.exit()
         if config.STRING2:
@@ -102,11 +102,11 @@ class Userbot(Client):
                 self.two.name = get_me.first_name
             try:
                 await self.two.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴡᴏ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.two.id}`\n❄ ɴᴀᴍᴇ : {self.two.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.two.username}"
+                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} تم بدأ التشغيل :**\n\n✨ الايدي : `{self.two.id}`\n❄ الاسم : {self.two.name}\n💫 المعرف : @{self.two.username}"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 2 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"فشل حساب المساعد 1 في الوصول إلى مجموعة السجل. تأكد من إضافة مساعدك إلى مجموعة السجل الخاصة بك وترقيته كمسؤول ! "
                 )
                 sys.exit()
             LOGGER(__name__).info(
@@ -133,11 +133,11 @@ class Userbot(Client):
                 self.three.name = get_me.first_name
             try:
                 await self.three.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛʜʀᴇᴇ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.three.id}`\n❄ ɴᴀᴍᴇ : {self.three.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.three.username}"
+                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} تم بدأ التشغيل :**\n\n✨ الايدي : `{self.three.id}`\n❄ الاسم : {self.three.name}\n💫 المعرف : @{self.three.username}"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 3 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"فشل حساب المساعد 1 في الوصول إلى مجموعة السجل. تأكد من إضافة مساعدك إلى مجموعة السجل الخاصة بك وترقيته كمسؤول ! "
                 )
                 sys.exit()
             LOGGER(__name__).info(
@@ -164,11 +164,11 @@ class Userbot(Client):
                 self.four.name = get_me.first_name
             try:
                 await self.four.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ғᴏᴜʀ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.four.id}`\n❄ ɴᴀᴍᴇ : {self.four.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.four.username}"
+                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} تم بدأ التشغيل :**\n\n✨ الايدي : `{self.four.id}`\n❄ الاسم : {self.four.name}\n💫 المعرف : @{self.four.username}"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 4 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"فشل حساب المساعد 1 في الوصول إلى مجموعة السجل. تأكد من إضافة مساعدك إلى مجموعة السجل الخاصة بك وترقيته كمسؤول ! "
                 )
                 sys.exit()
             LOGGER(__name__).info(
@@ -195,11 +195,11 @@ class Userbot(Client):
                 self.five.name = get_me.first_name
             try:
                 await self.five.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ғɪᴠᴇ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.five.id}`\n❄ ɴᴀᴍᴇ : {self.five.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.five.username}"
+                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} تم بدأ التشغيل :**\n\n✨ الايدي : `{self.five.id}`\n❄ الاسم : {self.five.name}\n💫 المعرف : @{self.five.username}"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 5 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"فشل حساب المساعد 1 في الوصول إلى مجموعة السجل. تأكد من إضافة مساعدك إلى مجموعة السجل الخاصة بك وترقيته كمسؤول ! "
                 )
                 sys.exit()
             LOGGER(__name__).info(
