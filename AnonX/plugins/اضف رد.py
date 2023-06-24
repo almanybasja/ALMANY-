@@ -5,6 +5,7 @@ from pyrogram import Client, filters, idle
 from pyromod import listen
 from pyrogram.enums import ParseMode, ChatMemberStatus 
 from AnonX import app
+from config import LOG_GROUP_ID
 
   
 LOG =(LOG_GROUP_ID) 
