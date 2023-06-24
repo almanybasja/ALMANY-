@@ -7,7 +7,7 @@ from strings.filters import command
 
 
 @app.on_message(command(['زوجني','ز']))
-def call_random_member(client, message):
+def call_random_member(client:Client, message:Message):
     chat_id = message.chat.id
     members = [
         member for member in client.iter_chat_members(chat_id)
