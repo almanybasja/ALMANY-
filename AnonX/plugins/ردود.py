@@ -65,18 +65,23 @@ txt1 = [
 
 async def cutt(client: Client, message: Message):
 
-
-      a = random.choice(txt)
-
-
-      await message.reply(
+  dev = (OWNER_ID)
+     if message.from_user.id in dev:
 
 
-        f"{a}")
-      b = random.choice(txt1)
+         b = random.choice(txt1)
 
 
-      await message.reply(
+         await message.reply(
 
 
-        f"{b}")
+         f"{b}")
+     else:
+         a = random.choice(txt)
+
+
+         await message.reply(
+
+
+         f"{a}")
+       
