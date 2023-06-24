@@ -65,7 +65,7 @@ txt1 = [
 
 async def cutt(client: Client, message: Message):
 
-  dev = (OWNER_ID)
+     dev = (OWNER_ID)
      if message.from_user.id in dev:
 
 
@@ -73,7 +73,6 @@ async def cutt(client: Client, message: Message):
 
 
          await message.reply(
-
 
          f"{b}")
      else:
