@@ -1,6 +1,6 @@
 from pyrogram import * 
 from pyrogram.types import * 
-from pyromod import listen
+from pyromod import *
 import time
 from pyrogram import Client, filters
 import requests
