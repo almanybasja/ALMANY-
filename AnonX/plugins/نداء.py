@@ -10,7 +10,7 @@ from pyrogram import Client
 from config import OWNER_ID
 from pyrogram import filters
 
-@app.on_message(command(['نداء','ن']))
+@app.on_message(command(["نداء","ن"]))
 def call_random_member(client:Client, message:Message):
     chat_id = message.chat.id
     members = [
