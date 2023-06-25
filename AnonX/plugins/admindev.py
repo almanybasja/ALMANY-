@@ -8,11 +8,11 @@ import redis, re
 from pyrogram import *
 from pyrogram.types import *
 from pyrogram.errors import PeerIdInvalid
-from config import *
+from config import BOT_TOKEN, OWNER_ID
 
-TOKEN = BOT_TOKEN
 
-bot_id = app.TOKEN.split(":")[0]
+bot_owner = OWNER_ID
+bot_id = app.BOT_TOKEN.split(":")[0]
 
 
 r = redis.from_url('redis://')
