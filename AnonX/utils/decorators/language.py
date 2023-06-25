@@ -31,9 +31,9 @@ def languageCB(mystic):
         if await is_maintenance() is False:
             if CallbackQuery.from_user.id not in SUDOERS:
                 return await CallbackQuery.answer(
-                  "» البوت تحت الصيانه بعض الوقت يرجى الانتظار او زريادة فريق الدعم لمهعرفت السبب."
+                    "» البوت تحت الصيانه بعض الوقت يرجى الانتظار او زريادة فريق الدعم لمهعرفت السبب.",
                     show_alert=True,
-                )
+                    )
         try:
             language = await get_lang(CallbackQuery.message.chat.id)
             language = get_string(language)
