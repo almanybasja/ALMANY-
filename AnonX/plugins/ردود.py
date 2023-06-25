@@ -7,13 +7,12 @@ from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from strings.filters import command
 from pyrogram import filters, Client
-import config
+from config import OWNER_ID
 
-dev = (config.OWNER_ID)
+dev = (OWNER_ID)
 
 
 txt = [
-
             "دوٌمُ ٱڷضٍـحڪهْهْ ♥️😻",
 
 
