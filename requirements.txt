@@ -7,12 +7,12 @@ gitpython
 hachoir
 heroku3
 lyricsgenius
-motor==3.0.0
+motor == 3.0.0
 pillow
 psutil
 py-tgcalls
 pykeyboard
-pyrogram
+pyrogram == 2.0.56
 python-dotenv
 pyyaml
 requests
