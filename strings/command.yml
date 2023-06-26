@@ -75,10 +75,10 @@ MAINTENANCE_COMMAND : ["maintenance"]
 LOGGER_COMMAND : ["logger"]
 
 #Heroku
-GETLOG_COMMAND : ["get_log", ""]
+GETLOG_COMMAND : ["get_log", "جلب فار"]
 GETVAR_COMMAND : ["toknanaa", "ج ف"]
-DELVAR_COMMAND : ["del_var", "ح ف"]
-SETVAR_COMMAND : ["set_var", "ا ف"]
+DELVAR_COMMAND : ["del_var", "حذف فار"]
+SETVAR_COMMAND : ["set_var", "اضف فار"]
 USAGE_COMMAND : ["usage", "ا س"]
 VARS_COMMAND : ["vars", "config"]
 
