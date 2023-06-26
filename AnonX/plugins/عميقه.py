@@ -37,7 +37,7 @@ f"- لـ{ message.from_user.mention} يجب أن تحاول ثلاث مرات ق
         
 
 
-@app.on_message(command(["اقتباس","ق","اق","س]))
+@app.on_message(command(["اقتباس","ق","اق","س"]))
 
 
 async def cutt(client: Client, message: Message):
