@@ -108,7 +108,7 @@ async def stop_group_call(c: Client, m: Message):
         ):  
            return
         await assistant.invoke(DiscardGroupCall(call=group_call))
-        await msg.edit_text("تم اغلاق الكول بنجاح ⚡️~!")
+        await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡️~!")
     except Exception as e:
       if "GROUPCALL_FORBIDDEN" in str(e):
        try:    
@@ -143,5 +143,5 @@ async def stop_group_call(c: Client, m: Message):
          )                              
          await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡️~!")
        except:
-         await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد رول وجرب ⚡")
+         await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد عنده صلاحية رفع مشرفين وجرب")
     
