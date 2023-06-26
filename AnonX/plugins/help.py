@@ -28,7 +28,7 @@ HELP_COMMAND = get_command("HELP_COMMAND")
     filters.regex("settings_back_helper") & ~BANNED_USERS
 )
 async def helper_private(
-    client: app, update: Union[types.Message, types.CallbackQuery]
+    client: app, message: Message, update: Union[types.Message, types.CallbackQuery]
 ):
     is_callback = isinstance(update, types.CallbackQuery)
     if is_callback:
