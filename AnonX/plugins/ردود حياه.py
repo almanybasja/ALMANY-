@@ -7,12 +7,12 @@ from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from strings.filters import command
 from pyrogram import Client
-from config import OWNER_ID
+from config import OWNER_ID, MUSIC_BOT_NAME
 from pyrogram import filters
 
 txt = [
 
-            "؏ـيوٍڼ حـيآهہ😻🫶",
+            f"؏ـيوٍڼ {MUSIC_BOT_NAME}😻🫶",
 
 
              "ﻧ؏ـ۾ 🥺❤",
@@ -21,7 +21,7 @@ txt = [
             "هہذآ آڛـﻤــي 🫶😻",
             
             
-            "ضـوꪆ حـيـاﮪ،💗🧸!َ''))",
+            f"ضـوꪆ {MUSIC_BOT_NAME}،💗🧸!َ''))",
             
             
             "نعٓم يـﺣـبـعـﻣـري،🥺🧡🌸!َ''))",
@@ -37,7 +37,7 @@ txt = [
         ]
 txt1 = [
 
-            f"**؏ـيوٍڼ حـيآهہ😻🫶 يا مطوريي**",
+            f"**؏ـيوٍڼ {MUSIC_BOT_NAME}😻🫶 يا مطوريي**",
 
 
              f"**ﻧ؏ـم يامطوريي**",
@@ -60,7 +60,7 @@ txt1 = [
         
 
 
-@app.on_message(command(["حياه"]))
+@app.on_message(command([MUSIC_BOT_NAME]))
 
 
 async def cutt(client: Client, message: Message):
