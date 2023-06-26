@@ -357,38 +357,38 @@ async def overall_stats(client, CallbackQuery, _):
     sudoers = len(await get_sudoers())
     text = f""" **ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏ:**
 
-       <b><u>ʜᴀʀᴅᴡᴀʀᴇ</b><u/>
-**ᴍᴏᴅᴜʟᴇs:** {mod}
-**ᴩʟᴀᴛғᴏʀᴍ:** {sc}
-**ʀᴀᴍ:** {ram}
-**ᴩʜʏsɪᴄᴀʟ ᴄᴏʀᴇs:** {p_core}
-**ᴛᴏᴛᴀʟ ᴄᴏʀᴇs:** {t_core}
-**ᴄᴩᴜ ғʀᴇǫᴜᴇɴᴄʏ:** {cpu_freq}
+       <b><u>المكونات</b><u/>
+**الوحدات:** {mod}
+**المنصه:** {sc}
+**الراب:** {ram}
+**النوى الماديه:** {p_core}
+**المجموع:** {t_core}
+**المعالج:** {cpu_freq}
 
-       <b><u>sᴏғᴛᴡᴀʀᴇ</b><u/>
-**ᴩʏᴛʜᴏɴ :** {pyver.split()[0]}
-**ᴩʏʀᴏɢʀᴀᴍ :** {pyrover}
+       <b><u>النظام</b><u/>
+**البايثون :** {pyver.split()[0]}
+**البايروجرام :** {pyrover}
 **ᴩʏ-ᴛɢᴄᴀʟʟs :** {pytgver}
 
-        <b><u>sᴛᴏʀᴀɢᴇ</b><u/>
-**ᴀᴠᴀɪʟᴀʙʟᴇ:** {total[:4]} GiB
-**ᴜsᴇᴅ:** {used[:4]} GiB
+        <b><u>الذاكره</b><u/>
+**المتاح:** {total[:4]} GiB
+**المستخم:** {used[:4]} GiB
 **ғʀᴇᴇ:** {free[:4]} GiB
         
-      <b><u>ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs</b><u/>
-**ᴄʜᴀᴛs:** {served_chats} 
-**ᴜsᴇʀs:** {served_users} 
-**ʙʟᴏᴄᴋᴇᴅ:** {blocked} 
-**sᴜᴅᴏᴇʀs:** {sudoers} 
+      <b><u>الاحصائيات العامه</b><u/>
+**الدردشه:** {served_chats} 
+**المستخدمين:** {served_users} 
+**المحظورين:** {blocked} 
+**المطورين:** {sudoers} 
 
       <b><u>ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ</b><u/>
-**ᴜᴩᴛɪᴍᴇ:** {mongouptime[:4]} Days
-**sɪᴢᴇ:** {datasize[:6]} Mb
-**sᴛᴏʀᴀɢᴇ:** {storage} Mb
-**ᴄᴏʟʟᴇᴄᴛɪᴏɴs:** {collections}
-**ᴋᴇʏs:** {objects}
-**ǫᴜᴇʀɪᴇs:** `{query}`
-**ʙᴏᴛ ǫᴜᴇʀɪᴇs:** `{total_queries} `
+**مدة التشغيل:** {mongouptime[:4]} Days
+**المساحه:** {datasize[:6]} Mb
+**الذاكره:** {storage} Mb
+**المجموعه:** {collections}
+**المفاتيح:** {objects}
+**الاستفسارات:** `{query}`
+**استفسارات البوت:** `{total_queries} `
     """
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
