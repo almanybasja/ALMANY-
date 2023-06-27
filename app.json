@@ -22,9 +22,9 @@
         "value": "https://e.top4top.io/p_27331r5n31.jpg",
         "required": true
       },
-      "PIC_START": {
+      "START_IMG_URL": {
         "description": "pic your bot",
-        "value": "BP_BP",
+        "value": "https://telegra.ph/file/df8c9227ef4511aed9dd0.jpg",
         "required": true
       },
       "API_HASH": {
