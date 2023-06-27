@@ -11,7 +11,7 @@ API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
 
 BOT_TOKEN = getenv("BOT_TOKEN")
-
+PIC_START = getenv("PIC_START")
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID"))
 MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "HaYa ダ ᴍᴜsɪᴄ")
@@ -77,11 +77,11 @@ clean = {}
 autoclean = []
 
 
-START_IMG_URL = getenv("START_IMG_URL", "https://i.top4top.io/p_2729n1wub1.jpg")
+START_IMG_URL = getenv("START_IMG_URL", "{PIC_START}")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "https://i.top4top.io/p_2729n1wub1.jpg",
+    "{PIC_START}",
 )
 
 PLAYLIST_IMG_URL = "https://i.top4top.io/p_2729n1wub1.jpg"
@@ -131,12 +131,12 @@ if UPSTREAM_REPO:
 if PING_IMG_URL:
     if PING_IMG_URL != "assets/Ping.jpeg":
         if not re.match("(?:http|https)://", PING_IMG_URL):
-            PING_IMG_URL = "https://i.top4top.io/p_2729n1wub1.jpg"
+            PING_IMG_URL = "{PIC_START}"
 
 if START_IMG_URL:
     if START_IMG_URL != "assets/Ping.jpeg":
         if not re.match("(?:http|https)://", START_IMG_URL):
-            START_IMG_URL = "https://i.top4top.io/p_2729n1wub1.jpg"
+            START_IMG_URL = "{PIC_START}"
 if MONGO_DB_URI != None:
     MONGO_DB_URI = MONGO_DB_URI.strip()
 if MONGO_DB_URI == "":
