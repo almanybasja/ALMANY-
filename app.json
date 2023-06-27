@@ -22,6 +22,11 @@
         "value": "BP_BP",
         "required": true
       },
+      "PIC_START": {
+        "description": "pic your bot",
+        "value": "BP_BP",
+        "required": true
+      },
       "API_HASH": {
         "description": "Get this value from https://my.telegram.org",
         "value": "5a2684512006853f2e48aca9652d83ea",
