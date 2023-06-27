@@ -77,18 +77,18 @@ clean = {}
 autoclean = []
 
 
-START_IMG_URL = getenv("START_IMG_URL", "{PIC_START}")
+START_IMG_URL = getenv("START_IMG_URL", (PIC_START))
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "{PIC_START}",
+    (PIC_START),
 )
 
 PLAYLIST_IMG_URL = "https://i.top4top.io/p_2729n1wub1.jpg"
 
 GLOBAL_IMG_URL = "https://i.top4top.io/p_2729n1wub1.jpg"
 
-STATS_IMG_URL = "https://i.top4top.io/p_2729n1wub1.jpg"
+STATS_IMG_URL = (PIC_START)
 
 TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/6298d377ad3eb46711644.jpg"
 
@@ -131,12 +131,12 @@ if UPSTREAM_REPO:
 if PING_IMG_URL:
     if PING_IMG_URL != "assets/Ping.jpeg":
         if not re.match("(?:http|https)://", PING_IMG_URL):
-            PING_IMG_URL = "{PIC_START}"
+            PING_IMG_URL = (PIC_START)
 
 if START_IMG_URL:
     if START_IMG_URL != "assets/Ping.jpeg":
         if not re.match("(?:http|https)://", START_IMG_URL):
-            START_IMG_URL = "{PIC_START}"
+            START_IMG_URL = (PIC_START)
 if MONGO_DB_URI != None:
     MONGO_DB_URI = MONGO_DB_URI.strip()
 if MONGO_DB_URI == "":
