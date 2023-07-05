@@ -15,8 +15,8 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 iddof = []
 
 @app.on_message(
-    pyrogram.filters.command(["قفل ايدي","تعطيل ايدي"])
-    & pyrogram.filters.group
+    command(["قفل ايدي","تعطيل ايدي"])
+    &filters.group
 )
 async def iddlock(client, message):
     get = await app.get_chat_member(message.chat.id, message.from_user.id)
@@ -29,8 +29,8 @@ async def iddlock(client, message):
         return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
 
 @app.on_message(
-   pyrogram.filters.command(["فتح الايدي","تفعيل الايدي"])
-    & pyrogram.filters.group
+    command(["فتح الايدي","تفعيل الايدي"])
+    & filters.group
 )
 async def iddopen(client, message):
    get = await app.get_chat_member(message.chat.id, message.from_user.id)
@@ -44,8 +44,8 @@ async def iddopen(client, message):
 
 
 @app.on_message(
-    pyrogram.filters.command(["ايدي","id","ا"])
-    & pyrogram.filters.group
+    command(["ايدي","id","ا"])
+    & filters.group
 )
 
 async def iddd(client, message):
@@ -75,8 +75,8 @@ async def iddd(client, message):
 
 iddof = []
 @app.on_message(
-    pyrogram.filters.command(["قفل صورتي","تعطيل صورتي"])
-    & pyrogram.filters.group
+    command(["قفل صورتي","تعطيل صورتي"])
+    & filters.group
 )
 async def lllock(client, message):
    get = await app.get_chat_member(message.chat.id, message.from_user.id)
@@ -87,8 +87,8 @@ async def lllock(client, message):
       return await message.reply_text(" تم تعطيل صورتي بنجاح✅🔒")
 
 @app.on_message(
-    pyrogram.filters.command(["فتح صورتي","تفعيل صورتي"])
-    & pyrogram.filters.group
+    command(["فتح صورتي","تفعيل صورتي"])
+    & filters.group
 )
 async def idljjopen(client, message):
    get = await app.get_chat_member(message.chat.id, message.from_user.id)
