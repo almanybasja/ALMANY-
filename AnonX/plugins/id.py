@@ -15,7 +15,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 iddof = []
 
 @app.on_message(
-    command(["قفل ايدي","تعطيل ايدي"])
+    filters.command(["قفل ايدي","تعطيل ايدي"])
     &filters.group
 )
 async def iddlock(client, message):
@@ -29,7 +29,7 @@ async def iddlock(client, message):
         return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
 
 @app.on_message(
-    command(["فتح الايدي","تفعيل الايدي"])
+    filters.command(["فتح الايدي","تفعيل الايدي"])
     & filters.group
 )
 async def iddopen(client, message):
@@ -75,7 +75,7 @@ async def iddd(client, message):
 
 iddof = []
 @app.on_message(
-    command(["قفل صورتي","تعطيل صورتي"])
+    filters.command(["قفل صورتي","تعطيل صورتي"])
     & filters.group
 )
 async def lllock(client, message):
@@ -87,7 +87,7 @@ async def lllock(client, message):
       return await message.reply_text(" تم تعطيل صورتي بنجاح✅🔒")
 
 @app.on_message(
-    command(["فتح صورتي","تفعيل صورتي"])
+    filters.command(["فتح صورتي","تفعيل صورتي"])
     & filters.group
 )
 async def idljjopen(client, message):
