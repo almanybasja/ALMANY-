@@ -1,5 +1,5 @@
 from pyrogram import * 
-from pyrogram.types import * 
+from pyrogram.types import Message
 from pyromod import listen
 import time
 from pyrogram import Client, filters
