@@ -12,6 +12,7 @@ pillow
 psutil
 py-tgcalls
 pykeyboard
+pyromod
 pyrogram == 2.0.56
 python-dotenv
 pyyaml
@@ -24,4 +25,4 @@ yt-dlp
 youtube-search
 youtube-search-python
 telegraph
-pyromod
+
