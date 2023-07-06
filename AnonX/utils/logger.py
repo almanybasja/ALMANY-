@@ -1,26 +1,26 @@
 from config import LOG, LOG_GROUP_ID, MUSIC_BOT_NAME
 from AnonX import app
 from AnonX.utils.database import is_on_off
+from pyrogram.types import Message
 
-
-async def play_logs(message, streamtype):
+async def play_logs(Message, streamtype):
     if await is_on_off(LOG):
-        if message.chat.username:
-            chatusername = f"@{message.chat.username}"
+        if Message.chat.username:
+            chatusername = f"@{Message.chat.username}"
         else:
             chatusername = "محادثه خاصه"
         logger_text = f"""
 **{MUSIC_BOT_NAME} مسجل التشغيل**
 
-**الدردشه:** {message.chat.title} [`{message.chat.id}`]
-**المعرف:** @{message.from_user.username}
-**الايدي:** `{message.from_user.id}`
+**الدردشه:** {Message.chat.title} [`{Message.chat.id}`]
+**المعرف:** @{Message.from_user.username}
+**الايدي:** `{Message.from_user.id}`
 **رابط الدردشه:** {chatusername}
 
-**تم البحث بواسطة:** {message.text}
+**تم البحث بواسطة:** {Message.text}
 
 **نوع المشغل:** {streamtype}"""
-        if message.chat.id != LOG_GROUP_ID:
+        if Message.chat.id != LOG_GROUP_ID:
             try:
                 await app.send_message(
                     LOG_GROUP_ID,
