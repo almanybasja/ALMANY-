@@ -13,7 +13,7 @@ async def play_logs(message, streamtype):
 **{MUSIC_BOT_NAME} مسجل التشغيل**
 
 **الدردشه:** {message.chat.title} [`{message.chat.id}`]
-**المستخدم:** {message.from_user.mention}
+**المستخدم:** {message.from_user.first_name}
 **المعرف:** @{message.from_user.username}
 **الايدي:** `{message.from_user.id}`
 **رابط الدردشه:** {chatusername}
