@@ -19,9 +19,9 @@ iddof = []
     &filters.group
    
 )
-async def iddlock(client, message):
-    get = await app.get_chat_member(message.chat.id, message.from_user.id)
-    if member.status in ["creator", "administrator"]:
+async def iddlock(client:Client, message):
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in ["creator", "administrator"]:
         if message.chat.id in iddof:
             return await message.reply_text("تم معطل من قبل🔒")
         iddof.append(message.chat.id)
@@ -34,10 +34,10 @@ async def iddlock(client, message):
     & filters.group
    
 )
-async def iddopen(client, message):
-   get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if member.status in ["creator", "administrator"]:
-      if not message.chat.id in iddof:
+async def iddlock(client:Client, message):
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in ["creator", "administrator"]:
+        if message.chat.id in iddof:
         return await message.reply_text("الايدي مفعل من قبل ✅")
       iddof.remove(message.chat.id)
       return await message.reply_text("تم فتح الايدي بنجاح ✅🔓")
