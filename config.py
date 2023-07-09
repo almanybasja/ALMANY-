@@ -9,7 +9,7 @@ load_dotenv()
 
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
-
+CHANNEL_DEV = getenv("CHANNEL_DEV")
 BOT_TOKEN = getenv("BOT_TOKEN")
 PIC_START = getenv("PIC_START")
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
