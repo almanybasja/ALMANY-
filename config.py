@@ -9,7 +9,7 @@ load_dotenv()
 
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
-CHANNEL_DEV = getenv("CHANNEL_DEV")
+
 BOT_TOKEN = getenv("BOT_TOKEN")
 PIC_START = getenv("PIC_START")
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
@@ -20,6 +20,7 @@ OWNER_ID = list(map(int, getenv("OWNER_ID", "6275847466").split()))
 
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
+CHANNEL_DEV = getenv("CHANNEL_DEV","HL_BG")
 USER_OWNER = getenv("USER_OWNER","bp_bp")
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/ma7amad2000/HAYA01")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
