@@ -16,7 +16,7 @@ iddof = []
 
 @app.on_message(
     filters.command(["قفل ايدي","تعطيل ايدي"])
-    &filters.group
+ 
    
 )
 async def iddlock(client:Client, message:Message):
@@ -31,7 +31,7 @@ async def iddlock(client:Client, message:Message):
 
 @app.on_message(
     filters.command(["فتح الايدي","تفعيل الايدي"])
-    & filters.group
+   
    
 )
 async def iddlock(client:Client, message:Message):
