@@ -1,21 +1,31 @@
 from strings.filters import command
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram import Client, filters 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from AnonX import app, Telegram
-import config
 
-# تعيين القناة الخاصة وزر الاشتراك
 
-subscribe_button = InlineKeyboardButton("اشترك في القناة", url="https://t.me/{config.CHANNEL_DEV}")
 
-# دالة لمعالجة الأمر /start
-@Client.on_message(filters.command("start"))
-async def start(client, message):
-    # الرد على الامر /start بالأزرار المطلوبة
-    if message.from_user.id == (config.OWNER_ID):
-        await message.reply("مرحباً بك! اليك الأزرار المطلوبة",
-                            reply_markup=InlineKeyboardMarkup([[subscribe_button]]))
-    else:
-        await message.reply("أنت لست مطور البوت")
+@app.on_message(filters.command(["start"]))
+def start(client, message):
+    channel_username = "HL_BG"
 
+    bot_button = InlineKeyboardMarkup(
+        [[
+            InlineKeyboardButton("زيارة القناة", url=f"https://t.me/{channel_username}"),
+            InlineKeyboardButton("تحقق من الاشتراك", callback_data="check_subscription")
+        ]]
+    )
+
+    message.reply_text("مرحبًا بك! اضغط على أحد الأزرار بالأسفل للاشتراك.", reply_markup=bot_button)
+
+@app.on_callback_query()
+def callback_handler(client:Client, callback):
+    if callback.data == "check_subscription":
+        channel_id = -1001734203093  # استبدل بمعرف قناتك هنا
+
+        if client.get_chat_member(chat_id=channel_id, user_id=Message.from_user.id).status == "member":
+            callback.answer("تم التحقق من الاشتراك! مستخدم صالح.", show_alert=True)
+        else:
+            
+            callback.answer("المرجو الاشتراك في القناة أولاً.", show_alert=True)
 
