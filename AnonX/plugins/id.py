@@ -19,7 +19,7 @@ iddof = []
     &filters.group
    
 )
-async def iddlock(client:Client, message):
+async def iddlock(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in ["creator", "administrator"]:
         if message.chat.id in iddof:
@@ -34,7 +34,7 @@ async def iddlock(client:Client, message):
     & filters.group
    
 )
-async def iddlock(client:Client, message):
+async def iddlock(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in ["creator", "administrator"]:
         if message.chat.id in iddof:
