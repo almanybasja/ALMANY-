@@ -3689,3 +3689,33 @@ async def cutt(client: Client, message: Message):
 
         f"{a}")
         
+iddof = []
+@app.on_message(
+    command(["قفل كت","تعطيل تويت"])
+    & filters.group
+    & ~filters.edited
+)
+async def iddlock_two(client, message):
+   get = await app.get_chat_member(message.chat.id, message.from_user.id)
+   if get.status in ["creator", "administrator"]:
+      if message.chat.id in iddof:
+        return await message.reply_text("تم معطل من قبل🔒")
+      iddof.append(message.chat.id)
+      return await message.reply_text("تم تعطيل كت بنجاح ✅🔒")
+   else:
+      return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
+@app.on_message(
+    command(["قفل كت","تعطيل تويت"])
+    & filters.group
+    & ~filters.edited
+)
+async def iddlock_two(client, message):
+   get = await app.get_chat_member(message.chat.id, message.from_user.id)
+   if get.status in ["creator", "administrator"]:
+      if message.chat.id in iddof:
+        return await message.reply_text("تم معطل من قبل🔒")
+      iddof.append(message.chat.id)
+      return await message.reply_text("تم تعطيل كت بنجاح ✅🔒")
+   else:
+      return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
+    
