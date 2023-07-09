@@ -2,11 +2,12 @@ from strings.filters import command
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AnonX import app, Telegram
+from config import CHANNEL_DEV
 
 
 @app.on_message(filters.command(["start"]))
 def start(client, message):
-    channel_username = (CHANNEL_DEV)  # استبدل بمعرف قناتك هنا
+    channel_username = (CHANNEL_DEV)
 
     bot_button = InlineKeyboardMarkup(
         [[
