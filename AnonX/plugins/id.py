@@ -38,7 +38,7 @@ async def iddlock(client:Client, message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in ["creator", "administrator"]:
         if message.chat.id in iddof:
-        return await message.reply_text("الايدي مفعل من قبل ✅")
+           return await message.reply_text("الايدي مفعل من قبل ✅")
       iddof.remove(message.chat.id)
       return await message.reply_text("تم فتح الايدي بنجاح ✅🔓")
  
