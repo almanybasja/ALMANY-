@@ -1,12 +1,12 @@
-
+from strings.filters import command
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from AnonX import app, Telegram
 
-app = Client("my_account")
 
 @app.on_message(filters.command(["start"]))
 def start(client, message):
-    channel_username = "your_channel_username"  # استبدل بمعرف قناتك هنا
+    channel_username = (CHANNEL_DEV)  # استبدل بمعرف قناتك هنا
 
     bot_button = InlineKeyboardMarkup(
         [[
@@ -27,4 +27,4 @@ def callback_handler(client, callback):
         else:
             callback.answer("المرجو الاشتراك في القناة أولاً.", show_alert=True)
 
-app.run()
+
