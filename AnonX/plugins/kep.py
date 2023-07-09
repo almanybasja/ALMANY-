@@ -2,7 +2,7 @@ from strings.filters import command
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AnonX import app, Telegram
-from config import OWNER_ID, CHANNEL_DEV
+from config import *
 
 # تعيين القناة الخاصة وزر الاشتراك
 
