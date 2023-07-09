@@ -21,7 +21,7 @@ def start(client, message):
 @app.on_callback_query()
 def callback_handler(client, callback):
     if callback.data == "check_subscription":
-        channel_id = channel_username  # استبدل بمعرف قناتك هنا
+        channel_id = -1001734203093  # استبدل بمعرف قناتك هنا
 
         if client.get_chat_member(chat_id=channel_id, user_id=callback.from_user.id).status == "member":
             callback.answer("تم التحقق من الاشتراك! مستخدم صالح.", show_alert=True)
