@@ -7,7 +7,7 @@ from AnonX import app, Telegram
 
 @app.on_message(filters.command(["start"]))
 def start(client, message):
-    channel_username = "@hl_bg"
+    channel_username = "https://t.me/HL_BG"
 
     bot_button = InlineKeyboardMarkup(
         [[
