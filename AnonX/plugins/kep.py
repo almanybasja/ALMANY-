@@ -1,6 +1,6 @@
 from strings.filters import command
 from pyrogram import Client, filters 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AnonX import app, Telegram
 
 
@@ -23,7 +23,7 @@ def callback_handler(client:Client, callback):
     if callback.data == "check_subscription":
         channel_id = -1001734203093  # استبدل بمعرف قناتك هنا
 
-        if client.get_chat_member(chat_id=channel_id, user_id=Message.from_user.id).status == "member":
+        if client.get_chat_member(chat_id=channel_id, user_id=callback.from_user.id).status == "member":
             callback.answer("تم التحقق من الاشتراك! مستخدم صالح.", show_alert=True)
         else:
             
