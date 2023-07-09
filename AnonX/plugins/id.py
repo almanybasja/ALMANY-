@@ -17,7 +17,7 @@ iddof = []
 @app.on_message(
     filters.command(["قفل ايدي","تعطيل ايدي"])
     &filters.group
-    &filters.update
+   
 )
 async def iddlock(client, message):
     get = await app.get_chat_member(message.chat.id, message.from_user.id)
@@ -32,7 +32,7 @@ async def iddlock(client, message):
 @app.on_message(
     filters.command(["فتح الايدي","تفعيل الايدي"])
     & filters.group
-    &filters.update
+   
 )
 async def iddopen(client, message):
    get = await app.get_chat_member(message.chat.id, message.from_user.id)
