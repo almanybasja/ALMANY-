@@ -1,4 +1,4 @@
-python
+
 import asyncio
 import random
 from AnonX import app
