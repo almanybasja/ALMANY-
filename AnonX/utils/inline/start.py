@@ -51,7 +51,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         ],
         [
             InlineKeyboardButton(
-                text="قناة المطور", url=f"https://t.me/{config.CHANNEL_DEV}"
+                text="قناة المطور", url=f"https://t.me/{CHANNEL_DEV}"
             )
         ],
       
