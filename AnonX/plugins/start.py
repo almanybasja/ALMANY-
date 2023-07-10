@@ -1,6 +1,6 @@
 import asyncio
 import time
-from config import OWNER_ID
+
 from pyrogram import filters
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
@@ -8,7 +8,7 @@ from youtubesearchpython.__future__ import VideosSearch
 from pyrogram.enums import ChatType, ParseMode
 import config
 from config import BANNED_USERS
-from config import OWNER_ID , USER_OWNER
+from config import OWNER_ID , USER_OWNER, MUSIC_BOT_NAME
 from strings import get_command, get_string
 from AnonX import Telegram, YouTube, app
 from AnonX.misc import SUDOERS, _boot_
@@ -46,7 +46,7 @@ async def start_comm(client, message: Message, _):
             if message.from_user.id in dev:
                    await message.reply_text(f"**مرحبا مطوري الحبيب  {message.from_user.mention} \n\n اليك لوحة التحكم الخاصه بك**")
             else:  
-                   await message.reply_text(f"اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي")
+                     await message.reply_text(f"**اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي**")
                    return await message.reply_photo(
                        photo=config.START_IMG_URL,
                        caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard
@@ -209,7 +209,7 @@ async def start_comm(client, message: Message, _):
                 if message.from_user.id in dev:
                    await message.reply_text(f"**مرحبا مطوري الحبيب  {message.from_user.mention} \n\n اليك لوحة التحكم الخاصه بك**")
                 else:  
-                   await message.reply_text(f"اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي")
+                   await message.reply_text(f"**اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي**")
                    return await message.reply_photo(
                     photo=config.START_IMG_URL,
                     caption=_["start_2"].format(
