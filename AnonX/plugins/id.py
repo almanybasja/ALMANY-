@@ -42,9 +42,7 @@ async def iddlock(client:Client, message:Message):
            return await message.reply_text(f"يا {message.from_user.mention} الايدي فاتحه من قبل")
         iddof.remove(message.chat.id)
         return await message.reply_text(f"**تم فتح الايدي \n\n من قبل ←{message.from_user.mention}**")
-     else:
-        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
-
+    
 
 
 
