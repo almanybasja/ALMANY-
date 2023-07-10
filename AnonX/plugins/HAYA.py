@@ -3,7 +3,7 @@ import asyncio
 import os
 import time
 import requests
-from config import USER_OWNER, OWNER_ID
+from config import USER_OWNER, OWNER_ID, SUPPORT_CHANNEL
 from pyrogram import filters
 import random
 from pyrogram import Client
@@ -120,10 +120,34 @@ async def yas(client, message):
                     InlineKeyboardButton(
                         "استدعاء المطور", url=f"https://t.me/{usr.username}"),                        
                  ],
+                      [
+                    InlineKeyboardButton(
+                        "قناة المطور", url=f"https://t.me/{SUPPORT_CHANNEL}"),                        
+                 ],
             ]
         ),
     )
-    
+@app.on_message(
+   command(["قناة المطور"])
+   
+)
+async def yas(client, message):
+    usr = await client.get_chat(SUPPORT_CHANNEL)
+    name = usr.first_name
+    photo = await app.download_media(usr.photo.big_file_id)
+    await message.reply_photo(photo,       caption=f"**قناة المطور \nاشترك فالقناه فضلا وليس امرا \n\n اسم القناه : {name} \n ("https://t.me/{usr.username}")الرابط : [هنا]**", 
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        name, url=f"https://t.me/{usr.username}")
+                ],  [
+                    InlineKeyboardButton(
+                        "استدعاء المبرمج", url=f"https://t.me/{usr.username}"),                        
+                 ],
+            ]
+        ),
+    )
 
 
 
