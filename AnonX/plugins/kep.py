@@ -6,7 +6,7 @@ from strings.filters import command
 
 @app.on_message(filters.command(["start"]))
 def start(client:Client, message:Message):
-    SUPPORT_CHANNEL = "{SUPPORT_CHANNEL}"  # استبدل بمعرف قناتك هنا
+    SUPPORT_CHANNEL = "{SUPPORT_CHANNEL}"
 
     bot_button = InlineKeyboardMarkup(
         [[
@@ -20,7 +20,7 @@ def start(client:Client, message:Message):
 @app.on_callback_query()
 def callback_handler(client:Client, callback):
     if callback.data == "check_subscription":
-        channel_id = CHANNEL_ID # استبدل بمعرف قناتك هنا
+        channel_id = CHANNEL_ID 
 
         if client.get_chat_member(chat_id= channel_id, user_id= callback.from_user.id).status == "member":
             callback.answer("تم التحقق من الاشتراك! مستخدم صالح.", show_alert=True)
