@@ -46,7 +46,7 @@ async def start_comm(client, message: Message, _):
             if message.from_user.id in dev:
                    await message.reply_text(f"**مرحبا مطوري العزيز  {message.from_user.mention}**")
             else:  
-                   await message.reply_text(f"اهلا عزيزي {message.from_user.mention} في بوت الميوزك الخاص بي @{USER_OWNER}")
+                   await message.reply_text(f"اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي")
                    return await message.reply_photo(
                        photo=config.START_IMG_URL,
                        caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard
