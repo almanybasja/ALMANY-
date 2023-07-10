@@ -3,7 +3,7 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 import config
-from config import *
+from config import SUPPORT_CHANNEL
 
 
 
@@ -51,7 +51,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         ],
         [
             InlineKeyboardButton(
-                text="قناة المطور", url=f"https://t.me/{CHANNEL_DEV}"
+                text="قناة المطور", url=f"{SUPPORT_CHANNEL}"
             )
         ],
       
