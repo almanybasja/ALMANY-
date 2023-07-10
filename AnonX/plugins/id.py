@@ -85,9 +85,9 @@ async def lllock(client, message):
    get = await app.get_chat_member(message.chat.id, message.from_user.id)
    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
       if message.chat.id in iddof:
-        return await message.reply_text("صورتي معطل من قبل✅")
+        return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
       iddof.append(message.chat.id)
-      return await message.reply_text(" تم تعطيل صورتي بنجاح✅🔒")
+      return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
 
 @app.on_message(
     filters.command(["فتح صورتي","تفعيل صورتي"])
@@ -97,9 +97,9 @@ async def idljjopen(client, message):
    get = await app.get_chat_member(message.chat.id, message.from_user.id)
    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
       if not message.chat.id in iddof:
-        return await message.reply_text("صورتي مفعل من قبل✅")
+        return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
       iddof.remove(message.chat.id)
-      return await message.reply_text("تم فتح صورتي بنجاح ✅🔓")
+      return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
  
 
 
