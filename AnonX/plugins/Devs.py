@@ -3,6 +3,7 @@ from pyrogram import Client, filters
 from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from AnonX import app, Telegram
+import random
 @app.on_message(
     command(["صورص","سورس","السورس","سورس حياه", "haya"])
 )
