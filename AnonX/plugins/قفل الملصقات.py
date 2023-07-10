@@ -3,18 +3,38 @@ from AnonX import app
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
+stiklok =["creator","administrator"]
 
+@app.on_message(
+    filters.command(["قفل الملصقات","تعطيل الملصقات"])
+ 
+   
+)
+async def block_stickers(client:Client, message:Message):
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in ["creator", "administrator"]:
+        if message.chat.id in stiklok:
+            return await message.reply_text(f"يا {message.from_user.mention} الملصقات مقفله من قبل")
+        stiklok.append(message.chat.id)
+        return await message.reply_text(f"تم قفل الملصقات \n\n من قبل ←{message.from_user.mention}")
+    else:
+        return await message.reply_text(f"يا {message.from_user.mention} انت لست مشرفا")
+    
+    
+    
 
-    # يجب أن يرسل الأمر المشترك إلى المجموعة لتنفيذه
-@app.on_message(filters.group)
-def block_stickers(client:Client, message:Message):
-        # يتم حجب الملصقات بالحذف في المجموعة
-        if message.text == "قفل الملصقات":
-            client.set_chat_permissions(message.chat.id, can_send_stickers=False)
-
-        # يتم فتح الملصقات بعدم الحذف في المجموعة
-        elif message.text == "فتح الملصقات":
-            client.set_chat_permissions(message.chat.id, can_send_stickers=True)
-
-        # إرسال رسالة استجابة للإعلان عن تمكين أمر قفل وفتح الملصقات
-        client.send_message(message.chat.id, "تم تنفيذ الأمر!")
+@app.on_message(
+    filters.command(["فتح الملصقات","تفعيل الملصقات"])
+ 
+   
+)
+async def block_stickers(client:Client, message:Message):
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in ["creator", "administrator"]:
+        if message.chat.id in stiklok:
+            return await message.reply_text(f"يا {message.from_user.mention} الملصقات مقفله من قبل")
+        stiklok.append(message.chat.id)
+        return await message.reply_text(f"تم قفل الملصقات \n\n من قبل ←{message.from_user.mention}")
+    else:
+        return await message.reply_text(f"يا {message.from_user.mention} انت لست مشرفا")
+    
