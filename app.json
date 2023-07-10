@@ -17,6 +17,11 @@
         "value": "1747534",
         "required": true
       },
+     "CHANNEL_ID": {
+        "description": "ايدي قناتك",
+        "value": "1747534",
+        "required": true
+      },
       "USER_OWNER": {
         "description": "Your user",
         "value": "https://e.top4top.io/p_27331r5n31.jpg",
