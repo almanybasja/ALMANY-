@@ -22,5 +22,5 @@ def call_random_member(client:Client, message:Message):
         f"• يـا راس السطل تعال {random_member_mention}",
         f"• انت ليش قمر هكي 🌚♥ {random_member_mention}"
     ])
-    client.send_message(chat_id, random_message, reply_to_message_id= message.id, parse_mode= "None")
+    client.send_message(chat_id, random_message, reply_to_message_id= message.id)
 
