@@ -44,7 +44,7 @@ async def start_comm(client, message: Message, _):
             dev = (OWNER_ID)
             keyboard = help_pannel(_)
             if message.from_user.id in dev:
-                   await message.reply_text(f"**مرحبا مطوري العزيز  {message.from_user.mention}**")
+                   await message.reply_text(f"**مرحبا مطوري الحبيب  {message.from_user.mention} \n\n اليك لوحة التحكم الخاصه بك**")
             else:  
                    await message.reply_text(f"اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي")
                    return await message.reply_photo(
@@ -207,7 +207,7 @@ async def start_comm(client, message: Message, _):
             try:
                 dev = (OWNER_ID)
                 if message.from_user.id in dev:
-                   await message.reply_text(f"**مرحبا مطوري العزيز  {message.from_user.mention}**")
+                   await message.reply_text(f"**مرحبا مطوري الحبيب  {message.from_user.mention} \n\n اليك لوحة التحكم الخاصه بك**")
                 else:  
                    await message.reply_text(f"اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي")
                    return await message.reply_photo(
