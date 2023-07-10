@@ -22,8 +22,9 @@ iddof = ["creator", "administrator"]
    
 )
 async def iddlock(client:Client, message:Message):
+    dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
         if message.chat.id in iddof:
             return await message.reply_text(f"يا {message.from_user.mention} الايدي مقفله من قبل")
         iddof.append(message.chat.id)
@@ -38,8 +39,9 @@ async def iddlock(client:Client, message:Message):
    
 )
 async def iddlock(client:Client, message:Message):
+    dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
         if message.chat.id in iddof:
            return await message.reply_text(f"يا {message.from_user.mention} الايدي فاتحه من قبل")
         iddof.remove(message.chat.id)
@@ -84,8 +86,9 @@ iddof = []
     & filters.group
 )
 async def lllock(client, message):
-   get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+    dev = (OWNER_ID)
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if message.chat.id in iddof:
         return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
       iddof.append(message.chat.id)
@@ -96,8 +99,9 @@ async def lllock(client, message):
     & filters.group
 )
 async def idljjopen(client, message):
-   get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+    dev = (OWNER_ID)
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if not message.chat.id in iddof:
         return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
       iddof.remove(message.chat.id)
