@@ -35,7 +35,7 @@ async def huhh(client: Client, message: Message):
 
     )
 
-@app.on_message(command(["غنيلي", "غني", "غ", "حياه غنيلي"]))
+@app.on_message(command([f"غنيلي", "غني", "غ", "{BOT_USERNAME} غنيلي"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(3,267)
     url = f"https://t.me/bsmaatt/{rl}"
