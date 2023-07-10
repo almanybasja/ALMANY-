@@ -1,14 +1,9 @@
 import asyncio
-
-
 import random
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import filters, Client
 from AnonX import app
-from pyrogram.types import (InlineKeyboardButton,
-                            InlineKeyboardMarkup, Message)
 from strings.filters import command
-from pyrogram import Client
-from config import OWNER_ID
-from pyrogram import filters
 
 
 @app.on_message(command(['زوجني','ز']))
@@ -24,5 +19,5 @@ def call_random_member(client:Client, message:Message):
         f"**• اخترت لك هذا الشخص** {random_member_mention} \n **🙈♥**",
         f"**• اخترت لك هذا الشخص** \n {random_member_mention} \n **"
     ])
-    # client.send_message(chat_id, random_message, reply_to_message_id= message.chat.id, parse_mode='markdown')
+    client.send_message(chat_id, random_message, reply_to_message_id= message.id)
 
