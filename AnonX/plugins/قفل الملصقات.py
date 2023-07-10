@@ -5,8 +5,8 @@ from pyrogram import Client, Filters
 
 
     # يجب أن يرسل الأمر المشترك إلى المجموعة لتنفيذه
-    @app.on_message(Filters.group)
-    def block_stickers(client, message):
+@app.on_message(Filters.group)
+def block_stickers(client, message):
         # يتم حجب الملصقات بالحذف في المجموعة
         if message.text == "قفل الملصقات":
             client.set_chat_permissions(message.chat.id, can_send_stickers=False)
