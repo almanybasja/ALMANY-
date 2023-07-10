@@ -32,9 +32,9 @@
         "value": "5a2684512006853f2e48aca9652d83ea",
         "required": true
       },
-      "CHANNEL_DEV": {
-        "description": "معرف قناتك بدون @",
-        "value": "HL_BG",
+      "SUPPORT_CHANNEL": {
+        "description": "رابط قناتك",
+        "value": "https://t.me/HL_BG",
         "required": true
       },
       "BOT_TOKEN": {
