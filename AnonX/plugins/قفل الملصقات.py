@@ -1,11 +1,11 @@
 from strings.filters import command
 from AnonX import app
-from pyrogram import Client, Filters
+from pyrogram import Client, filters
 
 
 
     # يجب أن يرسل الأمر المشترك إلى المجموعة لتنفيذه
-@app.on_message(Filters.group)
+@app.on_message(filters.group)
 def block_stickers(client, message):
         # يتم حجب الملصقات بالحذف في المجموعة
         if message.text == "قفل الملصقات":
