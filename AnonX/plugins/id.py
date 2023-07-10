@@ -12,7 +12,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 #           #    #    #          #     ##   #     #
 #              #      #####   ######   #     #
 
-iddof = []
+iddof = ["creator", "administrator"]
 
 @app.on_message(
     filters.command(["قفل ايدي","تعطيل ايدي"])
