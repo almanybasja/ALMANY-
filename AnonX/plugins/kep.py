@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from config import * 
 from strings.filters import command
-
+from AnonX import app, Telegram
 
 @app.on_message(filters.command(["start"]))
 def start(client:Client, message:Message):
