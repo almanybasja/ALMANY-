@@ -99,7 +99,7 @@ async def adf_rd(app,message:Message):
 
 
 @app.on_message(command(["مسح رد"]))
-async def delete_rd(app,message):
+async def delete_rd(app,message:Message):
    get = await get_rtba(message.chat.id, message.from_user.id)
    if not get: return await message.reply("• هذا االأمر لا يخصك")
    ask = await app.ask(
@@ -114,7 +114,7 @@ async def delete_rd(app,message):
 
 
 @app.on_message(command(["مسح الردود"]))
-async def delrdood(app,message):
+async def delrdood(app,message:Message):
    get = await get_rtba(message.chat.id, message.from_user.id)
    if not get: return await message.reply("• هذا االأمر لا يخصك")
    a = del_rdod(message.chat.id)
@@ -125,7 +125,7 @@ async def delrdood(app,message):
 
 
 @app.on_message(command(["الردود"]))
-async def get_rdodd(app,message):
+async def get_rdodd(app,message:Message):
     get = await get_rtba(message.chat.id, message.from_user.id)
     if not get: return await message.reply("• هذا االأمر لا يخصك")
     a = get_rdod(message.chat.id)
@@ -134,7 +134,7 @@ async def get_rdodd(app,message):
 
 
 @app.on_message(filters.text & filters.group, group=1)
-async def gettt_rd(app, message):
+async def gettt_rd(app, message:Message):
    a = get_rd(message.text, message.chat.id)
    if a: return await app.copy_message(message.chat.id, LOG, a, reply_to_message_id=message.id)
    else: return 
