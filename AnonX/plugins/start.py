@@ -44,7 +44,7 @@ async def start_comm(client, message: Message, _):
             dev = (OWNER_ID)
             keyboard = help_pannel(_)
             if message.from_user.id in dev:
-                   await message.reply_text(f"**مرحبا مطوري العزيز  {message.from_user.first_name}**")
+                   await message.reply_text(f"**مرحبا مطوري العزيز  {message.from_user.mention}**")
             else:  
                    await message.reply_text(f"اهلا عزيزي {message.from_user.first_name} في بوت الميوزك الخاص بي @{USER_OWNER}")
                    return await message.reply_photo(
