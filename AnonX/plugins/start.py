@@ -205,9 +205,7 @@ async def start_comm(client, message: Message, _):
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:
             try:
-              if message.from_user.id in dev:
-                   await message.reply_text(f"**مرحبا مطوري العزيز  {message.from_user.mention}**")
-              else:  
+             
                    await message.reply_text(f"اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي")
                    return await message.reply_photo(
                     photo=config.START_IMG_URL,
