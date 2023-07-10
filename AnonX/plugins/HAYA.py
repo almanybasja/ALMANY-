@@ -135,16 +135,13 @@ async def yas(client, message):
     usr = await client.get_chat(SUPPORT_CHANNEL)
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"**قناة المطور \nاشترك فالقناه فضلا وليس امرا \n\n اسم القناه : {name} \n ("https://t.me/{usr.username}")الرابط : [هنا]**", 
+    await message.reply_photo(photo,       caption=f"**قناة المطور \nاشترك فالقناه فضلا وليس امرا من الازرار في الاسفل \n\n اسم القناه : {name}**", 
     reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
                         name, url=f"https://t.me/{usr.username}")
-                ],  [
-                    InlineKeyboardButton(
-                        "استدعاء المبرمج", url=f"https://t.me/{usr.username}"),                        
-                 ],
+                ], 
             ]
         ),
     )
