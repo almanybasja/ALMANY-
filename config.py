@@ -17,10 +17,9 @@ LOG_GROUP_ID = int(getenv("LOG_GROUP_ID"))
 MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "HaYa ダ ᴍᴜsɪᴄ")
 
 OWNER_ID = list(map(int, getenv("OWNER_ID", "6275847466").split()))
-
+CHANNEL_DEV = getenv("CHANNEL_DEV","HL_BG")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
-CHANNEL_DEV = getenv("CHANNEL_DEV","HL_BG")
 USER_OWNER = getenv("USER_OWNER","bp_bp")
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/ma7amad2000/HAYA01")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
