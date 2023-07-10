@@ -24,11 +24,11 @@ async def iddlock(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
         if message.chat.id in iddof:
-            return await message.reply_text("تم معطل من قبل🔒")
+            return await message.reply_text(f"يا {message.from_user.mention} الايدي مقفله من قبل")
         iddof.append(message.chat.id)
-        return await message.reply_text("تم تعطيل الايدي بنجاح ✅🔒")
+        return await message.reply_text(f"**تم قفل الايدي \n\n من قبل ←{message.from_user.mention}**")
     else:
-        return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 
 @app.on_message(
     filters.command(["فتح الايدي","تفعيل الايدي"])
@@ -39,10 +39,12 @@ async def iddlock(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
         if message.chat.id in iddof:
-           return await message.reply_text("الايدي مفعل من قبل ✅")
+           return await message.reply_text(f"يا {message.from_user.mention} الايدي فاتحه من قبل")
         iddof.remove(message.chat.id)
-        return await message.reply_text("تم فتح الايدي بنجاح ✅🔓")
- 
+        return await message.reply_text(f"**تم فتح الايدي \n\n من قبل ←{message.from_user.mention}**")
+     else:
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
+
 
 
 
