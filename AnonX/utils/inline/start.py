@@ -3,7 +3,7 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 import config
-from config import CHANNEL_DEV
+from config import *
 
 
 
