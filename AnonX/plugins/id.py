@@ -16,7 +16,8 @@ from pyrogram.enums import ParseMode, ChatMemberStatus
 iddof = ["creator", "administrator"]
 
 @app.on_message(
-    filters.command(["قفل ايدي","تعطيل ايدي"])
+     command(["قفل ايدي","تعطيل ايدي"])
+     & filters.group
  
    
 )
@@ -31,7 +32,8 @@ async def iddlock(client:Client, message:Message):
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 
 @app.on_message(
-    filters.command(["فتح الايدي","تفعيل الايدي"])
+    command(["فتح الايدي","تفعيل الايدي"])
+     & filters.group
    
    
 )
@@ -47,7 +49,7 @@ async def iddlock(client:Client, message:Message):
 
 
 @app.on_message(
-    command(["id"])
+    command(["id","ايدي","ا"])
     & filters.group
 )
 
@@ -78,7 +80,7 @@ async def iddd(client, message):
 
 iddof = []
 @app.on_message(
-    filters.command(["قفل صورتي","تعطيل صورتي"])
+    command(["قفل صورتي","تعطيل صورتي"])
     & filters.group
 )
 async def lllock(client, message):
@@ -90,7 +92,7 @@ async def lllock(client, message):
       return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
 
 @app.on_message(
-    filters.command(["فتح صورتي","تفعيل صورتي"])
+    command(["فتح صورتي","تفعيل صورتي"])
     & filters.group
 )
 async def idljjopen(client, message):
