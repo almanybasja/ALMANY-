@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from config import *
+from config import CHANNEL_ID,  SUPPORT_CHANNEL 
 from strings.filters import command
 
 
