@@ -57,7 +57,7 @@ async def clean_mode(client, update, users, chats):
     await set_queries(1)
 
 
-@app.on_message(filters.command(BROADCAST_COMMAND) & SUDOERS)
+@app.on_message(command(BROADCAST_COMMAND) & SUDOERS)
 @language
 async def braodcast_message(client:Client, message:Message, _):
     global IS_BROADCASTING
