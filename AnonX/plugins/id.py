@@ -131,7 +131,7 @@ async def lllock(client, message):
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
     elif message.from_user.id in dev:
          rotba = "مطور اساسي"
-    else:
+  
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if message.chat.id in iddof:
         return await message.reply_text(f"**يا {message.from_user.mention}\n صورتي مقفلها من قبل**")
@@ -153,7 +153,8 @@ async def idljjopen(client, message):
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
     elif message.from_user.id in dev:
          rotba = "مطور اساسي"
-    else:
+    
+   
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if not message.chat.id in iddof:
         return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
@@ -186,4 +187,3 @@ async def idjjdd(client, message):
         ),
     )
        
-
