@@ -1,3 +1,7 @@
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
+
 import asyncio
 from config import OWNER_ID
 from pyrogram import Client, filters
@@ -8,7 +12,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ParseMode, ChatMemberStatus
 
 #       #             #  #####  #####      ####
-#        #           #  #         #            #     #
+#        #  كود الرتبه الوهميه برمجة ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]         #  #         #            #     #
 #          #        #  #####  #            #####    
 #           #    #    #          #     ##   #     #
 #              #      #####   ######   #     #
@@ -65,12 +69,19 @@ async def iddd(client, message):
         rotba = "مطور اساسي"
     else: 
        rotba= "عضو"
+    
+    if message.from_user.id in haya:
+       prim= "بريميوم لفل ماكس"
+    elif message.from_user.id in botdev:
+       prim = "بريميوم"
+    else: 
+       prim= "عادي"
     if message.chat.id in iddof:
       return
     usr = await client.get_chat(message.from_user.id)
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"""**{xtxk}\n✧ ¦آســمــگڪ :{message.from_user.mention}\n✧ ¦يـوزرڪ :@{message.from_user.username}\n✧ ¦آيـديــڪ :`{message.from_user.id}`\n✧ ¦بـآيـو :{usr.bio}\n✧ ¦ࢪتبتگ: {rotba}**""",
+    await message.reply_photo(photo,       caption=f"""**{xtxk}\n✧ ¦آســمــگڪ :{message.from_user.mention}\n✧ ¦يـوزرڪ :@{message.from_user.username}\n✧ ¦آيـديــڪ :`{message.from_user.id}`\n✧ ¦بـآيـو :{usr.bio}\n✧ ¦ࢪتبتگ: {rotba} \n✧ ¦نوع الحساب {prim}**""",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
