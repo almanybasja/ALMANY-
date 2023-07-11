@@ -191,6 +191,8 @@ async def idjjdd(client, message):
     & filters.group
 )
 async def rotba(client, message):
+    dev = (OWNER_ID)
+    haya = (6275847466,6195765774)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.ADMINISTRATOR]:
          rotba = "الادمن"
