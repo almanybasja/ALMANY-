@@ -45,8 +45,8 @@ async def iddlock(client:Client, message:Message):
         if message.chat.id in iddof:
            return await message.reply_text(f"يا {message.from_user.mention} الايدي فاتحه من قبل")
         iddof.remove(message.chat.id)
-        return await message.reply_text(f"**تم فتح الايدي \n\n من قبل ←{message.from_user.mention}**")
-    
+    return await message.reply_text(f"**تم فتح الايدي \n\n من قبل ←{message.from_user.mention}**")
+   
 
 
 
@@ -92,7 +92,7 @@ async def lllock(client, message):
       if message.chat.id in iddof:
         return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
       iddof.append(message.chat.id)
-      return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
+    return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
 
 @app.on_message(
     command(["فتح صورتي","تفعيل صورتي"])
@@ -105,7 +105,7 @@ async def idljjopen(client, message):
       if not message.chat.id in iddof:
         return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
       iddof.remove(message.chat.id)
-      return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
+    return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
  
 
 
