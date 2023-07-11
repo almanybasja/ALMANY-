@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from pyrogram import filters, Client
 from pyrogram.errors import FloodWait
 from pyrogram.raw import types
-
+from strings.filters import command
 import config
 from config import adminlist, chatstats, clean, userstats
 from strings import get_command
