@@ -1,5 +1,5 @@
 
-from config import API_HASH,  API_ID,  BOT_TOKEN
+from config import OWNER_ID
 import asyncio
 from pyrogram import Client, filters
 from AnonX import app
@@ -9,29 +9,37 @@ from pyrogram.types import Message
 from pyrogram.enums import ParseMode, ChatMemberStatus
 iddof = []
 
-@app.on_message(command(['تفعيل التعديل']))
+@app.on_message(
+     command(["تعطيل التعديل"])
+     & filters.group
+
+   
+)
 async def iddlock(client:Client, message:Message):
+    dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
         if message.chat.id in iddof:
-            return await message.reply_text("تم تفعيل التعديل مسبقًا 🔒")
+            return await message.reply_text(f"يا {message.from_user.mention}\n التعديل معطل من قبل")
         iddof.append(message.chat.id)
-        return await message.reply_text("تم تفعيل التعديل بنجاح ✅🔒")
+        return await message.reply_text(f"تم تعطي التعديل بنجاح\n\n بواسطة ←{message.from_user.mention}")
     else:
-        return await message.reply_text("يجب عليك أن تكون مشرفًا لتنفيذ هذا الأمر.")
-
-@app.on_message(command(['تعطيل التعديل']))
-async def iddopen(client:Client, message:Message):
-   get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
+@app.on_message(
+    command(["تفعيل التعديل"])
+    & filters.group
+)
+async def idljjopen(client:Client, message:Message):
+    dev = (OWNER_ID)
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if not message.chat.id in iddof:
-        return await message.reply_text("التعديل معطل من قبل ✅")
+        return await message.reply_text(f"يا {message.from_user.mention}\التعديل معفل من قبل")
       iddof.remove(message.chat.id)
-      return await message.reply_text("تم فتح تعطيل بنجاح ✅🔓")
-   else:
-      return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
+      return await message.reply_text(f"تم تفعيل التعديل بنجاح\n\n بواسطة ←{message.from_user.mention}")
 
-@app.on_message(Client.edit_message_text)
+@app.on_message(filters.edit)
 async def delete_edited_message(client:Client, message:Message):
     if message.chat.id in iddof:
         await client.delete_messages(chat_id=message.chat.id, message_ids=message.id)
