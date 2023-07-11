@@ -3671,7 +3671,41 @@ txt = [
 
         ]
 
+iddof = []
 
+@app.on_message(
+     command(["قفل كت","تعطيل كت"])
+     & filters.group
+
+   
+)
+async def iddlock(client:Client, message:Message):
+    dev = (OWNER_ID)
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
+        if message.chat.id in iddof:
+            return await message.reply_text(f"يا {message.from_user.mention} كت تويت مقفله من قبل")
+        iddof.append(message.chat.id)
+        return await message.reply_text(f"**تم قفل كت تويت \n\n من قبل ←{message.from_user.mention}**")
+    else:
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
+
+@app.on_message(
+    command(["فتح كت","تفعيل كت"])
+     & filters.group
+   
+   
+)
+async def iddlock(client:Client, message:Message):
+    dev = (OWNER_ID)
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
+        if message.chat.id in iddof:
+           return await message.reply_text(f"**تم فتح كت تويت \n\n من قبل ←{message.from_user.mention}**")
+        iddof.remove(message.chat.id)
+    return await message.reply_text(f"يا {message.from_user.mention} كت تويت فاتحه من قبل")
+    
+   
         
 
 
@@ -3689,33 +3723,3 @@ async def cutt(client: Client, message: Message):
 
         f"{a}")
         
-iddof = []
-@app.on_message(
-    command(["قفل كت","تعطيل تويت"])
-  
-)
-async def iddlock_two(client, message):
-   get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if get.status in ["creator", "administrator"]:
-      if message.chat.id in iddof:
-          return await message.reply_text("تم تعطيل من قبل🔒")
-      iddof.append(message.chat.id)
-      return await message.reply_text("تم تعطيل كت بنجاح ✅🔒")
-   else:
-      return await message.reply_text("يجب أن تكون أدمن لتتمكن من تنفيذ هذا الأمر") 
-
-@app.on_message(
-    command(["قفل كت","تعطيل تويت"])
-   
-)
-async def iddlock_two(client, message):
-   get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if get.status in ["creator", "administrator"]:
-      if message.chat.id in iddof:
-          return await message.reply_text("تم تعطيل من قبل🔒")
-      iddof.append(message.chat.id)
-      return await message.reply_text("تم تعطيل كت بنجاح ✅🔒")
-   else:
-      return await message.reply_text("يجب أن تكون أدمن لتتمكن من تنفيذ هذا الأمر") 
-
-    
