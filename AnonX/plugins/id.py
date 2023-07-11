@@ -26,27 +26,25 @@ async def iddlock(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
         if message.chat.id in iddof:
-            return await message.reply_text(f"يا {message.from_user.mention} الايدي مقفله من قبل")
+            return await message.reply_text(f"يا {message.from_user.mention}\n الايدي مقفله من قبل")
         iddof.append(message.chat.id)
-        return await message.reply_text(f"**تم قفل الايدي \n\n من قبل ←{message.from_user.mention}**")
+        return await message.reply_text(f"**تم قفل الايدي بنجاح\n\n من قبل ←{message.from_user.mention}**")
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 
 @app.on_message(
-    command(["فتح الايدي","تفعيل الايدي"])
-     & filters.group
-   
-   
+    command(["فتح ايدي","تفعيل ايدي"])
+    & filters.group
 )
-async def iddlock(client:Client, message:Message):
+async def idljjopen(client, message):
     dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-        if message.chat.id in iddof:
-           return await message.reply_text(f"**تم فتح الايدي \n\n من قبل ←{message.from_user.mention}**")
-        iddof.remove(message.chat.id)
-    return await message.reply_text(f"يا {message.from_user.mention} الايدي فاتحه من قبل")
-    
+      if not message.chat.id in iddof:
+        return await message.reply_text(f"**يا {message.from_user.mention}\nالايدي معفل من قبل**")
+      iddof.remove(message.chat.id)
+      return await message.reply_text(f"**تم فتح امر ايدي بنجاح\n\n من قبل ←{message.from_user.mention}**")
+ 
    
 
 
@@ -93,9 +91,9 @@ async def lllock(client, message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if message.chat.id in iddof:
-        return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
+        return await message.reply_text(f"**يا {message.from_user.mention}\n صورتي مقفلها من قبل**")
       iddof.append(message.chat.id)
-    return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
+      return await message.reply_text(f"**تم قفل امر صورتي بنجاح\n\n من قبل ←{message.from_user.mention}**")
 
 @app.on_message(
     command(["فتح صورتي","تفعيل صورتي"])
@@ -106,9 +104,9 @@ async def idljjopen(client, message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if not message.chat.id in iddof:
-        return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
+        return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
       iddof.remove(message.chat.id)
-      return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
+      return await message.reply_text(f"**تم تفعيل امر صورتي بنجاح\n\n من قبل ←{message.from_user.mention}**")
  
 
 
