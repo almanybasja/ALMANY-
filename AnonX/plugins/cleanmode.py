@@ -1,7 +1,7 @@
 import asyncio
 from datetime import datetime, timedelta
-
-from pyrogram import filters
+from pyrogram.types import Message
+from pyrogram import filters, Client
 from pyrogram.errors import FloodWait
 from pyrogram.raw import types
 
@@ -59,10 +59,10 @@ async def clean_mode(client, update, users, chats):
 
 @app.on_message(filters.command(BROADCAST_COMMAND) & SUDOERS)
 @language
-async def braodcast_message(client, message, _):
+async def braodcast_message(client:Client, message:Message, _):
     global IS_BROADCASTING
     if message.reply_to_message:
-        x = message.reply_to_message.message_id
+        x = message.reply_to_message.id
         y = message.chat.id
     else:
         if len(message.command) < 2:
