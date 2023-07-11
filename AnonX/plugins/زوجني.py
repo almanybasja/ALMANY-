@@ -5,6 +5,7 @@ from pyrogram import filters, Client
 from AnonX import app
 from strings.filters import command
 iddof = []
+
 @app.on_message(
      command(["قفل زوجني","تعطيل زوجني"])
      & filters.group
@@ -16,26 +17,25 @@ async def iddlock(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
         if message.chat.id in iddof:
-            return await message.reply_text(f"**يا {message.from_user.mention} لعبة زوجني مقفله من قبل**")
+            return await message.reply_text(f"**يا {message.from_user.mention}\n لعبة زوجني مقفله من قبل**")
         iddof.append(message.chat.id)
-        return await message.reply_text(f"**تم قفل لعبة زوجني بنجاح \n\n من قبل ←{message.from_user.mention}**")
+        return await message.reply_text(f"**تم قفل لعبة زوجني بنجاح\n\n من قبل ←{message.from_user.mention}**")
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 
 @app.on_message(
-    command(["فتح زوجني","تفعيل زوجني"])
-     & filters.group
-   
-   
+    command(["فتح زوجني","تفعيل لعبة زوجني"])
+    & filters.group
 )
-async def iddlock(client:Client, message:Message):
+async def idljjopen(client, message):
     dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-        if message.chat.id in iddof:
-           return await message.reply_text(f"**تم فتح الايدي \n\n من قبل ←{message.from_user.mention}**")
-        iddof.remove(message.chat.id)
-    return await message.reply_text(f"يا {message.from_user.mention} الايدي فاتحه من قبل")
+      if not message.chat.id in iddof:
+        return await message.reply_text(f"**يا {message.from_user.mention}\nلعبة زوجني معفله من قبل**")
+      iddof.remove(message.chat.id)
+      return await message.reply_text(f"**تم فتح لعبة زوجني بنجاح\n\n من قبل ←{message.from_user.mention}**")
+ 
     
 @app.on_message(command(['زوجني','ز']))
 def call_random_member(client:Client, message:Message):
