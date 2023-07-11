@@ -1,3 +1,5 @@
+
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 import asyncio
 import random
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
@@ -7,7 +9,7 @@ from strings.filters import command
 from config import OWNER_ID
 from pyrogram.enums import ParseMode, ChatMemberStatus
 iddof = []
-
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 @app.on_message(
      command(["قفل زوجني","تعطيل زوجني"])
      & filters.group
@@ -24,7 +26,7 @@ async def iddlock(client:Client, message:Message):
         return await message.reply_text(f"تم قفل لعبة زوجني بنجاح\n\n من قبل ←{message.from_user.mention}")
     else:
         return await message.reply_text(f"يا {message.from_user.mention} انت لست مشرفا هنا")
-
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 @app.on_message(
     command(["فتح زوجني","تفعيل لعبة زوجني"])
     & filters.group
@@ -38,7 +40,7 @@ async def idljjopen(client:Client, message:Message):
       iddof.remove(message.chat.id)
       return await message.reply_text(f"تم فتح لعبة زوجني بنجاح\n\n من قبل ←{message.from_user.mention}")
  
-    
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]  
 @app.on_message(command(['زوجني','ز']))
 def iddd(client:Client, message:Message):
     chat_id = message.chat.id
