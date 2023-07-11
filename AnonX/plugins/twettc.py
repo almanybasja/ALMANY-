@@ -6,6 +6,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from strings.filters import command
 from pyrogram import filters, Client
 from pyrogram.enums import ParseMode, ChatMemberStatus
+from config import OWNER_ID
 txt = [
 
 
