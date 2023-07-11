@@ -204,5 +204,5 @@ async def rotba(client, message):
          rotba = "عضــو جميل"
     if message.chat.id in iddof:
       return
-    await message.reply_text(caption=f"رتبتك في هذه المجموعه \nهي ← «{rotba}»"
+    await message.reply_text(caption=f"رتبتك في هذه المجموعه \nهي ← «{rotba}»")
        
