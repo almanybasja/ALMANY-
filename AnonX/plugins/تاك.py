@@ -51,7 +51,7 @@ async def nummmm(client: app, message):
      return await message.reply_text(f"**تم بدأ التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention}**")
   chek = await client.get_chat_member(message.chat.id, message.from_user.id)
   if not chek.status in  [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-    await message.reply("f**انت لست مشرفا يا {message.from_user.mention}**")
+    await message.reply(f"**انت لست مشرفا يا {message.from_user.mention}**")
     return
   await message.reply_text(f"**تم بدأ التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention} \n\n للايقاف اكتب وقف منشن او خلاص**")
   i = 0
@@ -95,7 +95,7 @@ async def nummmm(client: app, message):
 async def stop(client, message):
   chek = await client.get_chat_member(message.chat.id, message.from_user.id)
   if not chek.status in  [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-    await message.reply("f**انت لست مشرفا يا {message.from_user.mention}**")
+    await message.reply(f"**انت لست مشرفا يا {message.from_user.mention}**")
     return
   if message.chat.id not in array:
      await message.reply(f"**التاق متوقف فالاصل \n\n يا {message.from_user.mention}**")
