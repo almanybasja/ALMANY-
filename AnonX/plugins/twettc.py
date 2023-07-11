@@ -3710,7 +3710,7 @@ async def iddlock(client:Client, message:Message):
         
 
 
-@app.on_message(command(["تويت"]))
+@app.on_message(command(["تويت","كت"]))
 
 
 async def cutt(client: Client, message: Message):
