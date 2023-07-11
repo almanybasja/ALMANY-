@@ -51,9 +51,9 @@ async def nummmm(client: app, message):
      return await message.reply_text(f"**تم بدأ التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention}**")
   chek = await client.get_chat_member(message.chat.id, message.from_user.id)
   if not chek.status in  [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-    await message.reply("**يجب انت تكون مشرف لاستخدام الامر 🖱️**")
+    await message.reply("f**انت لست مشرفا يا {message.from_user.mention}**")
     return
-  await message.reply_text("**جاري بدأ المنشن ، لايقاف الامر اضغط **\n اكتب خلاص او اكتب وقف منشن")
+  await message.reply_text(f"**تم بدأ التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention} \n\n للايقاف اكتب وقف منشن او خلاص**")
   i = 0
   txt = ""
   zz = message.text
