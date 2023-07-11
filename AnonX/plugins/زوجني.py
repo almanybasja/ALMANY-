@@ -25,7 +25,7 @@ async def iddlock(client:Client, message:Message):
         iddof.append(message.chat.id)
         return await message.reply_text(f"تم قفل لعبة زوجني بنجاح\n\n من قبل ←{message.from_user.mention}")
     else:
-        return await message.reply_text(f"يا {message.from_user.mention} انت لست مشرفا هنا")
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 @app.on_message(
     command(["فتح زوجني","تفعيل لعبة زوجني"])
