@@ -11,7 +11,7 @@ from AnonX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from AnonX import app
 from asyncio import gather
 from pyrogram.errors import FloodWait
-
+from pyrogram.enums import ParseMode, ChatMemberStatus
 
 
 
