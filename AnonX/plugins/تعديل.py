@@ -16,6 +16,7 @@ iddof = []
    
 )
 async def iddlock(client:Client, message:Message):
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.ADMINISTRATOR]:
          rotba = "الادمن"
     elif get.status in [ChatMemberStatus.OWNER]:
@@ -37,6 +38,7 @@ async def iddlock(client:Client, message:Message):
     & filters.group
 )
 async def idljjopen(client:Client, message:Message):
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.ADMINISTRATOR]:
          rotba = "الادمن"
     elif get.status in [ChatMemberStatus.OWNER]:
