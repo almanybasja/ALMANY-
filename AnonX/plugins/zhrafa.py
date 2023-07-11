@@ -1,7 +1,7 @@
 
 import random
 import re
-
+from config import MUSIC_BOT_NAME 
 from strings.filters import command
 from pyrogram import Client
 from pyrogram.types import Message
@@ -11,11 +11,11 @@ from AnonX import app
 async def zahrafa(c: Client, m: Message):
     text_list = m.text.split(None, 1)
     if len(text_list) < 2:
-        await m.reply_text("◍ يجب عليك إرسال نص يحتوي على 2 عنصر على الأقل لتشكيله!\n√", reply_to_message_id=m.message_id)
+        await m.reply_text("◍ يجب عليك إرسال نص يحتوي على 2 عنصر على الأقل لتشكيله!\n√", reply_to_message_id= m.id)
         return
     text = text_list[1].split(None, 1)[1] if len(text_list[1].split()) > 1 else text_list[1]
     if len(text) > 20:
-        await m.reply_text("◍ لا يمكنك تشكيل أكثر من 20 حرفاً، يرجى المحاولة مرة أخرى!\n√", reply_to_message_id=m.message_id)
+        await m.reply_text("◍ لا يمكنك تشكيل أكثر من 20 حرفاً، يرجى المحاولة مرة أخرى!\n√", reply_to_message_id= m.id)
         return
 
     # هنا يتم تنفيذ زخرفة النص
@@ -23,7 +23,7 @@ async def zahrafa(c: Client, m: Message):
 
     else:
         if re.match("\n", str(m.text)):
-            await m.reply_text("◍ لا يمكن زخرفه نص يحتوي على اكثر من سطر\n√", reply_to_message_id=m.message_id)
+            await m.reply_text("◍ لا يمكن زخرفه نص يحتوي على اكثر من سطر\n√", reply_to_message_id= m.id)
             return
     EmojeS = [
         ' 𓁻',
@@ -838,5 +838,5 @@ async def zahrafa(c: Client, m: Message):
                  + "`\n\n` " + zhrf9 + random.choice(Emoje) \
                  + "`\n\n` " + zhrf5 + random.choice(Emoje) 
           
-    Text_Zhrfa = Text_Zhrfa + "`\n\n اضغط علـي الاسـم ليـتم النـسخ \n│ \n🐉"
+    Text_Zhrfa = Text_Zhrfa + f"`\n\n{MUSIC_BOT_NAME} تمت الزخرفه من قبل \n│ \n🐉"
    
