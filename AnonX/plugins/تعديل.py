@@ -39,7 +39,7 @@ async def idljjopen(client:Client, message:Message):
       iddof.remove(message.chat.id)
       return await message.reply_text(f"تم تفعيل التعديل بنجاح\n\n بواسطة ←{message.from_user.mention}")
 
-@app.on_message(filters.edit)
+@app.on_message(Client.edit_message_text)
 async def delete_edited_message(client:Client, message:Message):
     if message.chat.id in iddof:
         await client.delete_messages(chat_id=message.chat.id, message_ids=message.id)
