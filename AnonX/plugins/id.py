@@ -186,4 +186,23 @@ async def idjjdd(client, message):
             ]
         ),
     )
+@app.on_message(
+    command(["رتبتي"])
+    & filters.group
+)
+async def rotba(client, message):
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
+         rotba = "الادمن"
+    elif get.status in [ChatMemberStatus.OWNER]:
+         rotba = "المالك"
+    elif message.from_user.id in haya:
+         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
+    elif message.from_user.id in dev:
+         rotba = "مطور اساسي"
+    else:
+         rotba = "عضــو جميل"
+    if message.chat.id in iddof:
+      return
+    await message.reply_text(caption=f"رتبتك في هذه المجموعه \nهي ← «{rotba}»"
        
