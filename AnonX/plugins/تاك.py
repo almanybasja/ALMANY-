@@ -49,11 +49,23 @@ array = []
 async def nummmm(client: app, message):
   if message.chat.id in array:
      return await message.reply_text(f"**تم بدأ التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention}**")
+
+  dev = (OWNER_ID)
+  haya = (6275847466,6195765774)
+  get = await client.get_chat_member(message.chat.id, message.from_user.id)
+  if get.status in [ChatMemberStatus.ADMINISTRATOR]:
+         rotba = "الادمن"
+  elif get.status in [ChatMemberStatus.OWNER]:
+         rotba = "المالك"
+  elif message.from_user.id in haya:
+         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
+  elif message.from_user.id in dev:
+         rotba = "مطور اساسي"     
   chek = await client.get_chat_member(message.chat.id, message.from_user.id)
   if not chek.status in  [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
     await message.reply(f"**انت لست مشرفا يا {message.from_user.mention}**")
     return
-  await message.reply_text(f"**تم بدأ التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention} \n\n للايقاف اكتب وقف منشن او خلاص**")
+  await message.reply_text(f"**تم بدأ التاق الجماعي \n\n بواسطة ← {rotba}✧ ¦{message.from_user.mention} \n\n للايقاف اكتب وقف منشن او خلاص**")
   i = 0
   txt = ""
   zz = message.text
@@ -93,6 +105,17 @@ async def nummmm(client: app, message):
 
 @app.on_message(command(["وقف منشن", "/cancel","خلاص"]))
 async def stop(client, message):
+  dev = (OWNER_ID)
+  haya = (6275847466,6195765774)
+  get = await client.get_chat_member(message.chat.id, message.from_user.id)
+  if get.status in [ChatMemberStatus.ADMINISTRATOR]:
+         rotba = "الادمن"
+  elif get.status in [ChatMemberStatus.OWNER]:
+         rotba = "المالك"
+  elif message.from_user.id in haya:
+         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
+  elif message.from_user.id in dev:
+         rotba = "مطور اساسي"           
   chek = await client.get_chat_member(message.chat.id, message.from_user.id)
   if not chek.status in  [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
     await message.reply(f"**انت لست مشرفا يا {message.from_user.mention}**")
@@ -102,7 +125,7 @@ async def stop(client, message):
      return 
   if message.chat.id in array:
     array.remove(message.chat.id)
-    await message.reply(f"**تم ايقاف التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention}**")
+    await message.reply(f"**تم ايقاف التاق الجماعي \n\n بواسطة ← {rotba}✧ ¦{message.from_user.mention}**")
     return
 
 
