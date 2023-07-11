@@ -35,7 +35,7 @@ async def iddlock(client:Client, message:Message):
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")    
      
-        if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
         if message.chat.id in iddof:
             return await message.reply_text(f"يا {message.from_user.mention}\n الايدي مقفله من قبل")
         iddof.append(message.chat.id)
