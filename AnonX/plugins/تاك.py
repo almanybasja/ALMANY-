@@ -21,9 +21,9 @@ async def gak_owne(client: Client, message: Message):
          return 
       else:
             chat_id = message.chat.id
-            f =  [ChatMemberStatus.ADMINISTRATOR]
+            f =  ChatMemberStatus.ADMINISTRATOR
             async for member in client.get_chat_members(chat_id, filter=f):
-               if member.status == [ChatMemberStatus.OWNER]:
+               if member.status == ChatMemberStatus.OWNER:
                  id = member.user.id
                  key = InlineKeyboardMarkup([[InlineKeyboardButton(member.user.first_name, user_id=id)]])
                  m = await client.get_chat(id)
@@ -104,6 +104,5 @@ async def stop(client, message):
     array.remove(message.chat.id)
     await message.reply(f"**تم ايقاف التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention}**")
     return
-
 
 
