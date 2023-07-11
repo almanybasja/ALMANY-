@@ -13,12 +13,12 @@ from pyrogram.enums import ParseMode, ChatMemberStatus
 #           #    #    #          #     ##   #     #
 #              #      #####   ######   #     #
 
-iddof = ["creator", "administrator"]
+iddof = []
 
 @app.on_message(
      command(["قفل ايدي","تعطيل ايدي"])
      & filters.group
- 
+
    
 )
 async def iddlock(client:Client, message:Message):
@@ -43,9 +43,10 @@ async def iddlock(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
         if message.chat.id in iddof:
-           return await message.reply_text(f"يا {message.from_user.mention} الايدي فاتحه من قبل")
+           return await message.reply_text(f"**تم فتح الايدي \n\n من قبل ←{message.from_user.mention}**")
         iddof.remove(message.chat.id)
-    return await message.reply_text(f"**تم فتح الايدي \n\n من قبل ←{message.from_user.mention}**")
+    return await message.reply_text(f"يا {message.from_user.mention} الايدي فاتحه من قبل")
+    
    
 
 
@@ -56,6 +57,8 @@ async def iddlock(client:Client, message:Message):
 )
 
 async def iddd(client, message):
+    txt = ["مــلآگ ونآزل مــن آلســمــآ♥️🥺","وويليييي يااا طرف انتتتتتت","مافيككشش جوو","نععليييي منككككك",]
+    xtxk = random.choice(txt)
     botdev= (OWNER_ID)
     haya = (6275847466,6195765774)
     if message.from_user.id in haya:
@@ -69,7 +72,7 @@ async def iddd(client, message):
     usr = await client.get_chat(message.from_user.id)
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"""مــلآگ ونآزل مــن آلســمــآ♥️🥺\n✧ ¦آســمــگڪ :{message.from_user.mention}\n✧ ¦يـوزرڪ :@{message.from_user.username}\n✧ ¦آيـديــڪ :`{message.from_user.id}`\n✧ ¦بـآيـو :{usr.bio}\n✧ ¦ࢪتبتگ: {rotba}""",
+    await message.reply_photo(photo,       caption=f"""{xtxk}\n✧ ¦آســمــگڪ :{message.from_user.mention}\n✧ ¦يـوزرڪ :@{message.from_user.username}\n✧ ¦آيـديــڪ :`{message.from_user.id}`\n✧ ¦بـآيـو :{usr.bio}\n✧ ¦ࢪتبتگ: {rotba}""",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -90,9 +93,9 @@ async def lllock(client, message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if message.chat.id in iddof:
-        return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
+        return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
       iddof.append(message.chat.id)
-    return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
+    return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
 
 @app.on_message(
     command(["فتح صورتي","تفعيل صورتي"])
@@ -103,9 +106,9 @@ async def idljjopen(client, message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if not message.chat.id in iddof:
-        return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
+        return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
       iddof.remove(message.chat.id)
-    return await message.reply_text(f"**تم قفل امر صورتي \n\n من قبل ←{message.from_user.mention}**")
+      return await message.reply_text(f"يا {message.from_user.mention} صورتي مقفلها من قبل")
  
 
 
