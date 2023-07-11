@@ -63,12 +63,17 @@ async def iddd(client, message):# البريميوم الوهمي كتابة ##|
     xtxk = random.choice(txt)
     botdev= (OWNER_ID)
     haya = (6275847466,6195765774)
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in haya:
        rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
     elif message.from_user.id in botdev:
         rotba = "مطور اساسي"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+        rotba= "أدمــــــن"
+    elif get.status in [ChatMemberStatus.OWNER]:
+        rotba= "المــــــألك"
     else: 
-       rotba= "عضو"
+        rotba= "عضو"
     
     if message.from_user.id in haya:
        prim= "بريميوم لفل ماكس"
