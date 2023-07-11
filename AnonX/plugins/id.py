@@ -27,11 +27,16 @@ iddof = []
 )
 async def iddlock(client:Client, message:Message):
     dev = (OWNER_ID)
+    haya = (6275847466,6195765774)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.ADMINISTRATOR]:
          rotba = "الادمن"
     elif get.status in [ChatMemberStatus.OWNER]:
          rotba = "المالك"
+    elif message.from_user.id in haya:
+         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
+    elif message.from_user.id in dev:
+         rotba = "مطور اساسي"
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")    
      
@@ -55,9 +60,9 @@ async def idljjopen(client, message):
          rotba = "الادمن"
     elif get.status in [ChatMemberStatus.OWNER]:
          rotba = "المالك"
-    elif get.status in haya:
+    elif message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif get.status in dev:
+    elif message.from_user.id in dev:
          rotba = "مطور اساسي"
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")       
@@ -128,9 +133,9 @@ async def lllock(client, message):
          rotba = "الادمن"
     elif get.status in [ChatMemberStatus.OWNER]:
          rotba = "المالك"
-    elif get.status in haya:
+    elif message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif get.status in dev:
+    elif message.from_user.id in dev:
          rotba = "مطور اساسي"
   
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
@@ -151,9 +156,9 @@ async def idljjopen(client, message):
          rotba = "الادمن"
     elif get.status in [ChatMemberStatus.OWNER]:
          rotba = "المالك"
-    elif get.status in haya:
+    elif message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif get.status in dev:
+    elif message.from_user.id in dev:
          rotba = "مطور اساسي"
     
    
@@ -200,9 +205,9 @@ async def rotba(client, message):
          rotba = "الادمن"
     elif get.status in [ChatMemberStatus.OWNER]:
          rotba = "المالك"
-    elif get.status in haya:
+    elif message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif get.status in dev:
+    elif message.from_user.id in dev:
          rotba = "مطور اساسي"
     else:
          rotba = "عضــو جميل"
