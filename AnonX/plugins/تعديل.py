@@ -22,7 +22,7 @@ async def iddlock(client:Client, message:Message):
         if message.chat.id in iddof:
             return await message.reply_text(f"يا {message.from_user.mention}\n التعديل معطل من قبل")
         iddof.append(message.chat.id)
-        return await message.reply_text(f"تم تعطي التعديل بنجاح\n\n بواسطة ←{message.from_user.mention}")
+        return await message.reply_text(f"تم تعطيل التعديل بنجاح\n\n بواسطة ←{message.from_user.mention}")
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
@@ -35,7 +35,7 @@ async def idljjopen(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if not message.chat.id in iddof:
-        return await message.reply_text(f"يا {message.from_user.mention}\التعديل معفل من قبل")
+        return await message.reply_text(f"يا {message.from_user.mention}\nالتعديل معفل من قبل")
       iddof.remove(message.chat.id)
       return await message.reply_text(f"تم تفعيل التعديل بنجاح\n\n بواسطة ←{message.from_user.mention}")
 
