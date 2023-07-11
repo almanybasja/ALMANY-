@@ -15,21 +15,21 @@ from pyrogram.enums import ParseMode, ChatMemberStatus
 
 
 
-@app.on_message(command(["صاحب الخرابه", "المنشي"]) & filters.group)
+@app.on_message(command(["المالك"]) & filters.group)
 async def gak_owne(client: Client, message: Message):
       if len(message.command) >= 2:
          return 
       else:
             chat_id = message.chat.id
-            f = "administrators"
+            f =  [ChatMemberStatus.ADMINISTRATOR]
             async for member in client.iter_chat_members(chat_id, filter=f):
-               if member.status == "creator":
+               if member.status == [ChatMemberStatus.OWNER]:
                  id = member.user.id
                  key = InlineKeyboardMarkup([[InlineKeyboardButton(member.user.first_name, user_id=id)]])
                  m = await client.get_chat(id)
                  if m.photo:
                        photo = await app.download_media(m.photo.big_file_id)
-                       return await message.reply_photo(photo, caption=f"🧞‍♂️ ¦𝙽𝙰𝙼𝙴 :{m.first_name}\n🎯 ¦𝚄𝚂𝙴𝚁 :@{m.username}\n🎃 ¦𝙸𝙳 :`{m.id}`\n💌 ¦𝙱𝙸𝙾 :{m.bio}\n✨ ¦𝙲𝙷𝙰𝚃: {message.chat.title}\n♻️ ¦𝙸𝙳.𝙲𝙷𝙰𝚃 :`{message.chat.id}`",reply_markup=key)
+                       return await message.reply_photo(photo, caption=f"✧ ¦معلومات مالك القروب \n\n ✧ ¦ اسمه ← {m.first_name} \n ✧ ¦ معرفه ← {m.username} \n ✧ ¦ البايو ← {m.bio}",reply_markup=key)
                  else:
                     return await message.reply("• " + member.user.mention)
                     
@@ -40,7 +40,7 @@ async def gak_owne(client: Client, message: Message):
 @app.on_message(command(["اسمي", "شن اسمي"]) & filters.group )
 async def vgdg(client: Client, message: Message):
     await message.reply_text(
-        f"""❤️‍🔥 اسمك »»  {message.from_user.mention()}""") 
+        f"""❤️‍🔥 اسمك هو »»  {message.from_user.mention()}""") 
 
         
 
@@ -48,9 +48,9 @@ array = []
 @app.on_message(command(["@all", "تاغ","تاغ للكل"]) & ~filters.private)
 async def nummmm(client: app, message):
   if message.chat.id in array:
-     return await message.reply_text("**التاك قيد التشغيل حالياً ،**")
+     return await message.reply_text(f"**تم بدأ التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention}**")
   chek = await client.get_chat_member(message.chat.id, message.from_user.id)
-  if not chek.status in ["administrator", "creator"]:
+  if not chek.status in  [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
     await message.reply("**يجب انت تكون مشرف لاستخدام الامر 🖱️**")
     return
   await message.reply_text("**جاري بدأ المنشن ، لايقاف الامر اضغط **\n اكتب خلاص او اكتب وقف منشن")
@@ -94,15 +94,15 @@ async def nummmm(client: app, message):
 @app.on_message(command(["وقف منشن", "/cancel","خلاص"]))
 async def stop(client, message):
   chek = await client.get_chat_member(message.chat.id, message.from_user.id)
-  if not chek.status in ["administrator", "creator"]:
-    await message.reply("**يجب انت تكون مشرف لاستخدام الامر 🖱️")
+  if not chek.status in  [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+    await message.reply("f**انت لست مشرفا يا {message.from_user.mention}**")
     return
   if message.chat.id not in array:
-     await message.reply("**المنشن متوقف بالفعل**")
+     await message.reply(f"**التاق متوقف فالاصل \n\n يا {message.from_user.mention}**")
      return 
   if message.chat.id in array:
     array.remove(message.chat.id)
-    await message.reply("**تم ايقاف المنشن بنجاح✅**")
+    await message.reply(f"**تم ايقاف التاق الجماعي \n\n بواسطة ← ✧ ¦{message.from_user.mention}**")
     return
 
 
