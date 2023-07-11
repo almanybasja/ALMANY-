@@ -22,7 +22,7 @@ async def gak_owne(client: Client, message: Message):
       else:
             chat_id = message.chat.id
             f =  ChatMemberStatus.ADMINISTRATOR
-            async for member in client.get_chat_members(chat_id, filter=f):
+            async for member in client.get_chat_members(chat_id, filters=f):
                if member.status == ChatMemberStatus.OWNER:
                  id = member.user.id
                  key = InlineKeyboardMarkup([[InlineKeyboardButton(member.user.first_name, user_id=id)]])
