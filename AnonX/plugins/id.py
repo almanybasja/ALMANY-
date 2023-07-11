@@ -196,9 +196,9 @@ async def rotba(client, message):
          rotba = "الادمن"
     elif get.status in [ChatMemberStatus.OWNER]:
          rotba = "المالك"
-    elif message.from_user.id in haya:
+    elif get.status in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif message.from_user.id in dev:
+    elif get.status in dev:
          rotba = "مطور اساسي"
     else:
          rotba = "عضــو جميل"
