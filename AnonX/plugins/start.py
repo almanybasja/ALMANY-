@@ -44,6 +44,11 @@ async def start_comm(client, message: Message, _):
         if name[0:4] == "help":
             dev = (OWNER_ID)
             keyboard = help_pannel(_)
+            Owneruser = ReplyKeyboardMarkup([
+[("الاوامر"),("السورس"),("المطور"),("مبرمج السورس")],
+[("غنيلي")], 
+[("كت"),("صور")],
+])
             OwnerM = ReplyKeyboardMarkup([
 [("رفع مالك"),("تنزيل مالك"),("المالكين"),("حذف المالكين")],
 [("الغاء")], 
@@ -88,7 +93,7 @@ async def start_comm(client, message: Message, _):
 
  
             else:  
-                   await message.reply_text(f"**اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي**")
+                   await message.reply_text(f"**اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي**",reply_markup=Owneruser)
                    return await message.reply_photo(
                        photo=config.START_IMG_URL,
                        caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard
@@ -248,6 +253,11 @@ async def start_comm(client, message: Message, _):
         if config.START_IMG_URL:
             try:
                 dev = (OWNER_ID)
+                Owneruser = ReplyKeyboardMarkup([
+[("الاوامر"),("السورس"),("المطور"),("مبرمج السورس")],
+[("غنيلي")], 
+[("كت"),("صور")],
+])		    
                 OwnerM = ReplyKeyboardMarkup([
 [("رفع مالك"),("تنزيل مالك"),("المالكين"),("حذف المالكين")],
 [("الغاء")], 
@@ -287,7 +297,7 @@ async def start_comm(client, message: Message, _):
 		           
                    await message.reply(f"**𖢿 | : مرحبا عزيزي المطور الاساسي {message.from_user.mention}\n𖢿 | : اليك ازرار التحكم بالاقسام\n𖢿 | : تستطيع التحكم بجميع الاقسام فقط اضغط على القسم الذي تريده **",reply_markup=OwnerM)               
                 else:  
-                   await message.reply_text(f"**اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي**")
+                   await message.reply_text(f"**اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي**",reply_markup=Owneruser)
                    return await message.reply_photo(
                     photo=config.START_IMG_URL,
                     caption=_["start_2"].format(
