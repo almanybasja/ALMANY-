@@ -1,5 +1,6 @@
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram.enums import ChatType
+from pyrogram import Client
 from config import adminlist
 from strings import get_string
 from AnonX import app
@@ -15,7 +16,7 @@ from ..formatters import int_to_alpha
 
 
 def AdminRightsCheck(mystic):
-    async def wrapper(client, message):
+    async def wrapper(client:Client, message:Message):
         
         if await is_commanddelete_on(message.chat.id):
             try:
@@ -59,7 +60,7 @@ def AdminRightsCheck(mystic):
 
 
 def AdminActual(mystic):
-    async def wrapper(client, message):
+    async def wrapper(client:Client, message:Message):
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
@@ -91,7 +92,7 @@ def AdminActual(mystic):
 
 
 def ActualAdminCB(mystic):
-    async def wrapper(client, CallbackQuery):
+    async def wrapper(client:Client, CallbackQuery):
         if await is_maintenance() is False:
             if CallbackQuery.from_user.id not in SUDOERS:
                 return await CallbackQuery.answer(
