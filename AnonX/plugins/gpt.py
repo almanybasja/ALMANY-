@@ -34,7 +34,7 @@ def gpt(text) -> str:
         return None
 
 def reply_gpt(client, message):
-    text = message.text.split("/سؤال ")[1]
+    text = message.text.split("سؤال ")[1]
     reply_text = gpt(text)
     chat_id = message.chat.id
     if message.reply_to_message is not None:
