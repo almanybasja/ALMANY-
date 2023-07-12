@@ -22,6 +22,6 @@ STOP_COMMAND = get_command("STOP_COMMAND_chh")
 @AdminRightsCheck
 async def stop_music(cli, message: Message, _, chat_id):
     await message.reply_text(
-        _["admin_9"].format(message.chat.first_name),
+        _["admin_9"].format(message.chat.id),
         reply_markup=close_keyboard,
     )
