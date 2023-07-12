@@ -19,7 +19,7 @@ STOP_COMMAND = get_command("STOP_COMMAND_chh")
     & ~BANNED_USERS
 )
 @AdminRightsCheck
-async def stop_music(cli, message: Message, _, chat_id):
+async def stop_music(cli, message: Message, _):
     await message.reply_text(
         _["admin_9"].format(message.from_user.first_name),
         reply_markup=close_keyboard,
