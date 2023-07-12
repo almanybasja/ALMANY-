@@ -15,13 +15,12 @@ STOP_COMMAND = get_command("STOP_COMMAND_chh")
 
 @app.on_message(
     command(STOP_COMMAND)
-    & filters.channel
-    & ~filters.group
+
     & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def stop_music(cli, message: Message, _, chat_id):
     await message.reply_text(
-        _["admin_9"].format(message.chat.id),
+        _["admin_9"].format(message.from_user.first_name),
         reply_markup=close_keyboard,
     )
