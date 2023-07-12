@@ -32,8 +32,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 
 @app.on_message(
     command(PLAY_COMMAND)
-    & filters.channel
-    & ~filters.group
+    & filters.group
     & ~BANNED_USERS   
    
 )
