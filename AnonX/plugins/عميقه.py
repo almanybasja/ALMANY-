@@ -66,7 +66,7 @@ async def idljjopen(client, message):
 )
 async def idjjdd(client:Client, message:Message):
 
-    i =     random_member = random.choice(client.get_chat_members)
+    random_member = random.choice(client.get_chat_members)
     random_member_mention = f"[{random_member.user.first_name}](tg://user?id={random_member.user.id})"
     random_message = random.choice([
          f"- لـ{random_member_mention}\n يجب أن تحاول ثلاث مرات قبل اليأس ",
@@ -91,6 +91,6 @@ async def idjjdd(client:Client, message:Message):
          f"- لـ{random_member_mention}\n النجاح هو القدرة على الذهاب من فشل إلى فشل بدون فقد أرزاقك الحماس ", 
     ])
 
-    ik = random.choice(i)
+    ik = random.choice(random_message)
     client.send_message(message.chat.id, random_message, reply_to_message_id= message.id)
-    await message.reply_text(f"**اليــك اقتبــاس اليــم ❤️\n│ \n└ʙʏ: {ik}**")
+    await message.reply_text(f"**اليــك اقتبــاس اليـوـم ❤️\n│ \n└ʙʏ: {ik}**")
