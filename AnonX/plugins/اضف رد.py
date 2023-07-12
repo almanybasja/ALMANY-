@@ -2,7 +2,6 @@ import os
 os.system("pip install tgcrypto && pip install pyromod && clear")
 from strings.filters import command
 from pyrogram import Client, filters, idle
-import getrdod
 from pyrogram.enums import ParseMode, ChatMemberStatus 
 from AnonX import app
 from config import LOG_GROUP_ID
