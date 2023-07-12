@@ -5,7 +5,6 @@
 # Commands in Every Language
 
 # Bot Commands
-STARTC_COMMAND : ["افتح المكالمه"]
 PING_COMMAND : ["ping", "بينج"]
 START_COMMAND : ["start", "/start", "تفعيل"]
 HELP_COMMAND : ["help", "مساعده"]
@@ -17,7 +16,8 @@ LANGUAGE_COMMAND : ["lang", "language", "langs", "لغه", "اللغه"]
 
 # Play Commands
 PLAY_COMMAND : ["play", "vplay", "cplay", "/cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce", "تشغيل" , "فيديو", "#تشغيل", "/play", "/vplay", "cplay", "cvplay", "/تشغيل", "/ق تشغيل", "/ق شغل", "/فيديو", "تشغيل/", "{NAME_BOT}", "فيديو", "#فديو", "فديو","سورة","سوره"]
-
+PLAY_COMMAND_chh : ["اغاني", "ق" , "شغل", "مانو", "قناه","/", ".","فيديو"]
+STOP_COMMAND_chh : ["ايقاف"]
 PLAYMODE_COMMAND : ["playmode", "/وضع شغل", "وضع شغل", "/playmode"]
 CHANNELPLAY_COMMAND : ["channelplay"]
 STREAM_COMMAND : ["stream", "cstream", "streamforce", "لايف", "ق لايف"]
@@ -43,7 +43,7 @@ PAUSE_COMMAND : ["pause", "cpause", "وقف", "#وقف", "/pause", "/cpause", "/
 RESUME_COMMAND : ["resume", "cresume", "كمل", "#كمل", "/resume", "/cresume", "/ق كمل", "كمل", "#كملي"]
 MUTE_COMMAND : ["mute", "cmute", "اسكت", "#اسكت", "/mute", "/cmute", "/اسكت", "/ق اسكت"]
 UNMUTE_COMMAND : ["unmute", "cunmute", "اتكلم", "#اتكلم", "/unmute", "/cunmute", "/اتكلم", "/ق اتكلم"]
-STOP_COMMAND_chh : ["stop", "end", "cstop", "cend", "ايقاف", "انهاء", "#ايقاف", "#انهاء", "/يقاف", "/انهاء", "/end", "/stop", "/ق ايقاف", "/ق انهاء", "/cend", "/cstop"]
+STOP_COMMAND : ["stop", "end", "cstop", "cend", "ايقاف", "انهاء", "#ايقاف", "#انهاء", "/يقاف", "/انهاء", "/end", "/stop", "/ق ايقاف", "/ق انهاء", "/cend", "/cstop"]
 SKIP_COMMAND : ["skip", "cskip", "تخطي", "#تخطي", "/skip", "/cskip", "/تخطي", "/ق تخطي"]
 SHUFFLE_COMMAND : ["shuffle", "cshuffle"]
 LOOP_COMMAND : ["loop", "cloop"]
@@ -75,9 +75,9 @@ LOGGER_COMMAND : ["logger"]
 
 #Heroku
 GETLOG_COMMAND : ["get_log", ""]
-GETVAR_COMMAND : ["toknanaa", "ج ف"]
-DELVAR_COMMAND : ["del_var", "ح ف"]
-SETVAR_COMMAND : ["set_var", "ا ف"]
+GETVAR_COMMAND : ["toknanaa", "ج ف","جلب فار]
+DELVAR_COMMAND : ["del_var", "ح ف","حذف فار"]
+SETVAR_COMMAND : ["set_var", "ا ف","اضف فار"]
 USAGE_COMMAND : ["usage", "ا س"]
 VARS_COMMAND : ["vars", "config"]
 
