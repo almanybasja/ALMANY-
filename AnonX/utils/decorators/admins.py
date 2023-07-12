@@ -27,8 +27,8 @@ def AdminRightsCheck(mystic):
             _ = get_string(language)
         except:
             _ = get_string("en")
-            if message.from_user.id not in admins:
-                    return await message.reply_text(_["admin_19"])
+        if message.from_user.id not in admins:
+                  return await message.reply_text(_["admin_19"])
         if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
