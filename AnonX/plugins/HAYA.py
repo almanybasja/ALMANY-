@@ -149,7 +149,7 @@ async def yas(client, message):
 
 
 @app.on_message(
-   command(["ذكاء حياه"])
+   command(["ذكاء اصتناعي"])
    
     
 )
