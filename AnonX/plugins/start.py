@@ -48,7 +48,7 @@ async def start_comm(client, message: Message, _):
             keyboard = help_pannel(_)
             Owneruser = ReplyKeyboardMarkup([
 [("الاوامر"),("السورس")],[("المطور"),("مبرمج السورس"),("/مساعده")],
-[("غنيلي"),("كت"),("صور").("اذكار")],
+[("غنيلي"),("كت"),("صور").("اذكار")]
 ])
             OwnerM = ReplyKeyboardMarkup([
 [("رفع مالك"),("تنزيل مالك"),("المالكين"),("حذف المالكين")],
