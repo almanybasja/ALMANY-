@@ -7,7 +7,7 @@ from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from strings.filters import command
 from pyrogram import Client
-from config import OWNER_ID
+from config import OWNER_ID, MUSIC_BOT_NAME
 from pyrogram import filters
 
 txt = [
