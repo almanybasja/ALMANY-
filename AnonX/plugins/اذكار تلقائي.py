@@ -1,111 +1,43 @@
 
 import time
-import asyncio
-from config import OWNER_ID
 from pyrogram import Client, filters
-from AnonX import app
-import random
 from strings.filters import command
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.enums import ParseMode, ChatMemberStatus
-
-
-
-# المعرف الخاص بالمجموعة المراد إرسال الرسالة فيها
-
+from AnonX import app
+from pyrogram.types import Message
+from pyrogram.enums import ParseMode, ChatMemberStatus 
 
 # النص الذي يتم إرساله في الرسالة
-message_text = ["االلَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ , وَشُكْرِكَ , وَحُسْنِ عِبَادَتِكَ🎈💞 ",
-"من الأدعية النبوية المأثورة:اللهمَّ زَيِّنا بزينة الإيمان",
-"اااللهم يا من رويت الأرض مطرا أمطر قلوبنا فرحا 🍂 ",
-"اا‏اللَّهُـمَّ لَڪَ الحَمْـدُ مِنْ قَـا؏ِ الفُـؤَادِ إلىٰ ؏َـرشِڪَ المُقـدَّس حَمْـدَاً يُوَافِي نِـ؏ـمَڪ 💙🌸",
-"﴿وَاذْكُرِ اسْمَ رَبِّكَ وَتَبَتَّلْ إِلَيْهِ تَبْتِيلًا﴾🌿✨",
-"﴿وَمَن يَتَّقِ اللهَ يُكَفِّرْ عَنْهُ سَيِّئَاتِهِ وَيُعْظِمْ لَهُ أَجْرًا﴾",
-"«سُبْحَانَ اللهِ ، وَالحَمْدُ للهِ ، وَلَا إلَهَ إلَّا اللهُ ، وَاللهُ أكْبَرُ ، وَلَا حَوْلَ وَلَا قُوَّةَ إلَّا بِاللهِ»🍃",
-"وذُنُوبًا شوَّهتْ طُهْرَ قُلوبِنا؛ اغفِرها يا ربّ واعفُ عنَّا ❤️",
-"«اللَّهُمَّ اتِ نُفُوسَنَا تَقْوَاهَا ، وَزَكِّهَا أنْتَ خَيْرُ مَنْ زَكَّاهَا ، أنْتَ وَلِيُّهَا وَمَوْلَاهَا»🌹",
-"۝‏﷽إن اللَّه وملائكته يُصلُّون على النبي ياأيُّها الذين امنوا صلُّوا عليه وسلِّموا تسليما۝",
-"فُسِبًحً بًحًمًدٍ ربًکْ وٌکْنِ مًنِ الَسِاجّدٍيَنِ 🌿✨",
-"اأقُمً الَصّلَاةّ لَدٍلَوٌکْ الَشُمًسِ إلَيَ غُسِقُ الَلَيَلَ🥀🌺",
-"نِسِتٌغُفُرکْ ربًيَ حًيَتٌ تٌلَهّيَنِا الَدٍنِيَا عٌنِ ذِکْرکْ🥺😢",
-"وٌمًنِ أعٌرض عٌنِ ذِکْريَ فُإنِ لَهّ مًعٌيَشُةّ ضنِکْا 😢",
-"وٌقُرأنِ الَفُجّر إنِ قُرانِ الَفُجّر کْانِ مًشُهّوٌدٍا🎀🌲",
-"اأّذّأّ أّلَدِنِيِّأّ نَِّستّګوِ أّصٌلَګوِ زِّوِروِ أّلَمَقِأّبِر💔",
-"حًتٌيَ لَوٌ لَمًتٌتٌقُنِ الَخِفُظُ فُمًصّاحًبًتٌ لَلَقُرانِ تٌجّعٌلَکْ مًنِ اهّلَ الَلَهّ وٌخِاصّتٌهّ❤🌱",
-"وٌإذِا رضيَتٌ وٌصّبًرتٌ فُهّوٌ إرتٌقُاء وٌنِعٌمًةّ✨??",
-"«ربً اجّعٌلَنِيَ مًقُيَمً الَصّلَاةّ وٌمًنِ ذِريَتٌيَ ربًنِا وٌتٌقُبًلَ دٍعٌاء 🤲",
-"ااعٌلَمً انِ رحًلَةّ صّبًرکْ لَهّا نِهّايَهّ عٌظُيَمًهّ مًحًمًلَهّ بًجّوٌائزٍ ربًانِيَهّ مًدٍهّشُهّ🌚☺️",
-"اإيَاکْ وٌدٍعٌوٌةّ الَمًظُلَوٌمً فُ إنِهّا تٌصّعٌدٍ الَيَ الَلَهّ کْأنِهّا شُرارهّ مًنِ نِار 🔥🥺",
-"االَلَهّمً انِقُذِ صّدٍوٌرنِا مًنِ هّيَمًنِهّ الَقُلَقُ وٌصّبً عٌلَيَهّا فُيَضا مًنِ الَطِمًأنِيَنِهّ✨🌺",
-"يَابًنِيَ إنِ صّلَاح الَحًيَاةّ فُ أتٌجّاهّ الَقُبًلَهّ 🥀🌿",
-"الَلَهّمً ردٍنِا إلَيَکْ ردٍا جّمًيَلَا💔🥺",
-]
+message_text = "تم إرسال رسالة تلقائية من خلال الكود الخاص بي!"
 
-
+# المتغير الذي يمكننا استخدامه لتعطيل أو تفعيل الكود
 enable_code = True
 
-iddof = []
+@app.on_message(command("تفعيل") & ~filters.group)
 
-@app.on_message(
-     command(["قفل الاذكار","تعطيل الاذكار"])
-     & filters.group
 
-   
-)
-async def azkarlock(client:Client, message:Message):
-    dev = (OWNER_ID)
-    global enable_code
-    enable_code = True
+async def enable_code_fn(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
+    if not get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:  
+       global enable_code
+       enable_code = True
+       message.reply_text("تم تفعيل الكود بنجاح!")
     else:
-        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")    
-     
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-        if message.chat.id in iddof:
-            return await message.reply_text(f"يا {message.from_user.mention}\n الاذكار التلقائيه مقفله من قبل")
-        iddof.append(message.chat.id)
-        return await message.reply_text(f"**تم قفل الاذكار التلقائيه بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
+        message.reply_text("لست مشرف")
+@app.on_message(command("تعطيل") & ~filters.group)
+async def disable_code_fn(client, message:Message):
+    get = await app.get_chat_member(message.chat.id, message.from_user.id)
+    if not get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:  
+       global enable_code
+       enable_code = False
+       message.reply_text("تم تعطيل الكود بنجاح!")
     else:
-        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
-
-@app.on_message(
-    command(["فتح الاذكار","تفعيل الاذكار"])
-    & filters.group
-)
-async def azkaropen(client, message):
-    global enable_code
-    enable_code = False
-    dev = (OWNER_ID)
-    haya = (6275847466,6195765774)
-    get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif message.from_user.id in haya:
-         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif message.from_user.id in dev:
-         rotba = "مطور اساسي"
-    else:
-        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")       
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-      if not message.chat.id in iddof:
-        return await message.reply_text(f"**يا {message.from_user.mention}\الاذكار التلقائيه معفل من قبل**")
-      iddof.remove(message.chat.id)
-      return await message.reply_text(f"**تم فتح امر الاذكار التلقائيه بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
- 
-   
-
+        message.reply_text("لست مشرف")      
 
 @app.on_message(filters.group)
-def send_message(client:Client, message:Message):
+def send_message(client, message:Message):
     if enable_code:
-        
+        # إرسال الرسالة في المجموعة
         app.send_message(message.chat.id, message_text)
 
-       
-        time.sleep(2 * 60)
+        # انتظار 5 دقائق قبل إرسال الرسالة التالية
+        time.sleep(20)
