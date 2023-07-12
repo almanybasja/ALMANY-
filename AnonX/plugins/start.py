@@ -9,7 +9,7 @@ from pyrogram.enums import ChatType, ParseMode
 import config
 
 from config import BANNED_USERS
-from config import OWNER_ID , USER_OWNER, MUSIC_BOT_NAME, SUPPORT_CHANNEL
+from config import OWNER_ID , USER_OWNER, MUSIC_BOT_NAME, SUPPORT_CHANNEL, BOT_TOKEN
 from strings import get_command, get_string
 from AnonX import Telegram, YouTube, app
 from AnonX.misc import SUDOERS, _boot_
@@ -29,7 +29,196 @@ from AnonX.utils.inline import (help_pannel, private_panel,
                                      start_pannel)
 
 loop = asyncio.get_running_loop()
+token = (BOT_TOKEN)
 
+bot_id = token.split(":")[0]
+
+owner = (OWNER_ID) 
+try:
+	open(f"Users{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"Users{bot_id}.json","w")
+try:
+	open(f"sudo{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"sudo{bot_id}.json","w")
+try:
+	open(f"maindevs{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"maindevs{bot_id}.json","w")
+try:
+	open(f"maindevsVII{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"maindevsVII{bot_id}.json","w")
+try:
+	open(f"groups{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"groups{bot_id}.json","w")
+try:
+	open(f"band{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"band{bot_id}.json","w")
+try:
+	open(f"links{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"links{bot_id}.json","w")
+try:
+	open(f"channel{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"channel{bot_id}.json","w")
+try:
+	open(f"devchannel{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"devchannel{bot_id}.json","w")
+try:
+	open(f"devuser{bot_id}.json","r")
+except FileNotFoundError:
+	open(f"devuser{bot_id}.json","w")
+try:
+	open(f'owner{bot_id}.json','r')
+except FileNotFoundError:
+	f = open(f'owner{bot_id}.json','w')
+	f.write(str(owner))
+
+
+
+
+def is_user(id):
+	result = False
+	file = open(f"Users{bot_id}.json","r")
+	for line in file:
+		if line.strip()==id:
+			result = True
+	file.close()
+	return result
+
+def is_dev(id):
+	result = False
+	file = open(f"sudo{bot_id}.json","r")
+	for line in file:
+		if line.strip()==id:
+			result = True
+	file.close()
+	return result
+	
+def del_all_sudo():
+	open(f"sudo{bot_id}.json","w")
+
+def del_all_main():
+	open(f"maindevs{bot_id}.json","w")
+
+def del_all_mainVII():
+	open(f"maindevsVII{bot_id}.json","w") 
+	
+def del_all_ban():
+	open(f"band{bot_id}.json","w")
+
+def is_main_dev(id):
+	result = False
+	file = open(f"maindevs{bot_id}.json","r")
+	for line in file:
+		if line.strip()==id:
+			result = True
+	file.close()
+	return result
+	
+def is_main_devVII(id):
+	result = False
+	file = open(f"maindevsVII{bot_id}.json","r")
+	for line in file:
+		if line.strip()==id:
+			result = True
+	file.close()
+	return result
+	
+def is_band(id):
+	result = False
+	file = open(f"band{bot_id}.json","r")
+	for line in file:
+		if line.strip()==id:
+			result = True
+	file.close()
+	return  result
+	
+def is_group(id):
+	result = False
+	file = open(f"groups{bot_id}.json","r")
+	for line in file:
+		if line.strip()==id:
+			result = True
+	file.close()
+	return result
+
+def add_user(id):
+	file = open(f"Users{bot_id}.json","a")
+	file.write("{}\n".format(id))
+
+def show_channel() -> str:
+	with open(f"channel{bot_id}.json","r") as file:
+		return file.readline()
+
+def add_channel(chat_id):
+	with open(f"channel{bot_id}.json","w") as file:
+		file.write(chat_id)
+
+def del_channel():
+	open(f"channel{bot_id}.json","w")
+
+def get_bot_owner() -> int:
+	with open("owner{bot_id}.json","r") as file:
+		return file.readline()
+		
+def set_bot_owner(user_id:int):
+	with open(f"owner{bot_id}.json","w") as file:
+		file.write(str(user_id))
+
+def show_devchannel() -> str:
+	with open(f"devchannel{bot_id}.json","r") as file:
+		return file.readline()
+
+def add_devchannel(chat_id):
+	with open(f"devchannel{bot_id}.json","w") as file:
+		file.write(chat_id)
+
+def del_devchannel():
+	open(f"devchannel{bot_id}.json","w")
+
+
+def show_devuser() -> str:
+	with open(f"devuser{bot_id}.json","r") as file:
+		return file.readline()
+
+def add_devuser(chat_id):
+	with open(f"devuser{bot_id}.json","w") as file:
+		file.write(chat_id)
+
+def del_devuser():
+	open(f"devuser{bot_id}.json","w")
+
+
+
+sudo_message = f"**𖢿 | : مرحبا عزيزي المطور الاساسي {message.from_user.mention}\n𖢿 | : اليك ازرار التحكم بالاقسام\n𖢿 | : تستطيع التحكم بجميع الاقسام فقط اضغط على القسم الذي تريده**"
+
+
+start_buttons = InlineKeyboardMarkup([[
+InlineKeyboardButton("ch",url=f"https://t.me/{show_devchannel()}")
+]])
+
+
+New_Member = """**
+دخل عضو جديد للبوت 🪄🪄
+
+᥀︙حسابة : {} 
+᥀︙ايديه : `{}`
+
+Time : {} .
+
+**"""
+	
+dev_ch_bu = InlineKeyboardMarkup([[
+InlineKeyboardButton("Dev",user_id=owner),
+InlineKeyboardButton("Ch",url=f"https://t.me/{show_devchannel()}")
+]])
 
 @app.on_message(
     filters.command(get_command("START_COMMAND"))
@@ -43,6 +232,41 @@ async def start_comm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             dev = (OWNER_ID)
+            mainSudoVIIM = ReplyKeyboardMarkup([
+[("•---- حذف الكيبورد -----•")],
+[("◍ قسم الاحصائيات ◍")],
+[("الاحصائيات")],
+[("عرض المجموعات"),("عدد المجموعات"),("نسخه المجموعات"),("نسخه للكل")],
+[("عرض الاساسيين"),("عرض الاعضاء"),("عرض المحظورين"),("عرض المطورين")], 
+[("عدد الاساسيين"),("عدد الاعضاء"),("عدد المحظورين"),("عدد المطورين")], 
+[("نسخه الاساسيين"),("نسخه الاعضاء"),("نسخه المحظورين"),("نسخه المطورين")],
+
+[("-")], 
+
+[("◍ قسم الاذاعه ◍")],
+[("توجيه للكل"),("-"),("اذاعه للكل")],
+[("-"),("-"),("-")],
+[("اذاعه الاعضاء"),("اذاعه المجموعات"),("اذاعه المحظورين")],
+[("توجيه الاعضاء"),("توجيه المجموعات"),("توجيه محظورين")],
+[("الغاء")], 
+
+
+[("◍ قسم الاساسيين"),("◍ قسم المطورين"),("◍ قسم الحظر ◍")],
+[("رفع مطور اساسي"),("رفع مطور"),("حظر عضو")],
+[("تنزيل مطور اساسي"),("تنزيل مطور"),("الغاء حظر عضو")],
+[("عرض المطورين الاساسيين"),("عرض المطورين"),("عرض المحظورين")],
+[("حذف الاساسيين"),("حذف المطورين"),("حذف المحظورين")],
+[("الغاء")],
+
+[("◍ قسم الاشتراك ◍"),("◍"),("◍ قسم المطور ◍")],
+[("عرض قناة الاشتراك"),("-"),("عرض قناة المطور")],
+[("اضف قناة اشتراك اجباري"),("-"),("اضافه قناه المطور")],
+[("حذف قناه الاشتراك"),("-"),("حذف قناه المطور")],
+[("الغاء")], 
+[("•---- حذف الكيبورد -----•")]
+])
+
+		
             keyboard = help_pannel(_)
             Owneruser = ReplyKeyboardMarkup([
 [("الاوامر"),("السورس")],[("المطور"),("مبرمج السورس"),("/مساعده")],
@@ -86,7 +310,10 @@ async def start_comm(client, message: Message, _):
             if message.from_user.id in dev:
 		           
                    await message.reply(f"**𖢿 | : مرحبا عزيزي المطور الاساسي {message.from_user.mention}\n𖢿 | : اليك ازرار التحكم بالاقسام\n𖢿 | : تستطيع التحكم بجميع الاقسام فقط اضغط على القسم الذي تريده**",reply_markup=OwnerM)
-                                  
+            if message.from_user.id in dev:
+		           
+                   await message.reply(f"**𖢿 | : مرحبا عزيزي المطور الاساسي {message.from_user.mention}\n𖢿 | : اليك ازرار التحكم بالاقسام\n𖢿 | : تستطيع التحكم بجميع الاقسام فقط اضغط على القسم الذي تريده**",reply_markup=mainSudoVIIM)
+                                   
 	               
 
 
@@ -252,6 +479,41 @@ async def start_comm(client, message: Message, _):
         if config.START_IMG_URL:
             try:
                 dev = (OWNER_ID)
+		mainSudoVIIM = ReplyKeyboardMarkup([
+[("•---- حذف الكيبورد -----•")],
+[("◍ قسم الاحصائيات ◍")],
+[("الاحصائيات")],
+[("عرض المجموعات"),("عدد المجموعات"),("نسخه المجموعات"),("نسخه للكل")],
+[("عرض الاساسيين"),("عرض الاعضاء"),("عرض المحظورين"),("عرض المطورين")], 
+[("عدد الاساسيين"),("عدد الاعضاء"),("عدد المحظورين"),("عدد المطورين")], 
+[("نسخه الاساسيين"),("نسخه الاعضاء"),("نسخه المحظورين"),("نسخه المطورين")],
+
+[("-")], 
+
+[("◍ قسم الاذاعه ◍")],
+[("توجيه للكل"),("-"),("اذاعه للكل")],
+[("-"),("-"),("-")],
+[("اذاعه الاعضاء"),("اذاعه المجموعات"),("اذاعه المحظورين")],
+[("توجيه الاعضاء"),("توجيه المجموعات"),("توجيه محظورين")],
+[("الغاء")], 
+
+
+[("◍ قسم الاساسيين"),("◍ قسم المطورين"),("◍ قسم الحظر ◍")],
+[("رفع مطور اساسي"),("رفع مطور"),("حظر عضو")],
+[("تنزيل مطور اساسي"),("تنزيل مطور"),("الغاء حظر عضو")],
+[("عرض المطورين الاساسيين"),("عرض المطورين"),("عرض المحظورين")],
+[("حذف الاساسيين"),("حذف المطورين"),("حذف المحظورين")],
+[("الغاء")],
+
+[("◍ قسم الاشتراك ◍"),("◍"),("◍ قسم المطور ◍")],
+[("عرض قناة الاشتراك"),("-"),("عرض قناة المطور")],
+[("اضف قناة اشتراك اجباري"),("-"),("اضافه قناه المطور")],
+[("حذف قناه الاشتراك"),("-"),("حذف قناه المطور")],
+[("الغاء")], 
+[("•---- حذف الكيبورد -----•")]
+])
+
+    
                 Owneruser = ReplyKeyboardMarkup([
 [("الاوامر"),("السورس")],[("المطور"),("مبرمج السورس"),("/مساعده")],
 [("غنيلي"),("كت"),("صور")],
