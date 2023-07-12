@@ -15,12 +15,7 @@ from ..formatters import int_to_alpha
 
 
 def AdminRightsCheck(mystic):
-    async def wrapper(client, message):
-        if await is_maintenance() is False:
-            if message.from_user.id not in SUDOERS:
-                return await message.reply_text(
-                    "»البوت في وضع الصيانه انتظر بعض الوقت او راسل فريق الدعم"
-                )
+ 
         if await is_commanddelete_on(message.chat.id):
             try:
                 await message.delete()
