@@ -12,22 +12,22 @@ from pyrogram import filters
 
 txt = [
 
-            "؏ـيوٍڼ حـيآهہ😻🫶",
+            f"انت البوت يلي راسك مربعع اسمي {MUSIC_BOT_NAME}",
 
 
-             "ﻧ؏ـ۾ 🥺❤",
+             f"اسمي {MUSIC_BOT_NAME} مكتوب الخط العريضض",
             
 
-            "هہذآ آڛـﻤــي 🫶😻",
+            f"معش تعيطط بوت بوت اسمميي {MUSIC_BOT_NAME}",
             
             
-            "ضـوꪆ حـيـاﮪ،💗🧸!َ''))",
+           f"لنا الله",
             
             
-            "نعٓم يـﺣـبـعـﻣـري،🥺🧡🌸!َ''))",
+            f"حسبي الله فيك اسمي {MUSIC_BOT_NAME} 🙂",
             
             
-             "ﺷِﻧڻ تـبـي🙂😒",
+            f"ﺷِﻧڻ تـبـي🙂😒",
             
             
  
@@ -60,7 +60,7 @@ txt1 = [
         
 
 
-@app.on_message(command([{MUSIC_BOT_NAME}]))
+@app.on_message(command(["بوت"]))
 
 
 async def cutt(client: Client, message: Message):
