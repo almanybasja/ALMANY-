@@ -101,4 +101,4 @@ async def idjjdd(client, message):
 ]
 
     ik = random.choice(i)
-    await message.reply_photo(f"اذكار اليوم ❤️\n│ \n└ʙʏ: {ik}")
+    await message.reply_text(f"اذكار اليوم ❤️\n│ \n└ʙʏ: {ik}")
