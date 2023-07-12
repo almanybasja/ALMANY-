@@ -8,7 +8,7 @@ from AnonX.core.call import Anon
 from AnonX.utils.database import set_loop
 from AnonX.utils.decorators import AdminRightsCheck
 from AnonX.utils.inline.play import close_keyboard
-
+from AnonX.utils.formatters import time_to_seconds
 # Commands
 STOP_COMMAND = get_command("STOP_COMMAND_chh")
 
@@ -25,6 +25,6 @@ async def stop_music(cli, message: Message, _, chat_id):
     await Anon.stop_stream(chat_id)
     await set_loop(chat_id, 0)
     await message.reply_text(
-        _["admin_9"].format(message.chat.first_name),
+        _["ADMIN Stop"].format(message.chat.first_name),
         reply_markup=close_keyboard,
     )
