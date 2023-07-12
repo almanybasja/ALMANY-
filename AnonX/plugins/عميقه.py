@@ -64,14 +64,9 @@ async def idljjopen(client, message):
     command(["ق","اقتباس"])
     & filters.group
 )
-async def idjjdd(client, message):
+async def idjjdd(client:Client, message:Message):
 
-    chat_id = message.chat.id
-    members = [
-        member for member in client.get_chat_members(chat_id)
-        if not member.user.is_bot
-    ]
-    i =     random_member = random.choice(members)
+    i =     random_member = random.choice(client.get_chat_members)
     random_member_mention = f"[{random_member.user.first_name}](tg://user?id={random_member.user.id})"
     random_message = random.choice([
          f"- لـ{random_member_mention}\n يجب أن تحاول ثلاث مرات قبل اليأس ",
@@ -97,4 +92,5 @@ async def idjjdd(client, message):
     ])
 
     ik = random.choice(i)
+    client.send_message(message.chat.id, random_message, reply_to_message_id= message.id)
     await message.reply_text(f"**اليــك اقتبــاس اليــم ❤️\n│ \n└ʙʏ: {ik}**")
