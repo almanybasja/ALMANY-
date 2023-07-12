@@ -24,7 +24,4 @@ async def stop_music(cli, message: Message, _, chat_id):
         return await message.reply_text(_["general_2"])
     await Anon.stop_stream(chat_id)
     await set_loop(chat_id, 0)
-    await message.reply_text(
-        _["ADMIN Stop"].format(message.chat.first_name),
-        reply_markup=close_keyboard,
-    )
+
