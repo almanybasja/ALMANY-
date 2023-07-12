@@ -61,9 +61,7 @@ async def idljjopen(client, message):
 
 
 @app.on_message(
-    command(["كت","تويت"])
-    & filters.group
-)
+    command(["كت","تويت"]))
 async def idjjdd(client, message):
     if message.chat.id in iddof:
       return
