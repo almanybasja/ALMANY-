@@ -75,7 +75,7 @@ LOGGER_COMMAND : ["logger"]
 
 #Heroku
 GETLOG_COMMAND : ["get_log", ""]
-GETVAR_COMMAND : ["toknanaa", "ج ف","جلب فار]
+GETVAR_COMMAND : ["toknanaa","ج ف","جلب فار"]
 DELVAR_COMMAND : ["del_var", "ح ف","حذف فار"]
 SETVAR_COMMAND : ["set_var", "ا ف","اضف فار"]
 USAGE_COMMAND : ["usage", "ا س"]
