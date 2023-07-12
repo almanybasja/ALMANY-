@@ -1,6 +1,5 @@
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.enums import ChatType
-from pyrogram import Client
 from config import adminlist
 from strings import get_string
 from AnonX import app
@@ -16,7 +15,7 @@ from ..formatters import int_to_alpha
 
 
 def AdminRightsCheck(mystic):
-    async def wrapper(client:Client, message:Message):
+    async def wrapper(client, message):
         
         if await is_commanddelete_on(message.chat.id):
             try:
@@ -28,7 +27,8 @@ def AdminRightsCheck(mystic):
             _ = get_string(language)
         except:
             _ = get_string("en")
-  
+            if message.from_user.id not in admins:
+                    return await message.reply_text(_["admin_19"])
         if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
@@ -43,6 +43,7 @@ def AdminRightsCheck(mystic):
             return await message.reply_text(_["general_6"])
         is_non_admin = await is_nonadmin_chat(message.chat.id)
         if not is_non_admin:
+            if message.from_user.id not in SUDOERS:
                 admins = adminlist.get(message.chat.id)
                 if not admins:
                   chat_id = message.chat.id
@@ -59,9 +60,9 @@ def AdminRightsCheck(mystic):
 
 
 def AdminActual(mystic):
-    async def wrapper(client:Client, message:Message):
+    async def wrapper(client, message):
         if await is_maintenance() is False:
-      
+            if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
                     "» ʙᴏᴛ ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ғᴏʀ sᴏᴍᴇ ᴛɪᴍᴇ, ᴩʟᴇᴀsᴇ ᴠɪsɪᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ ᴛᴏ ᴋɴᴏᴡ ᴛʜᴇ ʀᴇᴀsᴏɴ."
                 )
@@ -76,7 +77,7 @@ def AdminActual(mystic):
         except:
             _ = get_string("en")
   
- 
+        if message.from_user.id not in SUDOERS:
             try:
                 member = await app.get_chat_member(
                     message.chat.id, message.from_user.id
@@ -91,8 +92,9 @@ def AdminActual(mystic):
 
 
 def ActualAdminCB(mystic):
-    async def wrapper(client:Client, CallbackQuery):
+    async def wrapper(client, CallbackQuery):
         if await is_maintenance() is False:
+            if CallbackQuery.from_user.id not in SUDOERS:
                 return await CallbackQuery.answer(
                     "» ʙᴏᴛ ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ғᴏʀ sᴏᴍᴇ ᴛɪᴍᴇ, ᴩʟᴇᴀsᴇ ᴠɪsɪᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ ᴛᴏ ᴋɴᴏᴡ ᴛʜᴇ ʀᴇᴀsᴏɴ.",
                     show_alert=True,
@@ -118,6 +120,7 @@ def ActualAdminCB(mystic):
                     _["general_5"], show_alert=True
                 )
             if not a.privileges.can_manage_video_chats:
+                if CallbackQuery.from_user.id not in SUDOERS:
                     token = await int_to_alpha(
                         CallbackQuery.from_user.id
                     )
