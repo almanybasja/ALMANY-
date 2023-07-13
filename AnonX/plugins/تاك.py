@@ -54,14 +54,14 @@ async def nummmm(client: app, message):
   dev = (OWNER_ID)
   haya = (6275847466,6195765774)
   get = await client.get_chat_member(message.chat.id, message.from_user.id)
-  if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-  elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-  elif message.from_user.id in haya:
+  if message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
   elif message.from_user.id in dev:
-         rotba = "مطور اساسي"     
+         rotba = "مطور اساسي" 
+  elif get.status in [ChatMemberStatus.OWNER]:
+         rotba = "المالك"
+  elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+         rotba = "الادمن"     
   chek = await client.get_chat_member(message.chat.id, message.from_user.id)
   if not chek.status in  [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
     await message.reply(f"**انت لست مشرفا يا {message.from_user.mention}**")
