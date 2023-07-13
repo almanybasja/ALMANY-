@@ -49,7 +49,7 @@ async def start_comm(client, message: Message, _):
             Owneruser = ReplyKeyboardMarkup([
 [("الاوامر"),("السورس")],[("المطور"),("مبرمج السورس"),("/مساعده")],
 [("غنيلي"),("كت"),("صور")],
-[("اذكار"),("ذكاء اصتناعي")]
+[("اذكار"),("مميزات"),("ذكاء اصتناعي")]
 ], resize_keyboard=True)
             OwnerM = ReplyKeyboardMarkup([
 [("رفع مالك"),("تنزيل مالك"),("المالكين"),("حذف المالكين")],
@@ -257,7 +257,7 @@ async def start_comm(client, message: Message, _):
                 Owneruser = ReplyKeyboardMarkup([
 [("الاوامر"),("السورس")],[("المطور"),("مبرمج السورس"),("/مساعده")],
 [("غنيلي"),("كت"),("صور")],
-[("اذكار"),("ذكاء اصتناعي")]
+[("اذكار"),("مميزات"),("ذكاء اصتناعي")]
 ], resize_keyboard=True)		    
                 OwnerM = ReplyKeyboardMarkup([
 [("رفع مالك"),("تنزيل مالك"),("المالكين"),("حذف المالكين")],
