@@ -29,7 +29,7 @@ def toggle_code_active():
 @app.on_message()
 async def get_prayer_times(client, message):
 
-        if message.text == "مواعيد الصلاه ":
+        if message.text == "مواعيد الصلاه":
             await client.send_message(message.chat.id, "مرحبًا! للحصول على مواعيد الصلاة في ليبيا، ارسل لي '/prayer'.")
 
         elif message.text == "/prayer":
