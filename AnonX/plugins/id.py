@@ -109,7 +109,7 @@ async def iddd(client, message):# البريميوم الوهمي كتابة ##|
     usr = await client.get_chat(message.from_user.id)
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"""**✧ ¦{xtxk}\n\n✧ ¦آســمــڪ ← {message.from_user.mention}\n✧ ¦يـوزرڪ ← @{message.from_user.username}\n✧ ¦آيـديــڪ ← `{message.from_user.id}`\n✧ ¦بـآيـو ← {usr.bio}\n✧ ¦ࢪتبك ← {rotba} \n✧ ¦نوع الحساب ← {prim}**""",
+    await message.reply_photo(photo,       caption=f"""**✧ ¦ {xtxk}\n\n✧ ¦ آســمــڪ ← {message.from_user.mention}\n✧ ¦ يـوزرڪ ← @{message.from_user.username}\n✧ ¦ آيـديــڪ ← `{message.from_user.id}`\n✧ ¦ بـآيـو ← {usr.bio}\n✧ ¦ ࢪتبـتڪ ← {rotba} \n✧ ¦  غنوع الحساب ← {prim}**""",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -197,21 +197,21 @@ async def idjjdd(client, message):
     command(["رتبتي"])
     & filters.group
 )
-async def rotba(client, message):
+async def rotba(client, message:Message):
     dev = (OWNER_ID)
     haya = (6275847466,6195765774)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
+    if message.from_user.id in haya:
+         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
     elif get.status in [ChatMemberStatus.OWNER]:
          rotba = "المالك"
-    elif message.from_user.id in haya:
-         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+         rotba = "الادمن"
     elif message.from_user.id in dev:
          rotba = "مطور اساسي"
     else:
          rotba = "عضــو جميل"
     if message.chat.id in iddof:
       return
-    await message.reply_text(f"رتبتك في هذه المجموعه \nهي ← «{rotba}»")
+    await message.reply_text(f"**رتبتك في هذه المجموعه \nهي ← «{rotba}»**")
        
