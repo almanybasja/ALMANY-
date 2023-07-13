@@ -13,39 +13,34 @@ import pyrogram
 from pyrogram import Client, filters
 import requests
 
-# أولًا، سنحتاج إلى API key من موقع prayer times المختص بجلب مواعيد الصلاة في ليبيا
-api_key = "https://api.pray.zone/v2/times/today.json?city=tripoli&state=tripoli&country=libya"
-@app.on_message(
-    command(["توقيت الصلاه"])
-)
 
-def  get_prayer_times(country):
-    url = f"https://api.pray.zone/v2/times/today.json?city={country}&school=8"
-    response = requests.get(url)
-    data = response.json()
-    return data["results"]["datetime"][0]["times"]
+from pyrogram import Client
+from pyrogram.api import functions
 
-# ننشئ client بواسطة API key
+
+is_active = True 
+
+def toggle_code_active():
+    global is_active
+    is_active = not is_active
 
 
 
-@app.on_message(filters.text)
-def handle_message(client:Client, message:Message):
-    chat_id = message.chat.id
-    country = message.text
+@app.on_message()
+async def get_prayer_times(client, message):
 
-    prayer_times = get_prayer_times(country)
-    reply = f"مواعيد الصلاة في {country}: \n"
-    reply += f"الفجر: {prayer_times['Fajr']} \n"
-    reply += f"الشروق: {prayer_times['Sunrise']} \n"
-    reply += f"الظهر: {prayer_times['Dhuhr']} \n"
-    reply += f"العصر: {prayer_times['Asr']} \n"
-    reply += f"المغرب: {prayer_times['Maghrib']} \n"
-    reply += f"العشاء: {prayer_times['Isha']} \n"
+        if message.text == "مواعيد الصلاه ":
+            await client.send_message(message.chat.id, "مرحبًا! للحصول على مواعيد الصلاة في ليبيا، ارسل لي '/prayer'.")
 
-    client.send_message(chat_id, reply)
+        elif message.text == "/prayer":
+            if is_active:
+                prayer_times = await app.send(functions.messages.GetDialogs(offset_date=0, offset_id=0, offset_peer=None, limit=1, hash=0))
+                await client.send_message(message.chat.id, prayer_times)
+            else:
+                await client.send_message(message.chat.id, "تم تعطيل كود مواعيد الصلاة.")
 
-# لنبدأ تنفيذ البرنامج
+        elif message.text == "تفعيل التوقيت":
+            toggle_code_active()
+            await client.send_message(message.chat.id, f"تم تغيير حالة تفعيل الكود: {is_active}")
 
-
-
+    
