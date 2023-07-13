@@ -15,6 +15,9 @@ import requests
 
 # أولًا، سنحتاج إلى API key من موقع prayer times المختص بجلب مواعيد الصلاة في ليبيا
 api_key = "https://api.pray.zone/v2/times/today.json?city=tripoli&state=tripoli&country=libya"
+@app.on_message(
+    command(["توقيت الصلاه"])
+)
 
 def  get_prayer_times(country):
     url = f"https://api.pray.zone/v2/times/today.json?city={country}&school=8"
@@ -26,9 +29,8 @@ def  get_prayer_times(country):
 
 
 
-@app.on_message(
-    command(["توقيت الصلاه"])
-def handle_message(client, message):
+@app.on_message(filters.text)
+def handle_message(client:Client, message:Message):
     chat_id = message.chat.id
     country = message.text
 
