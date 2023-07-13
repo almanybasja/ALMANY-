@@ -29,14 +29,15 @@ async def iddlock(client:Client, message:Message):
     dev = (OWNER_ID)
     haya = (6275847466,6195765774)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif message.from_user.id in haya:
-         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
+    if message.from_user.id in haya:
+         rotba= "مّمٌَـبـ ـࢪمـج السوس"
     elif message.from_user.id in dev:
          rotba = "مطور اساسي"
+    elif get.status in [ChatMemberStatus.OWNER]:
+         rotba = "المالك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+         rotba = "الادمن" 
+    
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")    
      
@@ -56,14 +57,14 @@ async def idljjopen(client, message):
     dev = (OWNER_ID)
     haya = (6275847466,6195765774)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif message.from_user.id in haya:
+    if message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
     elif message.from_user.id in dev:
-         rotba = "مطور اساسي"
+         rotba = "مطور اساسي" 
+    elif get.status in [ChatMemberStatus.OWNER]:
+         rotba = "المالك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+         rotba = "الادمن"
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")       
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
@@ -129,14 +130,14 @@ async def lllock(client, message):
     dev = (OWNER_ID)
     haya = (6275847466,6195765774)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif message.from_user.id in haya:
+    if message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
     elif message.from_user.id in dev:
-         rotba = "مطور اساسي"
+         rotba = "مطور اساسي" 
+    elif get.status in [ChatMemberStatus.OWNER]:
+         rotba = "المالك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+         rotba = "الادمن"
   
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if message.chat.id in iddof:
@@ -152,14 +153,14 @@ async def idljjopen(client, message):
     dev = (OWNER_ID)
     haya = (6275847466,6195765774)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif message.from_user.id in haya:
+    if message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
     elif message.from_user.id in dev:
-         rotba = "مطور اساسي"
+         rotba = "مطور اساسي" 
+    elif get.status in [ChatMemberStatus.OWNER]:
+         rotba = "المالك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+         rotba = "الادمن"
     
    
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
