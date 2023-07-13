@@ -1,5 +1,6 @@
 import asyncio
 import os
+from config import OWNER_ID
 import time
 import requests
 import aiohttp
