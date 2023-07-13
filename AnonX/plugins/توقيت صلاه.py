@@ -46,6 +46,6 @@ def handle_message(client:Client, message:Message):
     client.send_message(chat_id, reply)
 
 # لنبدأ تنفيذ البرنامج
-with app:
+
 
 
