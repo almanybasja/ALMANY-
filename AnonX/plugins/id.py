@@ -97,7 +97,7 @@ async def iddd(client, message):# البريميوم الوهمي كتابة ##|
     elif get.status in [ChatMemberStatus.OWNER]:
         rotba= "المــــــألك"
     else: 
-        rotba= "عضو"
+        rotba= "عضو جميل"
     
     if message.from_user.id in haya:
        prim= "بريميوم لفل ماكس"
@@ -110,7 +110,7 @@ async def iddd(client, message):# البريميوم الوهمي كتابة ##|
     usr = await client.get_chat(message.from_user.id)
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"""**✧ ¦ {xtxk}\n\n✧ ¦ آســمــڪ ← {message.from_user.mention}\n✧ ¦ يـوزرڪ ← @{message.from_user.username}\n✧ ¦ آيـديــڪ ← `{message.from_user.id}`\n✧ ¦ بـآيـو ← {usr.bio}\n✧ ¦ ࢪتبـتڪ ← {rotba} \n✧ ¦  غنوع الحساب ← {prim}**""",
+    await message.reply_photo(photo,       caption=f"""**✧ ¦ {xtxk}\n\n✧ ¦ آســمــڪ ← {message.from_user.mention}\n✧ ¦ يـوزرڪ ← @{message.from_user.username}\n✧ ¦ آيـديــڪ ← `{message.from_user.id}`\n✧ ¦ بـآيـو ← {usr.bio}\n✧ ¦ ࢪتبـتڪ ← {rotba} \n✧ ¦ نوع الحساب ← {prim}**""",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
