@@ -9,14 +9,13 @@ from pyrogram.enums import ChatType, ParseMode
 import config
 import requests
 
-from config import BANNED_USERS
+
 from config import (OWNER_ID ,
 		     USER_OWNER,
-	             MUSIC_BOT_NAME,
-	             SUPPORT_CHANNEL,
-	             BOT_TOKEN,
-	             BOT_ID,
-	             BANNED_USERS)
+	         MUSIC_BOT_NAME,
+	         SUPPORT_CHANNEL,
+	         BOT_TOKEN,
+	         BANNED_USERS)
 from strings import get_command, get_string
 from AnonX import Telegram, YouTube, app
 from AnonX.misc import SUDOERS, _boot_
@@ -34,10 +33,10 @@ from AnonX.utils.decorators.language import LanguageStart
 from AnonX.utils.formatters import get_readable_time
 from AnonX.utils.inline import (help_pannel, private_panel,
                                      start_pannel)
-
+token = (BOT_TOKEN)
 loop = asyncio.get_running_loop()
 owner = (OWNER_ID) 
-bot_id = (BOT_ID)
+bot_id = token.split(":")[0]
 try:
 	open(f"Users{bot_id}.json","r")
 except FileNotFoundError:
