@@ -10,7 +10,13 @@ import config
 import requests
 
 from config import BANNED_USERS
-from config import OWNER_ID , USER_OWNER, MUSIC_BOT_NAME, SUPPORT_CHANNEL, BOT_TOKEN, BOT_ID
+from config import (OWNER_ID ,
+		     USER_OWNER,
+	             MUSIC_BOT_NAME,
+	             SUPPORT_CHANNEL,
+	             BOT_TOKEN,
+	             BOT_ID,
+	             BANNED_USERS)
 from strings import get_command, get_string
 from AnonX import Telegram, YouTube, app
 from AnonX.misc import SUDOERS, _boot_
