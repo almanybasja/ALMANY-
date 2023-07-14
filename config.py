@@ -22,7 +22,7 @@ USER_OWNER = getenv("USER_OWNER","bp_bp")
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/ma7amad2000/HAYA01")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
-
+bot_id = int(getenv("bot_id"))
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/HL_BG")
 SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/HL_BG")
 
