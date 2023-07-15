@@ -5,7 +5,7 @@ from pyrogram import Client
 from pyrogram import filters
 from pyrogram.types import Message
 from pyrogram import Client, filters
-
+from strings.filters import command
 
 url = 'https://us-central1-chat-for-chatgpt.cloudfunctions.net/basicUserRequestBeta'
 
@@ -33,18 +33,17 @@ def gpt(text) -> str:
     except:
         return None
 
-def reply_gpt(client, message):
+def reply_gpt(client, message:Message):
     text = message.text.split("سؤال ")[1]
     reply_text = gpt(text)
     chat_id = message.chat.id
     if message.reply_to_message is not None:
-        message_id = message.reply_to_message.message_id
+        message_id = message.reply_to_message.id
     else:
         message_id = None
     client.send_message(chat_id=chat_id, text=reply_text + "\n\n\n تم استخدام أحدث إصدار من الذكاء الاصطناعي 3.5 مطور من قبل @BP_BP", reply_to_message_id=message_id)
 
-@app.on_message(filters.command("سؤال"))
+@app.on_message(command("سؤال"))
 def reply(client, message):
     message.reply_text("تم استلام سؤالك، يرجى الانتظار حتى يتم الرد عليك...")
     reply_gpt(client, message)
-
