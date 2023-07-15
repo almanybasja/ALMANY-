@@ -10,57 +10,60 @@ from pyrogram.enums import ParseMode, ChatMemberStatus
 
 lokrf = []
 
-haya = (6275847466, 6195765774)
 @app.on_message(
-    command(["قفل الرفع","تعطيل الرفع"])
-    & filters.group
-)
-async def lllock(client:Client, message:Message):
-    dev = (OWNER_ID)
-    get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if message.from_user.id in haya:
-         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif  message.from_user.id in dev:
-         rotba = "مطور اساسي"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    
-    
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-      if message.chat.id in lokrf:
-        return await message.reply_text(f"**يا {message.from_user.mention}\n الرفع مقفلها من قبل**")
-      lokrf.append(message.chat.id)
-      return await message.reply_text(f"**تم قفل امر رفع بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
+     command(["قفل العاب","تعطيل العاب"])
+     & filters.group
 
-@app.on_message(
-    command(["فتح الرفع","تفعيل الرفع"])
-    & filters.group
-)
-async def idljjopen(client:Client, message:Message):
-    dev = (OWNER_ID)
-    get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if message.from_user.id in haya:
-         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif  message.from_user.id in dev:
-         rotba = "مطور اساسي"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    
    
+)
+async def iddlock(client:Client, message:Message):
+    dev = (OWNER_ID)
+    haya = (6275847466,6195765774)
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if message.from_user.id in haya:
+       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
+    elif message.from_user.id in dev:
+        rotba = "مطور اساسي"
+    elif get.status in [ChatMemberStatus.OWNER]:
+        rotba= "المــــــألك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+        rotba= "أدمــــــن"
+    else:   
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")    
+     
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-      if not message.chat.id in lokrf:
-        return await message.reply_text(f"يا {message.from_user.mention}\n الرفع مفتوحه من قبل")
-      lokrf.remove(message.chat.id)
-      return await message.reply_text(f"**تم تفعيل الرفع بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
+        if message.chat.id in iddof:
+            return await message.reply_text(f"**يا {message.from_user.mention}\n الالعاب مقفله من قبل**")
+        iddof.append(message.chat.id)
+        return await message.reply_text(f"**تم قفل الالعاب بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
+    else:
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
+
+@app.on_message(
+    command(["فتح العاب","تفعيل العاب"])
+    & filters.group
+)
+async def idljjopen(client, message):
+    dev = (OWNER_ID)
+    haya = (6275847466,6195765774)
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if message.from_user.id in haya:
+       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
+    elif message.from_user.id in dev:
+        rotba = "مطـور اساسي"
+    elif get.status in [ChatMemberStatus.OWNER]:
+        rotba= "المــــألك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+        rotba= "أدمـــن"
+    else:
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")       
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
+      if not message.chat.id in iddof:
+        return await message.reply_text(f"**يا {message.from_user.mention}\الالعاب معفل من قبل**")
+      iddof.remove(message.chat.id)
+      return await message.reply_text(f"**تم فتح الالعاب بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
  
-
-
-
-
+   
 
 
 klb = []
