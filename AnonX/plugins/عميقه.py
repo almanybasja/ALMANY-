@@ -1,72 +1,56 @@
 
-import time
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 import asyncio
-from config import OWNER_ID
-from pyrogram import Client, filters
-from AnonX import app
 import random
-from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import filters, Client
+from AnonX import app
+from strings.filters import command
+from config import OWNER_ID
 from pyrogram.enums import ParseMode, ChatMemberStatus
-
 iddof = []
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 @app.on_message(
-    command(["قفل الاقتباسات","تعطيل الاقتباسات"])
-    & filters.group
-)
-async def lllock(client, message):
-    dev = (OWNER_ID)
-    haya = (6275847466)
-    get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif message.from_user.id in haya:
-         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif message.from_user.id in dev:
-         rotba = "مطور اساسي"
-  
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-      if message.chat.id in iddof:
-        return await message.reply_text(f"**يا {message.from_user.mention}\n الاقتباسات مقفلها من قبل**")
-      iddof.append(message.chat.id)
-      return await message.reply_text(f"**تم قفل امر الاقتباسات بالمنشن بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
+     command(["قفل اقتباسات","تعطيل اقتباسات"])
+     & filters.group
 
+   
+)
+async def iddlock(client:Client, message:Message):
+    dev = (OWNER_ID)
+    get = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
+        if message.chat.id in iddof:
+            return await message.reply_text(f"يا {message.from_user.mention}\n لعبة اقتباسات مقفله من قبل")
+        iddof.append(message.chat.id)
+        return await message.reply_text(f"**تم قفل لعبة زوجني بنجاح\n\n من قبل ←{message.from_user.mention}**")
+    else:
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 @app.on_message(
-    command(["فتح الاقتباسات","تفعيل الاقتباسات"])
+    command(["فتح اقتباسات","تفعيل لعبة اقتباسات"])
     & filters.group
 )
-async def idljjopen(client, message):
+async def idljjopen(client:Client, message:Message):
     dev = (OWNER_ID)
-    haya = (6275847466)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif message.from_user.id in haya:
-         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
-    elif message.from_user.id in dev:
-         rotba = "مطور اساسي"
-    
-   
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
       if not message.chat.id in iddof:
-        return await message.reply_text(f"يا {message.from_user.mention}\n الاقتباسات مقفلها من قبل")
+        return await message.reply_text(f"يا {message.from_user.mention}\nلعبة اقتباسات معفله من قبل")
       iddof.remove(message.chat.id)
-      return await message.reply_text(f"**تم تفعيل الاقتباسات بالمنشن بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
+      return await message.reply_text(f"تم فتح لعبة اقتباسات بنجاح\n\n من قبل ←{message.from_user.mention}")
  
-
-
-
-@app.on_message(
-    command(["ق","اقتباس"])
-    & filters.group
-)
-async def idjjdd(client:Client, message:Message):
-
-    random_member = random.choice(client.get_chat_members)
+##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]  
+@app.on_message(command(["ق","اقتباس"]))
+def iddd(client:Client, message:Message):
+    chat_id = message.chat.id
+    if chat_id in iddof:
+         return await message.reply_text("اقتباسات مقفله") 
+    members = [
+        member for member in client.get_chat_members(chat_id)
+        if not member.user.is_bot
+    ]
+    random_member = random.choice(members)
     random_member_mention = f"[{random_member.user.first_name}](tg://user?id={random_member.user.id})"
     random_message = random.choice([
          f"- لـ{random_member_mention}\n يجب أن تحاول ثلاث مرات قبل اليأس ",
