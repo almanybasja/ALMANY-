@@ -53,7 +53,7 @@ async def idljjopen(client:Client, message:Message):
     if get.status in [ChatMemberStatus.ADMINISTRATOR]:
         rotba= "أدمـــن"
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-        if message.chat.id in iddof:
+        if not message.chat.id in iddof:
             return await message.reply_text(f"**يا {message.from_user.mention}\n الالعاب مفتوحه من قبل**")
         iddof.remove(message.chat.id)
         return await message.reply_text(f"**تم فتح الالعاب بنجاح\n\nبواسطة {rotba} ←{message.from_user.mention}**")
