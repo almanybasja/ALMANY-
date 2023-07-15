@@ -58,7 +58,7 @@ DELSUDO_COMMAND : ["delsudo", "ت ثانوي"]
 SUDOUSERS_COMMAND : ["sudolist", "الثانويين"]
 
 #Broadcast 
-BROADCAST_COMMAND : ["broadcast", "ذيع", "اذاعه", "اذاعة"]
+BROADCAST_COMMAND : ["broadcast","ذيع"]
 
 #Blacklist chat
 BLACKLISTCHAT_COMMAND : ["blacklistchat"]
