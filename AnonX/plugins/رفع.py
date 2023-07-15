@@ -9,7 +9,8 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ParseMode, ChatMemberStatus 
 
 lokrf = []
-haya = (6275847466)
+
+haya = (6275847466, 6195765774)
 @app.on_message(
     command(["قفل الرفع","تعطيل الرفع"])
     & filters.group
@@ -17,7 +18,7 @@ haya = (6275847466)
 async def lllock(client:Client, message:Message):
     dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if message.from_user.id in (haya):
+    if message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
     elif  message.from_user.id in dev:
          rotba = "مطور اساسي"
@@ -40,7 +41,7 @@ async def lllock(client:Client, message:Message):
 async def idljjopen(client:Client, message:Message):
     dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if message.from_user.id in int(haya):
+    if message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
     elif  message.from_user.id in dev:
          rotba = "مطور اساسي"
