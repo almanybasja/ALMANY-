@@ -768,7 +768,7 @@ async def ShowKey(c:Client,m:Message):
 	OWNER = (OWNER_ID)
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if  str(user) == '6275847466' or str(user) in mainSudoVII or (user) in OWNER:
-	    return await m.reply(f"**@{show_channel()} قناه الاشتراك**")
+	    return await m.reply("الامر تحت الصيانه")
 
 @app.on_message(filters.command("توجيه الاعضاء",prefixes=""))
 async def memcommands__(c,m):
@@ -927,7 +927,7 @@ async def ShowDevUser(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudoVII or (user) in owner:
-	    return await m.reply(f"**@{show_devuser()} معرف المطور**")
+	    return await m.reply("الامر تحت الصيانه")
 @app.on_message(filters.command("حذف معرف المطور","")&filters.private)
 async def DellDevUser(c:Client,m:Message):
 	user = m.from_user.id
