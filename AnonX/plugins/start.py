@@ -116,7 +116,10 @@ async def start_comm(client, message: Message, _):
                        photo=config.START_IMG_URL,
                        caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard
             )
-
+        if message.text == '•---- حذف الكيبورد -----•' or 'اخفاء الكيبورد':
+               await message.reply("• تم اخفاء لوحة التحكم لاظهارها مجدداً ارسل /start",
+        quote=True, reply_markup=ReplyKeyboardRemove (selective=True))
+            
 
         if name[0:4] == "song":
             return await message.reply_text(_["song_2"])
@@ -293,7 +296,9 @@ async def start_comm(client, message: Message, _):
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
-
+                if message.text == '•---- حذف الكيبورد -----•' or 'اخفاء الكيبورد':
+                   await message.reply("• تم اخفاء لوحة التحكم لاظهارها مجدداً ارسل /start",
+                   quote=True, reply_markup=ReplyKeyboardRemove (selective=True))
             except:
                 await message.reply_text(
                     _["start_2"].format(config.MUSIC_BOT_NAME),
@@ -1022,3 +1027,33 @@ url=f"https://t.me/{show_devchannel()}")]])
 			
 			us = len(open(f"Users{bot_id}.json","r").readlines())
 			await app.send_message(chat,f"**تم الاذاعه الي **: \n {us} من الاعضاء")
+@app.on_message(filters.command("اذاعه المجموعات",prefixes=""))
+async def memcommands__(c,m):
+	user = m.from_user.id
+	chat = m.chat.id
+	mainSudo = open(f"maindevs{bot_id}.json","r").read()
+	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
+	sudo = open(f"sudo{bot_id}.json","r").read()
+	
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
+		await m.delete()
+		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
+		inputText = ask.text 
+		
+		if inputText == "الغاء":
+			await m.reply("**تم الغاء الاذاعه**")
+		
+		else:
+			group = open(f"groups{bot_id}.json","r")
+			
+			for user in group:
+				try:
+					await ask.copy(int(user),
+					inputText, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Source channel",
+                    url=f"https://t.me/{show_devchannel()}")]])
+					)
+				except:
+					pass
+			
+			gr = len(open(f"groups{bot_id}.json","r").readlines())
+			await app.send_message(chat,f"**تم الاذاعه الي **: \n {gr} من الجروبات")
