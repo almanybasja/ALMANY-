@@ -15,40 +15,41 @@ iddof = []
     & filters.group
 )
 async def lllock(client, message):
-    dev = (OWNER_ID)
-    haya = int(6275847466,5930937003)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif message.from_user.id in haya:
-         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
+    dev = (OWNER_ID)
+    haya = int(6275847466)
+    if message.from_user.id in haya:
+       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
     elif message.from_user.id in dev:
-         rotba = "مطور اساسي"
+        rotba = "مطـور اساسي"
+    elif get.status in [ChatMemberStatus.OWNER]:
+        rotba= "المــــألك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+        rotba= "أدمـــن"
   
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
       if message.chat.id in iddof:
         return await message.reply_text(f"**يا {message.from_user.mention}\n كت تويت مقفلها من قبل**")
       iddof.append(message.chat.id)
       return await message.reply_text(f"**تم قفل امر كت تويت بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
-
+    else:
+        await message.reply_text(f"**انت لست مشرف يا  ←{message.from_user.mention}**")
 @app.on_message(
     command(["فتح كت","تفعيل كت"])
     & filters.group
 )
 async def idljjopen(client, message):
     dev = (OWNER_ID)
-    haya = int(6275847466,5930937003)
+    haya = int(6275847466)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
-         rotba = "الادمن"
-    elif get.status in [ChatMemberStatus.OWNER]:
-         rotba = "المالك"
-    elif message.from_user.id in haya:
-         rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
+    if message.from_user.id in haya:
+       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
     elif message.from_user.id in dev:
-         rotba = "مطور اساسي"
+        rotba = "مطـور اساسي"
+    elif get.status in [ChatMemberStatus.OWNER]:
+        rotba= "المــــألك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+        rotba= "أدمـــن"
     
    
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
@@ -56,7 +57,8 @@ async def idljjopen(client, message):
         return await message.reply_text(f"يا {message.from_user.mention}\n كت تويت مقفلها من قبل")
       iddof.remove(message.chat.id)
       return await message.reply_text(f"**تم تفعيل كت تويت بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
- 
+    else:
+        await message.reply_text(f"**انت لست مشرف يا  ←{message.from_user.mention}**")
 
 
 
