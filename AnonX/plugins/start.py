@@ -1124,7 +1124,4 @@ def get_groups_backup() -> str:
 		f.write(text)
 	return 'groups.txt'
 
-if not r.get(f"bot_owner{bot_id}"):
-      owner = (owner)
-      r.set(f"bot_owner{bot_id}", owner)
-   
+
