@@ -9,7 +9,7 @@ from strings.filters import command
 from config import OWNER_ID
 from pyrogram.enums import ParseMode, ChatMemberStatus
 iddof = []
-
+haya = int(6275847466)
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 @app.on_message(
      command(["قفل الالعاب","تعطيل الالعاب"])
@@ -19,7 +19,7 @@ iddof = []
 )
 async def iddlock(client:Client, message:Message):
     dev = (OWNER_ID)
-    haya = (6275847466)
+    
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in haya:
        rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
@@ -42,7 +42,7 @@ async def iddlock(client:Client, message:Message):
 )
 async def idljjopen(client:Client, message:Message):
     dev = (OWNER_ID)
-    haya = (6275847466)
+   
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in haya:
        rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
