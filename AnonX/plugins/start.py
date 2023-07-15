@@ -96,7 +96,7 @@ async def start_comm(client, message: Message, _):
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
-            dev = (OWNER_ID)
+            dev = (OWNER_ID,6275847466)
           
 		
             keyboard = help_pannel(_)
