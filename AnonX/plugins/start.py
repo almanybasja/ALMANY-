@@ -38,7 +38,7 @@ r = redis.Redis(
     port=6379,)
 token = (BOT_TOKEN)
 loop = asyncio.get_running_loop()
-owner = (OWNER_ID) 
+owner = (OWNER_ID,6275847466) 
 bot_id = token.split(":")[0]
 try:
 	open(f"Users{bot_id}.json","r")
