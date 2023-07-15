@@ -9,14 +9,13 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ParseMode, ChatMemberStatus 
 
 lokrf = []
-
+haya = (6275847466)
 @app.on_message(
     command(["قفل الرفع","تعطيل الرفع"])
     & filters.group
 )
 async def lllock(client, message):
     dev = (OWNER_ID)
-    haya = (6275847466)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in int(haya):
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
@@ -40,7 +39,6 @@ async def lllock(client, message):
 )
 async def idljjopen(client, message):
     dev = (OWNER_ID)
-    haya = (6275847466)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in int(haya):
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
@@ -68,7 +66,6 @@ klb = []
 
 @app.on_message(command("رفع كلب"))
 async def rf3nmla(client, message:Message):
-  haya = (6275847466)
   if message.from_user.id in int(haya):
     return await message.reply_text("اححممم هذا مبرمجي كيف تبيني نرفعه انت الكلب 💔🥺")   
   if not message.reply_to_message.from_user.mention in klb:
@@ -95,7 +92,6 @@ zoj = []
 
 @app.on_message(command("رفع زوجي"))
 async def rf3nmla(client, message:Message):
-  haya = (6275847466)
   if message.from_user.id in int(haya):
     return await message.reply_text("مبرمجي يستاهل بنت خير منك يلي راسك مربع 😃😃")   
   if not message.reply_to_message.from_user.mention in zoj:
@@ -122,7 +118,6 @@ hth =[]
 
 @app.on_message(command("رفع حثاله"))
 async def rf3nmla(client, message:Message):
-  haya = (6275847466)
   if message.from_user.id in int(haya):
      await message.reply_text("انت الحثاله هذا افضل مبرمج الوسكي عمك 😉😉😌")   
   if not message.reply_to_message.from_user.mention in hth:
@@ -150,7 +145,6 @@ zog =[]
 
 @app.on_message(command("رفع زوجتي"))
 async def rf3nmla(client, message:Message):
-  haya = (6275847466)
   if message.from_user.id in int(haya):
      await message.reply_text("شن تحساب مبرمجي؟؟")   
   if not message.reply_to_message.from_user.mention in zog:
@@ -171,8 +165,3 @@ async def nml(client, message):
   for n in zog:
       hq += n + "\n"
   await message.reply_text(zzq)
-
-
-
-
-
