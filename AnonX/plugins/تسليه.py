@@ -8,9 +8,12 @@ from AnonX import app
 from strings.filters import command
 from config import OWNER_ID
 from pyrogram.enums import ParseMode, ChatMemberStatus
-iddof = []
+
 
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
+
+
+iddof = []
 @app.on_message(
      command(["قفل العاب","تعطيل العاب"])
      & filters.group
