@@ -44,6 +44,8 @@ async def idljjopen(client:Client, message:Message):
 @app.on_message(command(['زوجني','ز']))
 def iddd(client:Client, message:Message):
     chat_id = message.chat.id
+    if chat_id in iddof:
+         return await message.reply_text("زوجني مقفله") 
     members = [
         member for member in client.get_chat_members(chat_id)
         if not member.user.is_bot
