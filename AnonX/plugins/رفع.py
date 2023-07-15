@@ -14,10 +14,10 @@ haya = (6275847466)
     command(["قفل الرفع","تعطيل الرفع"])
     & filters.group
 )
-async def lllock(client, message):
+async def lllock(client:Client, message:Message):
     dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if message.from_user.id in int(haya):
+    if message.from_user.id in (haya):
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
     elif  message.from_user.id in dev:
          rotba = "مطور اساسي"
@@ -37,7 +37,7 @@ async def lllock(client, message):
     command(["فتح الرفع","تفعيل الرفع"])
     & filters.group
 )
-async def idljjopen(client, message):
+async def idljjopen(client:Client, message:Message):
     dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in int(haya):
@@ -65,8 +65,8 @@ async def idljjopen(client, message):
 klb = []
 
 @app.on_message(command("رفع كلب"))
-async def rf3nmla(client, message:Message):
-  if message.from_user.id in int(haya):
+async def rf3nmla(client:Client, message:Message):
+  if message.from_user.id in haya:
     return await message.reply_text("اححممم هذا مبرمجي كيف تبيني نرفعه انت الكلب 💔🥺")   
   if not message.reply_to_message.from_user.mention in klb:
     klb.append(message.reply_to_message.from_user.mention)
@@ -74,14 +74,14 @@ async def rf3nmla(client, message:Message):
 
 
 @app.on_message(command("ت كلب"))
-async def tnzelnmla(client, message:Message):
+async def tnzelnmla(client:Client, message:Message):
   if message.reply_to_message.from_user.mention in klb:
     klb.remove(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n من قائمة الكلاب 😂♥️**")
 
 
 @app.on_message(command("المرفوعين كلاب"))
-async def nml(client, message):
+async def nml(client:Client, message:Message):
   kq = ""
   for n in klb:
       kq += n + "\n"
@@ -92,7 +92,7 @@ zoj = []
 
 @app.on_message(command("رفع زوجي"))
 async def rf3nmla(client, message:Message):
-  if message.from_user.id in int(haya):
+  if message.from_user.id in haya:
     return await message.reply_text("مبرمجي يستاهل بنت خير منك يلي راسك مربع 😃😃")   
   if not message.reply_to_message.from_user.mention in zoj:
     zoj.append(message.reply_to_message.from_user.mention)
@@ -100,7 +100,7 @@ async def rf3nmla(client, message:Message):
 
 
 @app.on_message(command("ت زوجي"))
-async def tnzelnmla(client, message):
+async def tnzelnmla(client:Client, message:Message):
   if message.reply_to_message.from_user.mention in zoj:
     zoj.remove(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n من قائمة المتزوجين رد عزابي 😂♥️**")
@@ -118,7 +118,7 @@ hth =[]
 
 @app.on_message(command("رفع حثاله"))
 async def rf3nmla(client, message:Message):
-  if message.from_user.id in int(haya):
+  if message.from_user.id in haya:
      await message.reply_text("انت الحثاله هذا افضل مبرمج الوسكي عمك 😉😉😌")   
   if not message.reply_to_message.from_user.mention in hth:
     hth.append(message.reply_to_message.from_user.mention)
@@ -126,7 +126,7 @@ async def rf3nmla(client, message:Message):
 
 
 @app.on_message(command("ت حثاله"))
-async def tnzelnmla(client, message):
+async def tnzelnmla(client:Client, message:Message):
   if message.reply_to_message.from_user.mention in hth:
     hth.remove(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n من قائمة الحثاله 😂♥️**")
@@ -145,7 +145,7 @@ zog =[]
 
 @app.on_message(command("رفع زوجتي"))
 async def rf3nmla(client, message:Message):
-  if message.from_user.id in int(haya):
+  if message.from_user.id in haya:
      await message.reply_text("شن تحساب مبرمجي؟؟")   
   if not message.reply_to_message.from_user.mention in zog:
     zog.append(message.reply_to_message.from_user.mention)
@@ -153,14 +153,14 @@ async def rf3nmla(client, message:Message):
 
 
 @app.on_message(command("ت زوجتي"))
-async def tnzelnmla(client, message):
+async def tnzelnmla(client:Client, message:Message):
   if message.reply_to_message.from_user.mention in zog:
     zog.remove(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  وصارت مطلقه جاده للزواج 😂♥️**")
 
 
 @app.on_message(command("المرفوعين زوجات"))
-async def nml(client, message):
+async def nml(client:Client, message:Message):
   zzq = ""
   for n in zog:
       hq += n + "\n"
