@@ -87,8 +87,6 @@ async def iddd(client, message):# البريميوم الوهمي كتابة ##|
     botdev= (OWNER_ID)
     haya = (6275847466,6195765774)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if iddof.append(message.chat.id):
-        await message.reply_text("الايدي معطل اطلب من الادمن يفتحه")
     if message.from_user.id in haya:
        rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
     elif message.from_user.id in botdev:
