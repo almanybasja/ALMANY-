@@ -23,10 +23,11 @@ async def iddlock(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in dev:
         rotba = "مطـور اساسي"
-    elif get.status in [ChatMemberStatus.OWNER]:
+    if get.status in [ChatMemberStatus.OWNER]:
         rotba= "المــــألك"
-    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
         rotba= "أدمـــن"
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and dev:
         if message.chat.id in iddof:
             return await message.reply_text(f"**يا {message.from_user.mention}\n الالعاب مقفله من قبل**")
         iddof.append(message.chat.id)
@@ -44,15 +45,17 @@ async def idljjopen(client:Client, message:Message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in dev:
         rotba = "مطـور اساسي"
-    elif get.status in [ChatMemberStatus.OWNER]:
+    if get.status in [ChatMemberStatus.OWNER]:
         rotba= "المــــألك"
-    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+    if get.status in [ChatMemberStatus.ADMINISTRATOR]:
         rotba= "أدمـــن"
+    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
         if message.chat.id in iddof:
             return await message.reply_text(f"**يا {message.from_user.mention}\n الالعاب مقفله من قبل**")
         iddof.remove(message.chat.id)
         return await message.reply_text(f"**تم فتح الالعاب بنجاح\n\nبواسطة {rotba} ←{message.from_user.mention}**")
- 
+    else:
+        return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]  
 @app.on_message(command(['زوجني','ز']))
 def iddd(client:Client, message:Message):
