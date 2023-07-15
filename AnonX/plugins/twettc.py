@@ -17,7 +17,7 @@ iddof = []
 async def lllock(client, message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     dev = (OWNER_ID)
-    elif message.from_user.id in dev:
+    if message.from_user.id in dev:
         rotba = "مطـور اساسي"
     elif get.status in [ChatMemberStatus.OWNER]:
         rotba= "المــــألك"
