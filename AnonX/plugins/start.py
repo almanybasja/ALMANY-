@@ -780,7 +780,7 @@ async def memcommands__(c,m):
 	OWNER = (OWNER_ID)
 	if  str(user) == '6275847466' or  str(user) in sudo or str(user) in mainSudoVII or (user) in OWNER:
 		await m.delete()
-		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
+		ask = await m.reply(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
 		
 		if inputText == "الغاء":
