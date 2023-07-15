@@ -34,6 +34,7 @@ from AnonX.utils.formatters import get_readable_time
 from AnonX.utils.inline import (help_pannel, private_panel,
                                      start_pannel)
 import redis, re
+from pyrogram.enums import ParseMode, ChatMemberStatus 
 r = redis.Redis(
     host="127.0.0.1",
     port=6379,)
@@ -237,7 +238,7 @@ async def start_comm(client, message: Message, _):
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:
             try:
-                dev = (OWNER_ID)
+                dev = (owner)
 
                 Owneruser = ReplyKeyboardMarkup([
 [("الاوامر"),("السورس")],[("المطور"),("مبرمج السورس"),("/مساعده")],
@@ -488,8 +489,11 @@ def del_devuser():
 
 
 
-@app.on_message(get_command("START_COMMAND") & filters.private)
-async def for_users (app,m):
+@app.on_message(
+    filters.command(["start"])
+    & filters.private
+)
+async def for_users (app,m:Message):
    if not check(m.from_user.id):
      await check_sub(app, m)
    if not is_user(m.from_user.id):
@@ -1084,7 +1088,7 @@ async def check_sub(c,m):
         text = f'✖️ عذراً عليك الاشتراك بقناة البوت أولاً لتتمكن من استخدامه !\n\nhttps://t.me/{channel}\n- /start'
         try:
            get = await c.get_chat_member(r.get(f"force_channel{bot_id}").decode('utf-8'), m.from_user.id)
-           if get.status in [enums.ChatMemberStatus.LEFT, enums.ChatMemberStatus.BANNED]:
+           if get.status in [ChatMemberStatus.LEFT, ChatMemberStatus.BANNED]:
              return await m.reply(text, quote=True, disable_web_page_preview=True)
         except:
            return await m.reply(text, quote=True, disable_web_page_preview=True)
@@ -1125,6 +1129,6 @@ def get_groups_backup() -> str:
 	return 'groups.txt'
 
 if not r.get(f"bot_owner{bot_id}"):
-   owner = (OWNER_ID)
+   owner = (owner)
    r.set(f"bot_owner{bot_id}", owner)
    
