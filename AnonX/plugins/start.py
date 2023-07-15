@@ -116,9 +116,7 @@ async def start_comm(client, message: Message, _):
                        photo=config.START_IMG_URL,
                        caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard
             )
-        if message.text == '•---- حذف الكيبورد -----•' or 'اخفاء الكيبورد':
-               await message.reply("• تم اخفاء لوحة التحكم لاظهارها مجدداً ارسل /start",
-        quote=True, reply_markup=ReplyKeyboardRemove (selective=True))
+
             
 
         if name[0:4] == "song":
@@ -296,9 +294,7 @@ async def start_comm(client, message: Message, _):
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
-                if message.text == '•---- حذف الكيبورد -----•' or 'اخفاء الكيبورد':
-                   await message.reply("• تم اخفاء لوحة التحكم لاظهارها مجدداً ارسل /start",
-                   quote=True, reply_markup=ReplyKeyboardRemove (selective=True))
+    
             except:
                 await message.reply_text(
                     _["start_2"].format(config.MUSIC_BOT_NAME),
