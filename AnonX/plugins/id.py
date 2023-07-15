@@ -217,13 +217,14 @@ async def rotba(client, message):
     await message.reply_text(f"رتبتك في هذه المجموعه \nهــي ← «{rotba}»")
        
 
+bio = []
 
 @app.on_message(
     command(["بايو"])
     & filters.group
 )
 async def idjjdd(client, message:Message):
-    if message.chat.id in iddof:
+    if message.chat.id in bio:
       return
     usr = await client.get_chat(message.from_user.id)
     await message.reply_text(f"**البايو هو\n│ \n└ʙʏ: {usr.bio}**")
