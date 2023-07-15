@@ -16,7 +16,7 @@ lokrf = []
 )
 async def lllock(client, message):
     dev = (OWNER_ID)
-    haya = (6275847466)
+    haya = int(6275847466)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
@@ -40,7 +40,7 @@ async def lllock(client, message):
 )
 async def idljjopen(client, message):
     dev = (OWNER_ID)
-    haya = (6275847466)
+    haya = int(6275847466)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in haya:
          rotba= "مّمٌَـبـ ـࢪمـج السوࢪس" 
