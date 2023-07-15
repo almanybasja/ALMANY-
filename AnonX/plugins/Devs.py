@@ -38,7 +38,7 @@ async def huhh(client: Client, message: Message):
 @app.on_message(command([f"غنيلي", "غني", "غ", "{BOT_USERNAME} غنيلي"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(3,267)
-    url = f"https://t.me/bsmaatt/{rl}"
+    url = f"https://t.me/iV_P_Nl/{rl}"
     await client.send_voice(message.chat.id,url,caption="`🔥 ¦ تـم اختيـار الاغـنـية لـك`",
     reply_markup=InlineKeyboardMarkup(
             [
