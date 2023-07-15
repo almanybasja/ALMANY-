@@ -17,9 +17,6 @@ iddof = []
 async def lllock(client, message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     dev = (OWNER_ID)
-    haya = int(6275847466)
-    if message.from_user.id in haya:
-       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
     elif message.from_user.id in dev:
         rotba = "مطـور اساسي"
     elif get.status in [ChatMemberStatus.OWNER]:
@@ -40,11 +37,10 @@ async def lllock(client, message):
 )
 async def idljjopen(client, message):
     dev = (OWNER_ID)
-    haya = int(6275847466)
+  
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if message.from_user.id in haya:
-       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
-    elif message.from_user.id in dev:
+   
+    if message.from_user.id in dev:
         rotba = "مطـور اساسي"
     elif get.status in [ChatMemberStatus.OWNER]:
         rotba= "المــــألك"
