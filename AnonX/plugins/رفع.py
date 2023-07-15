@@ -69,7 +69,8 @@ klb = []
 async def rf3nmla(client:Client, message:Message):
   if message.from_user.id in haya:
     return await message.reply_text("اححممم هذا مبرمجي كيف تبيني نرفعه انت الكلب 💔🥺")   
-  if not message.reply_to_message.from_user.mention in klb:
+  else: 
+    not message.reply_to_message.from_user.mention in klb
     klb.append(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n كلب من قبل {message.from_user.mention}😂♥️**")
 
@@ -93,9 +94,11 @@ zoj = []
 
 @app.on_message(command("رفع زوجي"))
 async def rf3nmla(client, message:Message):
+ 
   if message.from_user.id in haya:
-    return await message.reply_text("مبرمجي يستاهل بنت خير منك يلي راسك مربع 😃😃")   
-  if not message.reply_to_message.from_user.mention in zoj:
+     return await message.reply_text("مبرمجي يستاهل بنت خير منك يلي راسك مربع 😃😃")   
+  else:
+    not message.reply_to_message.from_user.mention in zoj
     zoj.append(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  زوج لـ {message.from_user.mention}😂♥️**")
 
@@ -121,7 +124,8 @@ hth =[]
 async def rf3nmla(client, message:Message):
   if message.from_user.id in haya:
      await message.reply_text("انت الحثاله هذا افضل مبرمج الوسكي عمك 😉😉😌")   
-  if not message.reply_to_message.from_user.mention in hth:
+  else:
+    not message.reply_to_message.from_user.mention in hth
     hth.append(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  حثاله من قبل {message.from_user.mention}😂♥️**")
 
@@ -148,7 +152,8 @@ zog =[]
 async def rf3nmla(client, message:Message):
   if message.from_user.id in haya:
      await message.reply_text("شن تحساب مبرمجي؟؟")   
-  if not message.reply_to_message.from_user.mention in zog:
+  else:
+    not message.reply_to_message.from_user.mention in zog
     zog.append(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  قعدت مرات هذا خلفو دنقات {message.from_user.mention}😂♥️**")
 
