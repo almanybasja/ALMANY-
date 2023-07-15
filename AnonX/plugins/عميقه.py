@@ -6,7 +6,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import filters, Client
 from AnonX import app
 from strings.filters import command
-from config import OWNER_ID
+from config import OWNER_ID, MUSIC_BOT_NAME
 from pyrogram.enums import ParseMode, ChatMemberStatus
 iddof = []
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
@@ -42,15 +42,10 @@ async def idljjopen(client:Client, message:Message):
  
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]  
 @app.on_message(command(["ق","اقتباس"]))
-def iddd(client:Client, message:Message):
-    chat_id = message.chat.id
-    if chat_id in iddof:
+async def idjjdd(client:Client, message:Message):
+    if message.chat.id in iddof:
          return
-    members = [
-        member for member in client.get_chat_members(chat_id)
-        if not member.user.is_bot
-    ]
-    random_member = random.choice(members)
+    random_member = random.choice(client.get_chat_members)
     random_member_mention = f"[{random_member.user.first_name}](tg://user?id={random_member.user.id})"
     random_message = random.choice([
          f"- لـ{random_member_mention}\n يجب أن تحاول ثلاث مرات قبل اليأس ",
@@ -77,4 +72,4 @@ def iddd(client:Client, message:Message):
 
     ik = random.choice(random_message)
     client.send_message(message.chat.id, random_message, reply_to_message_id= message.id)
-    await message.reply_text(f"**اليــك اقتبــاس اليـوـم ❤️\n│ \n└ʙʏ: {ik}**")
+    await message.reply_text(f"**اليــك اقتبــاس اليـوـم ❤️\n│ {ik} \n└ʙʏ: {MUSIC_BOT_NAME}**")
