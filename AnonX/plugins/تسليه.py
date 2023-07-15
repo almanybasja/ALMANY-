@@ -12,7 +12,7 @@ iddof = []
 
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 @app.on_message(
-     command(["قفل الالعاب","تعطيل الالعاب"])
+     command(["قفل العاب","تعطيل العاب"])
      & filters.group
 
    
@@ -32,12 +32,12 @@ async def iddlock(client:Client, message:Message):
         if message.chat.id in iddof:
             return await message.reply_text(f"**يا {message.from_user.mention}\n الالعاب مقفله من قبل**")
         iddof.append(message.chat.id)
-        return await message.reply_text(f"تم قفل لعبة الالعاب بنجاح\n\nبواسطة {rotba} ←{message.from_user.mention}**")
+        return await message.reply_text(f"**تم قفل الالعاب بنجاح\n\nبواسطة {rotba} ←{message.from_user.mention}**")
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 @app.on_message(
-    command(["فتح الالعاب","تفعيل الالعاب"])
+    command(["فتح العاب","تفعيل العاب"])
     & filters.group
 )
 async def idljjopen(client:Client, message:Message):
@@ -55,7 +55,7 @@ async def idljjopen(client:Client, message:Message):
         if message.chat.id in iddof:
             return await message.reply_text(f"**يا {message.from_user.mention}\n الالعاب مقفله من قبل**")
         iddof.remove(message.chat.id)
-        return await message.reply_text(f"تم قفل لعبة الالعاب بنجاح\n\nبواسطة {rotba} ←{message.from_user.mention}**")
+        return await message.reply_text(f"**تم فتح الالعاب بنجاح\n\nبواسطة {rotba} ←{message.from_user.mention}**")
  
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]  
 @app.on_message(command(['زوجني','ز']))
