@@ -9,6 +9,7 @@ from strings.filters import command
 from config import OWNER_ID
 from pyrogram.enums import ParseMode, ChatMemberStatus
 iddof = []
+haya = (6275847466)
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
 @app.on_message(
      command(["قفل الالعاب","تعطيل الالعاب"])
@@ -18,12 +19,20 @@ iddof = []
 )
 async def iddlock(client:Client, message:Message):
     dev = (OWNER_ID)
+    
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
+    if message.from_user.id in haya:
+       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
+    elif message.from_user.id in dev:
+        rotba = "مطـور اساسي"
+    elif get.status in [ChatMemberStatus.OWNER]:
+        rotba= "المــــألك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+        rotba= "أدمـــن"
         if message.chat.id in iddof:
             return await message.reply_text(f"**يا {message.from_user.mention}\n الالعاب مقفله من قبل**")
         iddof.append(message.chat.id)
-        return await message.reply_text(f"تم قفل لعبة الالعاب بنجاح\n\n من قبل ←{message.from_user.mention}")
+        return await message.reply_text(f"تم قفل لعبة الالعاب بنجاح\n\nبواسطة {rotba} ←{message.from_user.mention}**")
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
@@ -34,11 +43,18 @@ async def iddlock(client:Client, message:Message):
 async def idljjopen(client:Client, message:Message):
     dev = (OWNER_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-      if not message.chat.id in iddof:
-        return await message.reply_text(f"يا {message.from_user.mention}\nالالعاب معفله من قبل")
-      iddof.remove(message.chat.id)
-      return await message.reply_text(f"**تم فتح الالعاب بنجاح\n\n من قبل ←{message.from_user.mention}**")
+    if message.from_user.id in haya:
+       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
+    elif message.from_user.id in dev:
+        rotba = "مطـور اساسي"
+    elif get.status in [ChatMemberStatus.OWNER]:
+        rotba= "المــــألك"
+    elif get.status in [ChatMemberStatus.ADMINISTRATOR]:
+        rotba= "أدمـــن"
+        if message.chat.id in iddof:
+            return await message.reply_text(f"**يا {message.from_user.mention}\n الالعاب مقفله من قبل**")
+        iddof.append(message.chat.id)
+        return await message.reply_text(f"تم قفل لعبة الالعاب بنجاح\n\nبواسطة {rotba} ←{message.from_user.mention}**")
  
 ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]  
 @app.on_message(command(['زوجني','ز']))
@@ -91,4 +107,22 @@ def call_random_member(client:Client, message:Message):
          f"-اليــك اقتبــاس اليـوـم ❤️\n│ لـ{random_member_mention}\n النجاح هو القدرة على الذهاب من فشل إلى فشل بدون فقد أرزاقك الحماس ", 
     ])
     client.send_message(chat_id, random_message, reply_to_message_id= message.id)
-    
+@app.on_message(command(['نداء','ن']))
+def call_random_member(client:Client, message:Message):
+    chat_id = message.chat.id
+    members = [
+        member for member in client.get_chat_members(chat_id)
+        if not member.user.is_bot
+    ]
+    if chat_id in iddof:
+         return
+    random_member = random.choice(members)
+    random_member_mention = f"[{random_member.user.first_name}](tg://user?id={random_member.user.id})"
+    random_message = random.choice([
+        f"ووين ككارس لنا واجد نرجو فيك 😾 {random_member_mention}",
+        f"• يـا قمـري ❤️‍🔥 {random_member_mention}",
+        f"حبي فوتك من الخاص وتعال 🤔 {random_member_mention}",
+        f"• يـا راس السطل تعال {random_member_mention}",
+        f"• انت ليش قمر هكي 🌚♥ {random_member_mention}"
+    ])
+    client.send_message(chat_id, random_message, reply_to_message_id= message.id)
