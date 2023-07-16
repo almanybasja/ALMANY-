@@ -1,7 +1,6 @@
 import time
 import asyncio
 from config import OWNER_ID
-from config import PROG_ID
 from pyrogram import Client, filters
 from AnonX import app
 import random
@@ -19,11 +18,8 @@ lokrf = []
 )
 async def iddlock(client:Client, message:Message):
     dev = (OWNER_ID)
-    haya = (PROG_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if message.from_user.id in haya:
-       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
-    elif message.from_user.id in dev:
+    if message.from_user.id in dev:
         rotba = "مطور اساسي"
     elif get.status in [ChatMemberStatus.OWNER]:
         rotba= "المــــــألك"
@@ -46,11 +42,9 @@ async def iddlock(client:Client, message:Message):
 )
 async def idljjopen(client:Client, message:Message):
     dev = (OWNER_ID)
-    haya = (PROG_ID)
+  
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if message.from_user.id in haya:
-       rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
-    elif message.from_user.id in dev:
+    if message.from_user.id in dev:
         rotba = "مطـور اساسي"
     elif get.status in [ChatMemberStatus.OWNER]:
         rotba= "المــــألك"
@@ -163,4 +157,4 @@ async def nml(client:Client, message:Message):
   zzq = ""
   for n in zog:
       hq += n + "\n"
-  await message.reply_text(f"** عرايس القروب😂😂 : \n {zzq}**")
+  await message.reply_text(f"**عرايس القروب😂😂 : \n {zzq}**")
