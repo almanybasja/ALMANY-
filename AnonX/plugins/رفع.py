@@ -32,9 +32,9 @@ async def iddlock(client:Client, message:Message):
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")    
      
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-        if message.chat.id in iddof:
+        if message.chat.id in lokrf:
             return await message.reply_text(f"**يا {message.from_user.mention}\n الالعاب مقفله من قبل**")
-        iddof.append(message.chat.id)
+        lokrf.append(message.chat.id)
         return await message.reply_text(f"**تم قفل الالعاب بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
@@ -58,9 +58,9 @@ async def idljjopen(client, message):
     else:
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")       
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR] and  dev:
-      if not message.chat.id in iddof:
+      if not message.chat.id in lokrf:
         return await message.reply_text(f"**يا {message.from_user.mention}\الالعاب معفل من قبل**")
-      iddof.remove(message.chat.id)
+      lokrf.remove(message.chat.id)
       return await message.reply_text(f"**تم فتح الالعاب بنجاح\n\n بواسطة {rotba} ←{message.from_user.mention}**")
  
    
@@ -70,6 +70,7 @@ klb = []
 
 @app.on_message(command("رفع كلب"))
 async def rf3nmla(client:Client, message:Message):
+  haya = (6275847466)
   if message.from_user.id in haya:
     return await message.reply_text("اححممم هذا مبرمجي كيف تبيني نرفعه انت الكلب 💔🥺")   
   else: 
@@ -97,7 +98,7 @@ zoj = []
 
 @app.on_message(command("رفع زوجي"))
 async def rf3nmla(client, message:Message):
- 
+  haya = (6275847466)
   if message.from_user.id in haya:
      return await message.reply_text("مبرمجي يستاهل بنت خير منك يلي راسك مربع 😃😃")   
   else:
@@ -125,6 +126,7 @@ hth =[]
 
 @app.on_message(command("رفع حثاله"))
 async def rf3nmla(client, message:Message):
+  haya = (6275847466)
   if message.from_user.id in haya:
      await message.reply_text("انت الحثاله هذا افضل مبرمج الوسكي عمك 😉😉😌")   
   else:
@@ -153,10 +155,7 @@ zog =[]
 
 @app.on_message(command("رفع زوجتي"))
 async def rf3nmla(client, message:Message):
-  if message.from_user.id in haya:
-     await message.reply_text("شن تحساب مبرمجي؟؟")   
-  else:
-    not message.reply_to_message.from_user.mention in zog
+  if message.reply_to_message.from_user.mention in zog:
     zog.append(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  قعدت مرات هذا خلفو دنقات {message.from_user.mention}😂♥️**")
 
