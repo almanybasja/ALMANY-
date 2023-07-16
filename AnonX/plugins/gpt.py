@@ -44,6 +44,6 @@ def reply_gpt(client, message:Message):
     client.send_message(chat_id=chat_id, text=reply_text + "\n\n\n تم استخدام أحدث إصدار من الذكاء الاصطناعي 3.5 مطور من قبل @BP_BP", reply_to_message_id=message_id)
 
 @app.on_message(command("سؤال"))
-def reply(client, message):
-    message.reply_text("تم استلام سؤالك، يرجى الانتظار حتى يتم الرد عليك...")
+def reply(client, message:Message):
+    message.reply_text(f"**مرحبا بـك يا {message.from_user.mention}\n\n اكتب سؤالك بالكامل وسوف يتم الرد عليك فورا**")
     reply_gpt(client, message)
