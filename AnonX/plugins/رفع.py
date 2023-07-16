@@ -1,6 +1,6 @@
 import time
 import asyncio
-from config import OWNER_ID
+from config import OWNER_ID, PROG_ID
 from pyrogram import Client, filters
 from AnonX import app
 import random
@@ -18,7 +18,7 @@ lokrf = []
 )
 async def iddlock(client:Client, message:Message):
     dev = (OWNER_ID)
-    haya = (6275847466,6195765774)
+    haya = (PROG_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in haya:
        rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
@@ -43,9 +43,9 @@ async def iddlock(client:Client, message:Message):
     command(["فتح العاب","تفعيل العاب"])
     & filters.group
 )
-async def idljjopen(client, message):
+async def idljjopen(client:Client, message:Message):
     dev = (OWNER_ID)
-    haya = (6275847466,6195765774)
+    haya = (PROG_ID)
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if message.from_user.id in haya:
        rotba= "مّمٌَـبـ ـࢪمـج السوࢪس"
@@ -70,11 +70,8 @@ klb = []
 
 @app.on_message(command("رفع كلب"))
 async def rf3nmla(client:Client, message:Message):
-  haya = (6275847466)
-  if message.from_user.id in haya:
-    return await message.reply_text("اححممم هذا مبرمجي كيف تبيني نرفعه انت الكلب 💔🥺")   
-  else: 
-    not message.reply_to_message.from_user.mention in klb
+  
+  if message.reply_to_message.from_user.mention in klb:
     klb.append(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n كلب من قبل {message.from_user.mention}😂♥️**")
 
@@ -98,11 +95,7 @@ zoj = []
 
 @app.on_message(command("رفع زوجي"))
 async def rf3nmla(client, message:Message):
-  haya = (6275847466)
-  if message.from_user.id in haya:
-     return await message.reply_text("مبرمجي يستاهل بنت خير منك يلي راسك مربع 😃😃")   
-  else:
-    not message.reply_to_message.from_user.mention in zoj
+  if message.reply_to_message.from_user.mention in zoj:
     zoj.append(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  زوج لـ {message.from_user.mention}😂♥️**")
 
@@ -126,11 +119,8 @@ hth =[]
 
 @app.on_message(command("رفع حثاله"))
 async def rf3nmla(client, message:Message):
-  haya = (6275847466)
-  if message.from_user.id in haya:
-     await message.reply_text("انت الحثاله هذا افضل مبرمج الوسكي عمك 😉😉😌")   
-  else:
-    not message.reply_to_message.from_user.mention in hth
+  
+  if message.reply_to_message.from_user.mention in hth:
     hth.append(message.reply_to_message.from_user.mention)
   await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  حثاله من قبل {message.from_user.mention}😂♥️**")
 
@@ -172,4 +162,4 @@ async def nml(client:Client, message:Message):
   zzq = ""
   for n in zog:
       hq += n + "\n"
-  await message.reply_text(zzq)
+  await message.reply_text(f"** عرايس القروب😂😂 : \n {zzq}**")
