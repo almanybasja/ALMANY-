@@ -11,7 +11,7 @@ from pyrogram.enums import ParseMode, ChatMemberStatus
 lokrf = []
 
 @app.on_message(
-     command(["قفل العاب","تعطيل العاب"])
+     command(["قفل الرفع","تعطيل الرفع"])
      & filters.group
 
    
@@ -37,7 +37,7 @@ async def iddlock(client:Client, message:Message):
         return await message.reply_text(f"**يا {message.from_user.mention} انت لست مشرفا هنا**")
 
 @app.on_message(
-    command(["فتح العاب","تفعيل العاب"])
+    command(["فتح الرفع","تفعيل الرفع"])
     & filters.group
 )
 async def idljjopen(client:Client, message:Message):
@@ -78,12 +78,12 @@ async def tnzelnmla(client:Client, message:Message):
   await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n من قائمة الكلاب 😂♥️**")
 
 
-@app.on_message(command("المرفوعين كلاب"))
+@app.on_message(command("قائمة كلاب"))
 async def nml(client:Client, message:Message):
   kq = ""
   for n in klb:
       kq += n + "\n"
-  await message.reply_text(f"**قائمة الكلاب لي تنبح 😂😂 \n\n{kq}**")
+      await message.reply_text(f"**قائمة الكلاب لي تنبح 😂😂 \n\n{kq}\n\n لعرض القائمه اكتب قائمة الكلاب**")
 
 zoj = []
 
@@ -102,12 +102,12 @@ async def tnzelnmla(client:Client, message:Message):
   await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n من قائمة المتزوجين رد عزابي 😂♥️**")
 
 
-@app.on_message(command("المرفوعين المتزوجين"))
+@app.on_message(command("قائمة المتزوجين"))
 async def nml(client, message):
   zq = ""
   for n in zoj:
       zq += n + "\n"
-  await message.reply_text(f"**قائمة العرسان 😂😂 \n {zq}**")
+      await message.reply_text(f"**قائمة العرسان 😂😂 \n {zq}\n\n لعرض القائمه اكتب قائمة المتزوجين**")
 
 hth =[]
 
@@ -127,12 +127,12 @@ async def tnzelnmla(client:Client, message:Message):
   await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n من قائمة الحثاله 😂♥️**")
 
 
-@app.on_message(command("المرفوعين حثاله"))
+@app.on_message(command("قائمة حثاله"))
 async def nml(client, message):
   hq = ""
   for n in hth:
       hq += n + "\n"
-  await message.reply_text(f"**حثالة المجتمع 😂😂 : \n {hq}**")
+      await message.reply_text(f"**حثالة المجتمع 😂😂 : \n {hq}\n\n لعرض القائمه اكتب قائمة حثاله**")
 
 
 zog =[]
@@ -152,9 +152,9 @@ async def tnzelnmla(client:Client, message:Message):
   await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  وصارت مطلقه جاده للزواج 😂♥️**")
 
 
-@app.on_message(command("المرفوعين زوجات"))
+@app.on_message(command("قائمة المتزوجات"))
 async def nml(client:Client, message:Message):
   zzq = ""
   for n in zog:
       zzq += n + "\n"
-  await message.reply_text(f"**عرايس القروب😂😂 : \n {zzq}**")
+      await message.reply_text(f"**قائمة العرسان 😂😂 \n {zzq}\n\n لعرض القائمه اكتب قائمة المتزوجات**")
