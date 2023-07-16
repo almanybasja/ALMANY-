@@ -156,5 +156,5 @@ async def tnzelnmla(client:Client, message:Message):
 async def nml(client:Client, message:Message):
   zzq = ""
   for n in zog:
-      hq += n + "\n"
+      zzq += n + "\n"
   await message.reply_text(f"**عرايس القروب😂😂 : \n {zzq}**")
