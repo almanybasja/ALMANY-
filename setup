@@ -82,7 +82,7 @@ installation(){
 }
 
 clear
-pprint "Welcome to AnonXMusic Setup Installer\n\n"
+pprint "Welcome to HAYABOT Setup Installer\n\n"
 pprint "If you see any error during Installation Process, Please refer to these files for logs: "
 pprint "\nFor node js errors , Checkout nodelog.txt"
 pprint "\nFor pypi packages errors , Checkout pypilog.txt"
@@ -94,7 +94,7 @@ update
 packages
 node
 installation
-pprint "\n\n\n\n\nAnonX Music Installation Completed !" "cgreen"
+pprint "\n\n\n\n\HAYA Music Installation Completed !" "cgreen"
 sleep 1
 clear
 
@@ -103,6 +103,7 @@ pprint "API ID: "; color_reset; read api_id
 pprint "\nAPI HASH: "; color_reset; read api_hash
 pprint "\nBOT TOKEN: "; color_reset; read bot_token
 pprint "\nOWNER ID:"; color_reset; read ownid
+pprint "\PROG ID:"; color_reset; read proid
 pprint "\nMUSIC BOT NAME: "; color_reset; read mbt
 pprint "\nMONGO DB URI: "; color_reset; read mongo_db
 pprint "\nLOG GROUP ID: "; color_reset; read logger
@@ -122,8 +123,9 @@ LOG_GROUP_ID = $logger
 MUSIC_BOT_NAME = $mbt
 STRING_SESSION = $string_session
 USER_OWNER = $user_owner
+PROG_ID = $proid
 OWNER_ID = $ownid""" > .env
 clear
 
-pprint "\n\n\nThanks for using AnonX Music installer, your vars have been saved successfully ! \nIf you wanna add more variables add them in your env by : vi .env"
+pprint "\n\n\nThanks for using HAYA Music installer, your vars have been saved successfully ! \nIf you wanna add more variables add them in your env by : vi .env"
 pprint "\n\nNow you can start the bot by : bash zara\n\n"
