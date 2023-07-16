@@ -1,6 +1,7 @@
 import time
 import asyncio
-from config import OWNER_ID, PROG_ID
+from config import OWNER_ID
+from config import PROG_ID
 from pyrogram import Client, filters
 from AnonX import app
 import random
