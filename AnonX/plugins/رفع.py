@@ -75,7 +75,7 @@ async def rf3nmla(client:Client, message:Message):
 async def tnzelnmla(client:Client, message:Message):
   if message.reply_to_message.from_user.mention in klb:
     klb.remove(message.reply_to_message.from_user.mention)
-  await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n من قائمة الكلاب 😂♥️**")
+  await message.reply_text(f"**تم تنزيل العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n من قائمة الكلاب 😂♥️ \n\n لعرض القائمه اكتب قائمة الكلاب**")
 
 
 @app.on_message(command("قائمة كلاب"))
@@ -83,7 +83,7 @@ async def nml(client:Client, message:Message):
   kq = ""
   for n in klb:
       kq += n + "\n"
-      await message.reply_text(f"**قائمة الكلاب لي تنبح 😂😂 \n\n{kq}\n\n لعرض القائمه اكتب قائمة الكلاب**")
+  await message.reply_text(f"**قائمة الكلاب لي تنبح 😂😂 \n\n{kq}**")
 
 zoj = []
 
@@ -92,7 +92,7 @@ zoj = []
 async def rf3nmla(client, message:Message):
   if message.reply_to_message.from_user.mention in zoj:
     zoj.append(message.reply_to_message.from_user.mention)
-  await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  زوج لـ {message.from_user.mention}😂♥️**")
+  await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  زوج لـ {message.from_user.mention}😂♥️ \n\n لعرض القائمه اكتب قائمة المتزوجين**")
 
 
 @app.on_message(command("ت زوجي"))
@@ -107,7 +107,7 @@ async def nml(client, message):
   zq = ""
   for n in zoj:
       zq += n + "\n"
-      await message.reply_text(f"**قائمة العرسان 😂😂 \n {zq}\n\n لعرض القائمه اكتب قائمة المتزوجين**")
+  await message.reply_text(f"**قائمة العرسان 😂😂 \n {zq}**")
 
 hth =[]
 
@@ -117,7 +117,7 @@ async def rf3nmla(client, message:Message):
   
   if message.reply_to_message.from_user.mention in hth:
     hth.append(message.reply_to_message.from_user.mention)
-  await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  حثاله من قبل {message.from_user.mention}😂♥️**")
+  await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  حثاله من قبل {message.from_user.mention}😂♥️\n\n لعرض القائمه اكتب قائمة حثاله**")
 
 
 @app.on_message(command("ت حثاله"))
@@ -132,7 +132,7 @@ async def nml(client, message):
   hq = ""
   for n in hth:
       hq += n + "\n"
-      await message.reply_text(f"**حثالة المجتمع 😂😂 : \n {hq}\n\n لعرض القائمه اكتب قائمة حثاله**")
+  await message.reply_text(f"**حثالة المجتمع 😂😂 : \n {hq}**")
 
 
 zog =[]
@@ -142,7 +142,7 @@ zog =[]
 async def rf3nmla(client, message:Message):
   if message.reply_to_message.from_user.mention in zog:
     zog.append(message.reply_to_message.from_user.mention)
-  await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  قعدت مرات هذا خلفو دنقات {message.from_user.mention}😂♥️**")
+  await message.reply_text(f"**تم رفع العضو\n│ \n└ʙʏ : {message.reply_to_message.from_user.mention}\n\n  قعدت مرات هذا خلفو دنقات {message.from_user.mention}😂♥️ \n\n لعرض القائمه اكتب قائمة المتزوجات**")
 
 
 @app.on_message(command("ت زوجتي"))
@@ -157,4 +157,4 @@ async def nml(client:Client, message:Message):
   zzq = ""
   for n in zog:
       zzq += n + "\n"
-      await message.reply_text(f"**قائمة العرسان 😂😂 \n {zzq}\n\n لعرض القائمه اكتب قائمة المتزوجات**")
+  await message.reply_text(f"**قائمة العرسان 😂😂 \n {zzq}**")
