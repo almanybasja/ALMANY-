@@ -82,7 +82,8 @@ async def idljjopen(client, message):
 )
 
 async def iddd(client, message):# البريميوم الوهمي كتابة ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
-    member_count = app.get_chat_members_count(chat_id)
+   
+    member_count = app.get_chat_members_count(message.chat.id)
     if member_count < 500:
          rnum ="تفاعل ضعيف"
     elif member_count > 1000:
