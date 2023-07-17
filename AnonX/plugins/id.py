@@ -82,6 +82,11 @@ async def idljjopen(client, message):
 )
 
 async def iddd(client, message):# البريميوم الوهمي كتابة ##|𓆩˹𓏺َِ 𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝞝𝙔 ٍٍٍٍٍٍّّّّّّّ『مـبـ ـࢪمـج ⏎』🇸🇦 ☬, [23/12/44 03:32 ص]
+    member_count = app.get_chat_members_count(chat_id)
+    if member_count < 500:
+         rnum ="تفاعل ضعيف"
+    elif member_count > 1000:
+         rnum = "تفاعل ممتاز"
     txt = ["مــلآگ ونآزل مــن آلســمــآ♥️🥺","وويليييي يااا طرف انتتتتتت","مافيككشش جوو","نععليييي منككككك",]
     xtxk = random.choice(txt)
     botdev= (OWNER_ID)
@@ -109,7 +114,7 @@ async def iddd(client, message):# البريميوم الوهمي كتابة ##|
     usr = await client.get_chat(message.from_user.id)
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"""**✧ ¦{xtxk}\n\n✧ ¦ آســمــڪ ← {message.from_user.mention}\n✧ ¦ يـوزرڪ ← @{message.from_user.username}\n✧ ¦ آيـديــڪ ← `{message.from_user.id}`\n✧ ¦ بـآيـو ← {usr.bio}\n✧ ¦ ࢪتبتك ← {rotba} \n✧ ¦ نوع الحساب ← {prim}**""",
+    await message.reply_photo(photo,       caption=f"""**✧ ¦{xtxk}\n\n✧ ¦ آســمــڪ ← {message.from_user.mention}\n✧ ¦ يـوزرڪ ← @{message.from_user.username}\n✧ ¦ آيـديــڪ ← `{message.from_user.id}`\n✧ ¦ ࢪتبتك ← {rotba} \n✧ ¦ نوع الحساب ← {prim}\n✧ ¦ رسائلك ← {rnum}\n✧ ¦ تفاعلك ← {usr.bio}\n✧ ¦ بـآيـو ← {usr.bio}**""",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
