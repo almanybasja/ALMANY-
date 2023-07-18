@@ -9,7 +9,7 @@ import random
 )
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://graph.org/file/98adb662e22254f88894a.jpg",
+        photo=f"https://telegra.ph/file/4c0e63af8a410d9a53fa0.jpg",
         caption=f"""
  [𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼](https://t.me/HL_BG)
  —————————————
