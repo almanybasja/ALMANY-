@@ -684,7 +684,7 @@ async def __count(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if  str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if  str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		users = len(open(f"Users{bot_id}.json","r").readlines())
 		groups = len(open(f"groups{bot_id}.json","r").readlines())
 		sudos = len(open(f"sudo{bot_id}.json","r").readlines())
@@ -711,7 +711,7 @@ async def close__(_,query:CallbackQuery):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await query.message.delete()
 		
 	else:
@@ -724,7 +724,7 @@ async def del_keyboard(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		return await m.reply("**◍ تم حذف الكيبورد بنجاح  /start\n√**",reply_markup=ReplyKeyboardRemove())
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 
@@ -735,7 +735,7 @@ async def __get_copy(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		users = open(f"Users{bot_id}.json","rb")
 		groups = open(f"groups{bot_id}.json","rb")
 		band = open(f"band{bot_id}.json","rb")
@@ -783,7 +783,7 @@ async def show_groups(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or(user) in owner:
 		groups = open(f"groups{bot_id}.json")
 		x = 1
 		text = "**Bot groups **:\n\n"
@@ -807,7 +807,7 @@ async def __gcopy(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		gr = open(f"groups{bot_id}.json","rb")
 		gc = len(open(f"groups{bot_id}.json","r").readlines())
 		i = await m.reply("**◍ جاري جلب نسخه للمجموعات √**")
@@ -828,7 +828,7 @@ async def get_groups_count(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		leng = len(open(f"groups{bot_id}.json","r").readlines())
 		if leng == 0:
 			return await m.reply("**◍ لا توجد مجموعات تم تفعيلها في البوت √**")
@@ -842,7 +842,7 @@ async def show_links(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		x = 1
 		text = "**Groups links **:\n\n"
 		lenl = len(open(f"links{bot_id}.json","r").readlines())
@@ -865,7 +865,7 @@ async def get_copy___band(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		file = open(f"band{bot_id}.json","rb")
 		lenb = len(open(f"band{bot_id}.json","r").readlines())
 		l = await m.reply("**◍ جاري جلب نسخه للمحظورين √**")
@@ -885,7 +885,7 @@ async def countofuserBan(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		l = await m.reply("**◍ جاري حساب عدد الاعضاء √**")
 		lens = len(open(f"band{bot_id}.json","r").readlines())
 		time.sleep(.5)
@@ -903,7 +903,7 @@ async def ShowMain(c:Client,m:Message):
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		file = open(f"maindevs{bot_id}.json","r")
 		lens = len(open(f"maindevs{bot_id}.json","r").readlines())
 		l = await m.reply("**◍ جاري عرض المطورين الاساسيين √**")
@@ -925,7 +925,7 @@ async def get_MainSudo(c:Client,m:Message):
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		file = open(f"maindevs{bot_id}.json","rb")
 		lenb = len(open(f"maindevs{bot_id}.json","r").readlines())
 		l = await m.reply("**◍ جاري جلب نسخه للمطورين الاساسيين√**")
@@ -943,7 +943,7 @@ async def countofDev(c:Client,m:Message):
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		l = await m.reply("**◍ جاري حساب عدد اساسيين البوت√**")
 		lens = len(open(f"maindevsVII{bot_id}.json","r").readlines())
 		time.sleep(.5)
@@ -961,7 +961,7 @@ async def __show_sudos(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		file = open(f"sudo{bot_id}.json","r")
 		lens = len(open(f"sudo{bot_id}.json","r").readlines())
 		l = await m.reply("**◍ جاري عرض المطورين √**")
@@ -983,7 +983,7 @@ async def countofsudos(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		l = await m.reply("**◍ جاري حساب عدد مطورين البوت √**")
 		lens = len(open(f"sudo{bot_id}.json","r").readlines())
 		time.sleep(.5)
@@ -999,7 +999,7 @@ async def get_copy_Sudo(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		file = open(f"sudo{bot_id}.json","rb")
 		lenb = len(open(f"sudo{bot_id}.json","r").readlines())
 		l = await m.reply("**◍ جاري جلب نسخه للمطورين√**")
@@ -1020,7 +1020,7 @@ async def show_users(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		users = open(f"Users{bot_id}.json","r")
 		x = 1
 		text = "**Bot Users **: \n\n"
@@ -1042,7 +1042,7 @@ async def __get_users_copy(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		l = await m.reply("**◍ جاري سحب نسخه للاعضاء √**")
 		time.sleep(2)
 		lenu = len(open(f"Users{bot_id}.json","r").readlines())
@@ -1061,7 +1061,7 @@ async def countofusers(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		l = await m.reply("**◍ جاري حساب عدد الاعضاء √**")
 		lens = len(open(f"Users{bot_id}.json","r").readlines())
 		time.sleep(.5)
@@ -1076,7 +1076,7 @@ async def countofusers(c:Client,m:Message):
 async def AddKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 		ask = await m.chat.ask('**معرف القناه بدون @**')
 		if ask.text == "الغاء":
 			await ask.request.delete()
@@ -1095,7 +1095,7 @@ async def AddKey(c:Client,m:Message):
 async def ShowKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 	    return await m.reply(f"**@{show_channel()} قناه الاشتراك**")
 	
 
@@ -1104,7 +1104,7 @@ async def DellKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 	    		del_channel()
 	    		
 	
@@ -1114,7 +1114,7 @@ async def DellKey(c:Client,m:Message):
 async def AddChannel(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 		ask = await m.chat.ask('**معرف قناه المطور بدون @**')
 		if ask.text == "الغاء":
 			await ask.request.delete()
@@ -1133,7 +1133,7 @@ async def AddChannel(c:Client,m:Message):
 async def ShowDevKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 	    return await m.reply(f"**@{show_devchannel()} قناه المطور**")
 	
 
@@ -1141,7 +1141,7 @@ async def ShowDevKey(c:Client,m:Message):
 async def DellDevKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 	    		del_devchannel()
 	    		
 
@@ -1153,7 +1153,7 @@ async def DellDevKey(c:Client,m:Message):
 async def AddDevUser(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 		ask = await m.chat.ask('**معرف المطور بدون @**')
 		if ask.text == "الغاء":
 			await ask.request.delete()
@@ -1172,7 +1172,7 @@ async def AddDevUser(c:Client,m:Message):
 async def ShowDevUser(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 	    return await m.reply(f"**@{show_devuser()} معرف المطور**")
 	
 
@@ -1180,7 +1180,7 @@ async def ShowDevUser(c:Client,m:Message):
 async def DellDevUser(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 	    		del_devuser()
 	    		
                 
@@ -1223,7 +1223,7 @@ async def DelOwner(c:Client,m:Message):
 	user = m.from_user.id
 	chat = m.chat.id	
 	user = m.from_user.id
-	if int(user) == owner:
+	if (user) in owner:
 		
 		ask = await app.ask(chat,"**ارسل ايدي المالك**")
 		inputText = ask.text
@@ -1258,7 +1258,7 @@ url=f"https://t.me/{show_devchannel()}")]])
 async def ShowOwner(c:Client,m:Message):
 	user = m.from_user.id
 	
-	if int(user) == owner:
+	if (user) in owner:
 		file = open(f"maindevsVII{bot_id}.json","r")
 		lens = len(open(f"maindevsVII{bot_id}.json","r").readlines())
 		l = await m.reply("**◍ جاري عرض المطورين الاساسيين √**")
@@ -1292,7 +1292,7 @@ async def AddMain(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		
 		ask = await app.ask(chat,"**ارسل ايدي المطور الاساسي ")
 		if ask.text == "الغاء":
@@ -1324,7 +1324,7 @@ async def DelMain(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		
 		ask = await app.ask(chat,"**ارسل ايدي المطور الاساسي**")
 		inputText = ask.text
@@ -1358,7 +1358,7 @@ async def DelAllMain(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 	  del_all_main()
 	    
   
@@ -1371,7 +1371,7 @@ async def AddSudo(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		
 		ask = await app.ask(chat,"**ارسل ايدي المطور")
 		if ask.text == "الغاء":
@@ -1403,7 +1403,7 @@ async def DelSudo(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
-	if str(user) in mainSudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		
 		ask = await app.ask(chat,"**ارسل ايدي المطور**")
 		inputText = ask.text
@@ -1436,7 +1436,7 @@ async def DelAllSudo(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 	    del_all_sudo()
 	
 
@@ -1456,7 +1456,7 @@ async def UnBanUser(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
 		ask = await app.ask(chat,"**ارسل ايدي العضو**")
 		inputText = ask.text
@@ -1492,7 +1492,7 @@ async def ShowBan(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		file = open(f"band{bot_id}.json","r")
 		lens = len(open(f"band{bot_id}.json","r").readlines())
 		l = await m.reply("**◍ جاري عرض المحظورين√**")
@@ -1515,7 +1515,7 @@ async def DelAllBan(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
-	if str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudoVII or (user) in owner:
 	     del_all_ban()
 	     
 	
@@ -1528,7 +1528,7 @@ async def AllCommand__(c,m):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
 		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
@@ -1588,7 +1588,7 @@ async def memcommands__(c,m):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
 		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
@@ -1651,7 +1651,7 @@ async def memcommands__(c,m):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
 		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
@@ -1684,7 +1684,7 @@ async def AllCommand__(c,m):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
 		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
@@ -1733,7 +1733,7 @@ async def memcommands__(c,m):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
 		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
@@ -1762,7 +1762,7 @@ async def memcommands__(c,m):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
 		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
@@ -1791,7 +1791,7 @@ async def memcommands__(c,m):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
 		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
