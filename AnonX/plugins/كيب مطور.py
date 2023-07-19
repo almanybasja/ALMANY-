@@ -3,17 +3,15 @@ from pyrogram.types import *
 from AnonX import app
 from strings.filters import command
 import time
-import requests
 from config import BOT_TOKEN, OWNER_ID
+import requests
 
-api_id = 14170449 
-api_hash = "03488b3c030fe095667e7ca22fe34954 "
+
 token = (BOT_TOKEN)
 
 bot_id = token.split(":")[0]
 
 owner = (OWNER_ID)
-
 
 try:
 	open(f"Users{bot_id}.json","r")
@@ -387,7 +385,7 @@ async def app_start(c:Client,m:Message):
 		except:
 			await app.send_message(owner,"**دخل عضو جديد للبوت ولم استطع تحديد معلوماته √**")
 	
-@app.on_message(command("الاحصائيات","")&filters.private)
+@app.on_message(filters.command("الاحصائيات","")&filters.private)
 async def __count(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -414,7 +412,7 @@ async def __count(c:Client,m:Message):
 		return await m.reply(msg,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("close",callback_data="close")]]))
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 	
-@app.on_callback_query(filters.regex("اغلاق"))
+@app.on_callback_query(filters.regex("close"))
 async def close__(_,query:CallbackQuery):
 	user = query.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -427,7 +425,7 @@ async def close__(_,query:CallbackQuery):
 	else:
 		await query.answer("❎ فقط المطورين من لديهم الحق في القيام بهذا .")
 
-@app.on_message(command("•---- حذف الكيبورد -----•","")&filters.private)
+@app.on_message(filters.command("•---- حذف الكيبورد -----•","")&filters.private)
 async def del_keyboard(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -438,7 +436,7 @@ async def del_keyboard(c:Client,m:Message):
 		return await m.reply("**◍ تم حذف الكيبورد بنجاح  /start\n√**",reply_markup=ReplyKeyboardRemove())
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 
-@app.on_message(command("^نسخه الكل$","")&filters.private)
+@app.on_message(filters.command("^نسخه الكل$","")&filters.private)
 async def __get_copy(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -486,7 +484,7 @@ async def __get_copy(c:Client,m:Message):
 	
 
 
-@app.on_message(command("^عرض المجموعات$","")&filters.private)
+@app.on_message(filters.command("^عرض المجموعات$","")&filters.private)
 async def show_groups(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -510,7 +508,7 @@ async def show_groups(c:Client,m:Message):
 
 #--------------------------Group---------------------------
 
-@app.on_message(command("^نسخه المجموعات$","")&filters.private)
+@app.on_message(filters.command("^نسخه المجموعات$","")&filters.private)
 async def __gcopy(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -531,7 +529,7 @@ async def __gcopy(c:Client,m:Message):
 		return
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 		
-@app.on_message(command("^عدد المجموعات$","")&filters.private)
+@app.on_message(filters.command("^عدد المجموعات$","")&filters.private)
 async def get_groups_count(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -545,7 +543,7 @@ async def get_groups_count(c:Client,m:Message):
 		return await m.reply(f"**◍ تم تفعيل {leng} مجموعة في بوتك \n√**")
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 
-@app.on_message(command("^روابط المجموعات$","")&filters.private)
+@app.on_message(filters.command("^روابط المجموعات$","")&filters.private)
 async def show_links(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -588,7 +586,7 @@ async def get_copy___band(c:Client,m:Message):
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 
 
-@app.on_message(command("^عدد المحظورين$","")&filters.private)
+@app.on_message(filters.command("^عدد المحظورين$","")&filters.private)
 async def countofuserBan(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -607,7 +605,7 @@ async def countofuserBan(c:Client,m:Message):
 
 #----------------SpecialVIIUser-------------------------
 
-@app.on_message(command("عرض المطورين الاساسيين","")|filters.command("عرض الاساسيين","") &filters.private)
+@app.on_message(filters.command("عرض المطورين الاساسيين","")|filters.command("عرض الاساسيين","") &filters.private)
 async def ShowMain(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -629,7 +627,7 @@ async def ShowMain(c:Client,m:Message):
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 	
 
-@app.on_message(command("^نسخه الاساسيين$","")&filters.private)
+@app.on_message(filters.command("^نسخه الاساسيين$","")&filters.private)
 async def get_MainSudo(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -647,7 +645,7 @@ async def get_MainSudo(c:Client,m:Message):
 		return
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 	
-@app.on_message(command("^عدد الاساسيين$","")&filters.private)
+@app.on_message(filters.command("^عدد الاساسيين$","")&filters.private)
 async def countofDev(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -664,7 +662,7 @@ async def countofDev(c:Client,m:Message):
 
 #----------------------SpecialUser-----------------------
 
-@app.on_message(command("^عرض المطورين$","")&filters.private)
+@app.on_message(filters.command("^عرض المطورين$","")&filters.private)
 async def __show_sudos(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -686,7 +684,7 @@ async def __show_sudos(c:Client,m:Message):
 		return await l.edit(text=text)
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 
-@app.on_message(command("^عدد المطورين$","")&filters.private)
+@app.on_message(filters.command("^عدد المطورين$","")&filters.private)
 async def countofsudos(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -702,7 +700,7 @@ async def countofsudos(c:Client,m:Message):
 		return await l.edit(f"**◍ تم رفع {lens} مطور في البوت √**")
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 
-@app.on_message(command("^نسخه المطورين$","")&filters.private)
+@app.on_message(filters.command("^نسخه المطورين$","")&filters.private)
 async def get_copy_Sudo(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -723,7 +721,7 @@ async def get_copy_Sudo(c:Client,m:Message):
 	
 #-------------------NormalUser-------------------------
 
-@app.on_message(command("^عرض الاعضاء$","")&filters.private)
+@app.on_message(filters.command("^عرض الاعضاء$","")&filters.private)
 async def show_users(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -745,7 +743,7 @@ async def show_users(c:Client,m:Message):
 		return await i.edit(text=text)
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 
-@app.on_message(command("^نسخه الاعضاء$","")&filters.private)
+@app.on_message(filters.command("^نسخه الاعضاء$","")&filters.private)
 async def __get_users_copy(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -764,7 +762,7 @@ async def __get_users_copy(c:Client,m:Message):
 		return
 	return await m.reply("**◍ انت لست مطور في البوت \n√**")
 
-@app.on_message(command("^عدد الاعضاء$","")&filters.private)
+@app.on_message(filters.command("^عدد الاعضاء$","")&filters.private)
 async def countofusers(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
@@ -782,7 +780,7 @@ async def countofusers(c:Client,m:Message):
 
 #--------♡-------------Subscribe------------♡----------
 
-@app.on_message(command("اضف قناة اشتراك اجباري","")&filters.private)
+@app.on_message(filters.command("اضف قناة اشتراك اجباري","")&filters.private)
 async def AddKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
@@ -801,7 +799,7 @@ async def AddKey(c:Client,m:Message):
 		await m.reply('**تم وضع {} قناة اشتراك √**'.format(ask.text))
 		return
 		
-@app.on_message(command("عرض قناة الاشتراك","")&filters.private)
+@app.on_message(filters.command("عرض قناة الاشتراك","")&filters.private)
 async def ShowKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
@@ -809,7 +807,7 @@ async def ShowKey(c:Client,m:Message):
 	    return await m.reply(f"**@{show_channel()} قناه الاشتراك**")
 	
 
-@app.on_message(command("حذف قناه الاشتراك","")&filters.private)
+@app.on_message(filters.command("حذف قناه الاشتراك","")&filters.private)
 async def DellKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
@@ -822,7 +820,7 @@ async def DellKey(c:Client,m:Message):
 	
 #--------------------------------------------------------------
 #-----------------------DevChannel---------------------
-@app.on_message(command("اضافه قناه المطور","")&filters.private)
+@app.on_message(filters.command("اضافه قناه المطور","")&filters.private)
 async def AddChannel(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
@@ -841,7 +839,7 @@ async def AddChannel(c:Client,m:Message):
 		await m.reply('**تم وضع قناه المطور @{} √**'.format(ask.text))
 		return
 		
-@app.on_message(command("عرض قناة المطور","")&filters.private)
+@app.on_message(filters.command("عرض قناة المطور","")&filters.private)
 async def ShowDevKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
@@ -972,7 +970,7 @@ url=f"https://t.me/{show_devchannel()}")]])
 async def ShowOwner(c:Client,m:Message):
 	user = m.from_user.id
 	
-	if (user) in owner:
+	if(user) in owner:
 		file = open(f"maindevsVII{bot_id}.json","r")
 		lens = len(open(f"maindevsVII{bot_id}.json","r").readlines())
 		l = await m.reply("**◍ جاري عرض المطورين الاساسيين √**")
