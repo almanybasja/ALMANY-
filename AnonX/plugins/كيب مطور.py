@@ -3,14 +3,14 @@ from pyrogram.types import *
 from AnonX import app
 from strings.filters import command
 import time
-from config import BOT_TOKEN, OWNER_ID
+from config import BOT_TOKEN, OWNER_ID, BOT_ID
 import requests
 import json
 
 
 token = (BOT_TOKEN)
 
-bot_id = token.split(":")[0]
+bot_id = (BOT_ID)
 
 owner = (OWNER_ID)
 
