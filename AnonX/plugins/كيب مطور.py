@@ -1251,7 +1251,7 @@ async def AllCommand__(c,m):
 	
 	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
-		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
+		ask = await m.reply(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
 		
 		if inputText == "الغاء":
