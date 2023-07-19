@@ -8,7 +8,7 @@ from pyrogram import filters
 from pyrogram.errors import MessageIdInvalid
 from pyrogram.types import CallbackQuery, InputMediaPhoto, Message
 from pytgcalls.__version__ import __version__ as pytgver
-
+from strings.filters import command
 import config
 from config import BANNED_USERS, MUSIC_BOT_NAME
 from strings import get_command
