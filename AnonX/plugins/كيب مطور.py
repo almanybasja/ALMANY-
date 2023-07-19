@@ -5,6 +5,7 @@ from strings.filters import command
 import time
 from config import BOT_TOKEN, OWNER_ID
 import requests
+import json
 
 
 token = (BOT_TOKEN)
@@ -63,7 +64,7 @@ except FileNotFoundError:
 	
 
 	
-source_ch = "Y8830"
+source_ch = "HL_BG"
 
 
 
@@ -197,7 +198,7 @@ sudo_keyboard = ReplyKeyboardMarkup([
 
 def is_user(id):
 	result = False
-	file = open(f"Users{bot_id}.json","r")
+	file =  json.loads(open(f"Users{bot_id}.json","r"))
 	for line in file:
 		if line.strip()==id:
 			result = True
@@ -206,7 +207,7 @@ def is_user(id):
 
 def is_dev(id):
 	result = False
-	file = open(f"sudo{bot_id}.json","r")
+	file =  json.loads(open(f"sudo{bot_id}.json","r"))
 	for line in file:
 		if line.strip()==id:
 			result = True
@@ -214,7 +215,7 @@ def is_dev(id):
 	return result
 	
 def del_all_sudo():
-	open(f"sudo{bot_id}.json","w")
+	 json.loads(open(f"sudo{bot_id}.json","w"))
 
 def del_all_main():
 	open(f"maindevs{bot_id}.json","w")
