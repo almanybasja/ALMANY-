@@ -197,7 +197,7 @@ sudo_keyboard = ReplyKeyboardMarkup([
 
 
 def is_user(id):
-	result = False
+	result = True
 	file =  json.loads(open(f"Users{bot_id}.json","r"))
 	for line in file:
 		if line.strip()==id:
@@ -206,7 +206,7 @@ def is_user(id):
 	return result
 
 def is_dev(id):
-	result = False
+	result = True
 	file =  json.loads(open(f"sudo{bot_id}.json","r"))
 	for line in file:
 		if line.strip()==id:
@@ -227,7 +227,7 @@ def del_all_ban():
 	open(f"band{bot_id}.json","w")
 
 def is_main_dev(id):
-	result = False
+	result = True
 	file = open(f"maindevs{bot_id}.json","r")
 	for line in file:
 		if line.strip()==id:
@@ -236,7 +236,7 @@ def is_main_dev(id):
 	return result
 	
 def is_main_devVII(id):
-	result = False
+	result = True
 	file = open(f"maindevsVII{bot_id}.json","r")
 	for line in file:
 		if line.strip()==id:
@@ -245,7 +245,7 @@ def is_main_devVII(id):
 	return result
 	
 def is_band(id):
-	result = False
+	result = True
 	file = open(f"band{bot_id}.json","r")
 	for line in file:
 		if line.strip()==id:
@@ -254,7 +254,7 @@ def is_band(id):
 	return  result
 	
 def is_group(id):
-	result = False
+	result = True
 	file = open(f"groups{bot_id}.json","r")
 	for line in file:
 		if line.strip()==id:
