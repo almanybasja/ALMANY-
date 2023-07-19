@@ -39,7 +39,7 @@ loop = asyncio.get_running_loop()
 token = (BOT_TOKEN)
 bot_id = app.bot_token.split(":")[0]
 r = redis.from_url('redis://')
-owner = (OWNER_ID)
+dev = (OWNER_ID)
 dev_owner = int(6275847466)
 @app.on_message(
     filters.command(get_command("START_COMMAND"))
@@ -63,7 +63,7 @@ async def start_comm(client, message: Message, _):
 [("•---- حذف الكيبورد -----•")]
 ], resize_keyboard=True)
             user = m.from_user.id
-            if int(user) == owner:
+            if int(user) == dev_owner:
                 await message.reply(f"**𖢿 | : مرحبا حبيبي الوسكي مطور السورس{message.from_user.mention}\n𖢿 | : كل اقسام التحكم بالبوتات\n𖢿 | : تستطيع التحكم بكل البوتات عن طريق هذه الازرار**",reply_markup=OwnerM)
 					
             elif message.from_user.id in dev:
@@ -244,9 +244,9 @@ async def start_comm(client, message: Message, _):
 [("•---- حذف الكيبورد -----•")]
 ], resize_keyboard=True)		    
                 user = m.from_user.id
-                if int(user) == owner: 
+                if int(user) == dev_owner: 
                    await message.reply(f"**𖢿 | : مرحبا حبيبي الوسكي مطور السورس{message.from_user.mention}\n𖢿 | : كل اقسام التحكم بالبوتات\n𖢿 | : تستطيع التحكم بكل البوتات عن طريق هذه الازرار**",reply_markup=OwnerM)
-                elif message.from_user.id in dev: 
+                elif message.from_user.id in owner: 
                    await message.reply_text(f"**𖢿 | : مرحبا عزيزي المطور الاساسي {message.from_user.mention}\n𖢿 | : اليك ازرار التحكم بالاقسام\n𖢿 | : تستطيع التحكم بجميع الاقسام فقط اضغط على القسم الذي تريده**",reply_markup=main_dev_key)
                 else:  
                    await message.reply_text(f"**اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي**",reply_markup=Owneruser)
