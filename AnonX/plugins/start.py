@@ -62,7 +62,7 @@ async def start_comm(client, message: Message, _):
 [("اذكار"),("مميزات"),("ذكاء اصتناعي")],
 [("•---- حذف الكيبورد -----•")]
 ], resize_keyboard=True)
-            user = m.from_user.id
+            user = message.from_user.id
             if int(user) == dev_owner:
                 await message.reply(f"**𖢿 | : مرحبا حبيبي الوسكي مطور السورس{message.from_user.mention}\n𖢿 | : كل اقسام التحكم بالبوتات\n𖢿 | : تستطيع التحكم بكل البوتات عن طريق هذه الازرار**",reply_markup=OwnerM)
 					
@@ -243,7 +243,7 @@ async def start_comm(client, message: Message, _):
 [("اذكار"),("مميزات"),("ذكاء اصتناعي")],
 [("•---- حذف الكيبورد -----•")]
 ], resize_keyboard=True)		    
-                user = m.from_user.id
+                user = message.from_user.id
                 if int(user) == dev_owner: 
                    await message.reply(f"**𖢿 | : مرحبا حبيبي الوسكي مطور السورس{message.from_user.mention}\n𖢿 | : كل اقسام التحكم بالبوتات\n𖢿 | : تستطيع التحكم بكل البوتات عن طريق هذه الازرار**",reply_markup=OwnerM)
                 elif message.from_user.id in owner: 
