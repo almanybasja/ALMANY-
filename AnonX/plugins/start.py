@@ -1,5 +1,6 @@
 import asyncio
 import time
+import json
 from pyrogram.types import *
 from pyrogram.errors import PeerIdInvalid
 from pyrogram import filters, Client
@@ -348,49 +349,49 @@ async def welcome(client, message: Message):
             return
 
 try:
-	open(f"Users{bot_id}.json","r")
+	 json.loads(open(f"Users{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"Users{bot_id}.json","w")
+	 json.loads(open(f"Users{bot_id}.json","w"))
 try:
-	open(f"sudo{bot_id}.json","r")
+	 json.loads(open(f"sudo{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"sudo{bot_id}.json","w")
+	 json.loads(open(f"sudo{bot_id}.json","w"))
 try:
-	open(f"maindevs{bot_id}.json","r")
+	 json.loads(open(f"maindevs{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"maindevs{bot_id}.json","w")
+	 json.loads(open(f"maindevs{bot_id}.json","w"))
 try:
-	open(f"maindevsVII{bot_id}.json","r")
+	 json.loads(open(f"maindevsVII{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"maindevsVII{bot_id}.json","w")
+	 json.loads(open(f"maindevsVII{bot_id}.json","w"))
 try:
-	open(f"groups{bot_id}.json","r")
+	 json.loads(open(f"groups{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"groups{bot_id}.json","w")
+	 json.loads(open(f"groups{bot_id}.json","w"))
 try:
-	open(f"band{bot_id}.json","r")
+	 json.loads(open(f"band{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"band{bot_id}.json","w")
+	 json.loads(open(f"band{bot_id}.json","w"))
 try:
-	open(f"links{bot_id}.json","r")
+	 json.loads(open(f"links{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"links{bot_id}.json","w")
+	 json.loads(open(f"links{bot_id}.json","w"))
 try:
-	open(f"channel{bot_id}.json","r")
+	 json.loads(open(f"channel{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"channel{bot_id}.json","w")
+	 json.loads(open(f"channel{bot_id}.json","w"))
 try:
-	open(f"devchannel{bot_id}.json","r")
+	 json.loads(open(f"devchannel{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"devchannel{bot_id}.json","w")
+	 json.loads(open(f"devchannel{bot_id}.json","w"))
 try:
-	open(f"devuser{bot_id}.json","r")
+	 json.loads(open(f"devuser{bot_id}.json","r"))
 except FileNotFoundError:
-	open(f"devuser{bot_id}.json","w")
+	 json.loads(open(f"devuser{bot_id}.json","w"))
 try:
-	open(f'owner{bot_id}.json','r')
+	 json.loads(open(f'owner{bot_id}.json','r'))
 except FileNotFoundError:
-	f = open(f'owner{bot_id}.json','w')
+	f =  json.loads(open(f'owner{bot_id}.json','w'))
 	f.write(str(owner))
 	
 
@@ -403,6 +404,7 @@ start_text = "**welcome {} , its just a test bot √**"
 
 
 
+
 OwnerM = ReplyKeyboardMarkup([
 [("رفع مالك"),("تنزيل مالك"),("المالكين"),("حذف المالكين")],
 [("الغاء")], 
@@ -410,10 +412,20 @@ OwnerM = ReplyKeyboardMarkup([
 [("الاحصائيات"),("نسخه الكل")],
 [("عرض المجموعات"),("عدد المجموعات"),("نسخه المجموعات"),("روابط المجموعات")],
 [("عرض الاساسيين"),("عرض الاعضاء"),("عرض المحظورين"),("عرض المطورين")], 
-[("عدد الاساسيين"),("عدد الاعضاء"),("عدد المحظورين"),("عدد المطورين")],
+[("عدد الاساسيين"),("عدد الاعضاء"),("عدد المحظورين"),("عدد المطورين")], 
+[("نسخه الاساسيين"),("نسخه الاعضاء"),("نسخه المحظورين"),("نسخه المطورين")],
+
+[("-")], 
+
+[("◍ قسم الاذاعه ◍")],
+[("توجيه للكل"),("-"),("اذاعه للكل")],
+[("-"),("-"),("-")],
 [("اذاعه الاعضاء"),("اذاعه المجموعات"),("اذاعه المحظورين")],
 [("توجيه الاعضاء"),("توجيه المجموعات"),("توجيه محظورين")],
-[("الغاء")],
+[("الغاء")], 
+
+
+[("◍ قسم الاساسيين"),("◍ قسم المطورين"),("◍ قسم الحظر ◍")],
 [("رفع مطور اساسي"),("رفع مطور"),("حظر عضو")],
 [("تنزيل مطور اساسي"),("تنزيل مطور"),("الغاء حظر عضو")],
 [("عرض المطورين الاساسيين"),("عرض المطورين"),("عرض المحظورين")],
@@ -667,15 +679,44 @@ async def app_start(c:Client,m:Message):
 	banD = open(f"band{bot_id}.json","r").read()
 	
 	if do.count("left") or do.count("Bad Request: user not found") or is_user(id=user) and not is_band(user):
-          await m.reply_text(f"**Join [this channel](t.me/{show_channel()}) first to be able to use the bot**",disable_web_page_preview=True,reply_markup=InlineKeyboardMarkup(
-    [[
-          InlineKeyboardButton("Join Channel",
-          url=f'https://t.me/{show_channel()}'),
-],
-]))
+          
+		await m.reply_text(f"**Join [this channel](t.me/{show_channel()}) first to be able to use the bot**",disable_web_page_preview=True,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Channel",url=f'https://t.me/{show_channel()}'),],]))
+	else:    
 		
+		await app.send_message(text=f"Hi {m.from_user.mention}",
+	      chat_id = m.chat.id, 
+          reply_to_message_id=m.id,
+        disable_web_page_preview = True)
 	
 	
+	if str(user) in banD:
+		
+		return await m.reply(f"**◍ عذرا {mm} انت محظور من استخدام البوت \n√**",reply_markup=dev_ch_bu)
+		
+	if user == owner:
+		return await m.reply(f"💌╖اهلا بيك حبيبي آلمـطـور الاساسي\n⚙️╢ تقدر تتحكم باوامر البوت عن طريق\n🔍╢ الكيبور اللي ظهرتلك تحت ↘️\n🔰╜ للدخول لقناة السورس @{show_devchannel()}",reply_markup=OwnerM)
+	
+	if str(user) in mainSudoVII:
+		return await m.reply(f"💌╖اهلا بيك حبيبي آلمـطـور الاساسي\n⚙️╢ تقدر تتحكم باوامر البوت عن طريق\n🔍╢ الكيبور اللي ظهرتلك تحت ↘️\n🔰╜ للدخول لقناة السورس @{show_devchannel()}",reply_markup=mainSudoVIIM)
+	
+	if str(user) in mainSudo:
+		return await m.reply(f"💌╖اهلا بيك حبيبي آلمـطـور الاساسي\n⚙️╢ تقدر تتحكم باوامر البوت عن طريق\n🔍╢ الكيبور اللي ظهرتلك تحت ↘️\n🔰╜ للدخول لقناة السورس @{show_devchannel()}",reply_markup=main_dev_key)
+	
+	if str(user) in Sudo:
+		return await m.reply(sudo_message,reply_markup=sudo_keyboard)
+	
+	if is_user(id=user) and not is_band(user):
+		return await m.reply(start_text,reply_markup=start_buttons)
+		
+	if (not is_user(id=str(user))):
+		add_user(id=user)
+		cc = time.strftime("%H : %M : %S")
+		try:
+			await app.send_message(owner,New_Member.format(mm,user,cc),
+			reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("دخول لحسابه",
+			user_id=int(user))]]))
+		except:
+			await app.send_message(owner,"**دخل عضو جديد للبوت ولم استطع تحديد معلوماته √**")
 	
 @app.on_message(filters.command("الاحصائيات","")&filters.private)
 async def __count(c:Client,m:Message):
@@ -783,7 +824,7 @@ async def show_groups(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or(user) in owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		groups = open(f"groups{bot_id}.json")
 		x = 1
 		text = "**Bot groups **:\n\n"
@@ -943,7 +984,7 @@ async def countofDev(c:Client,m:Message):
 	mainSudo = open(f"maindevs{bot_id}.json","r").read()
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
+	if str(user) in mainSudo or str(user) in mainSudoVII or int(user) == owner:
 		l = await m.reply("**◍ جاري حساب عدد اساسيين البوت√**")
 		lens = len(open(f"maindevsVII{bot_id}.json","r").readlines())
 		time.sleep(.5)
@@ -1105,8 +1146,10 @@ async def DellKey(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	if str(user) in mainSudoVII or (user) in owner:
-	    		del_channel()
-	    		
+	     
+		del_channel()
+	    
+		await m.reply(f"تم حذفها")
 	
 #--------------------------------------------------------------
 #-----------------------DevChannel---------------------
@@ -1142,10 +1185,11 @@ async def DellDevKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudoVII or (user) in owner:
-	    		del_devchannel()
-	    		
-
-	    		
+	     
+		del_devchannel()
+	    
+		await m.reply(f"تم حذفها")
+	
 
 #--------------------------------------------------------------
 #-----------------------DevUser-------------------------
@@ -1181,9 +1225,10 @@ async def DellDevUser(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudoVII or (user) in owner:
-	    		del_devuser()
-	    		
-                
+	     
+		del_devuser()
+	    
+		await m.reply(f"تم حذفها")
 	    		
 #-------------------------------------------------------------
 #---------------------AddOwner------------------------
@@ -1223,7 +1268,7 @@ async def DelOwner(c:Client,m:Message):
 	user = m.from_user.id
 	chat = m.chat.id	
 	user = m.from_user.id
-	if (user) in owner:
+	if int(user) == owner:
 		
 		ask = await app.ask(chat,"**ارسل ايدي المالك**")
 		inputText = ask.text
@@ -1258,7 +1303,7 @@ url=f"https://t.me/{show_devchannel()}")]])
 async def ShowOwner(c:Client,m:Message):
 	user = m.from_user.id
 	
-	if (user) in owner:
+	if int(user) == owner:
 		file = open(f"maindevsVII{bot_id}.json","r")
 		lens = len(open(f"maindevsVII{bot_id}.json","r").readlines())
 		l = await m.reply("**◍ جاري عرض المطورين الاساسيين √**")
@@ -1279,9 +1324,11 @@ async def ShowOwner(c:Client,m:Message):
 async def DelAllOwner(c:Client,m:Message):
 	user = m.from_user.id
 	if int(user) == owner:
-	    del_all_mainVII()
-		        
-
+	     
+		del_all_mainVII()
+	    
+		await m.reply(f"تم حذفها")
+	
 
 #-------------------------------------------------------------
 #-------------------------AddMain------------------------
@@ -1359,9 +1406,11 @@ async def DelAllMain(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
 	if str(user) in mainSudoVII or (user) in owner:
-	  del_all_main()
+	     
+		del_all_main()
 	    
-  
+		await m.reply(f"تم حذفها")
+	
 #-------------------------------------------------------------
 #-------------------------AddSudo------------------------
 @app.on_message(filters.command("رفع مطور",prefixes="")&filters.private)
@@ -1436,15 +1485,17 @@ async def DelAllSudo(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
-	if str(user) in mainSudoVII or (user) in owner:
-	    del_all_sudo()
+	if str(user) in mainSudoVII or int(user) == owner:
+	     
+		del_all_sudo()
+	    
+		await m.reply(f"تم حذفها")
 	
-
 
 #-------------------------------------------------------------
 #------------------------BanUser-------------------------
 
-		
+	 		
 #-------------------------------------------------------------
 #-------------------------DelBanUser--------------------
 
@@ -1516,8 +1567,11 @@ async def DelAllBan(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	
 	if str(user) in mainSudoVII or (user) in owner:
-	     del_all_ban()
 	     
+		del_all_ban()
+	    
+		await m.reply(f"تم حذفها")
+	
 	
 #--------------------------AllBroadCast--------------------	
 @app.on_message(filters.command("اذاعه للكل",prefixes=""))
@@ -1619,7 +1673,7 @@ async def memcommands__(c,m):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
 		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
@@ -1762,7 +1816,7 @@ async def memcommands__(c,m):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	sudo = open(f"sudo{bot_id}.json","r").read()
 	
-	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
+	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
 		await m.delete()
 		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
@@ -1813,4 +1867,5 @@ async def memcommands__(c,m):
 			await app.send_message(chat,f"**تم الاذاعه بالتوجيه الي **: \n {gr} من المحظورين")
 
 		
+
 		
