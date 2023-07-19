@@ -348,51 +348,54 @@ async def welcome(client, message: Message):
         except:
             return
 
+
 try:
-	 json.loads(open(f"Users{bot_id}.json","r"))
+	open(f"Users{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"Users{bot_id}.json","w"))
+	open(f"Users{bot_id}.json","w")
 try:
-	 json.loads(open(f"sudo{bot_id}.json","r"))
+	open(f"sudo{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"sudo{bot_id}.json","w"))
+	open(f"sudo{bot_id}.json","w")
 try:
-	 json.loads(open(f"maindevs{bot_id}.json","r"))
+	open(f"maindevs{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"maindevs{bot_id}.json","w"))
+	open(f"maindevs{bot_id}.json","w")
 try:
-	 json.loads(open(f"maindevsVII{bot_id}.json","r"))
+	open(f"maindevsVII{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"maindevsVII{bot_id}.json","w"))
+	open(f"maindevsVII{bot_id}.json","w")
 try:
-	 json.loads(open(f"groups{bot_id}.json","r"))
+	open(f"groups{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"groups{bot_id}.json","w"))
+	open(f"groups{bot_id}.json","w")
 try:
-	 json.loads(open(f"band{bot_id}.json","r"))
+	open(f"band{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"band{bot_id}.json","w"))
+	open(f"band{bot_id}.json","w")
 try:
-	 json.loads(open(f"links{bot_id}.json","r"))
+	open(f"links{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"links{bot_id}.json","w"))
+	open(f"links{bot_id}.json","w")
 try:
-	 json.loads(open(f"channel{bot_id}.json","r"))
+	open(f"channel{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"channel{bot_id}.json","w"))
+	open(f"channel{bot_id}.json","w")
 try:
-	 json.loads(open(f"devchannel{bot_id}.json","r"))
+	open(f"devchannel{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"devchannel{bot_id}.json","w"))
+	open(f"devchannel{bot_id}.json","w")
 try:
-	 json.loads(open(f"devuser{bot_id}.json","r"))
+	open(f"devuser{bot_id}.json","r")
 except FileNotFoundError:
-	 json.loads(open(f"devuser{bot_id}.json","w"))
+	open(f"devuser{bot_id}.json","w")
 try:
-	 json.loads(open(f'owner{bot_id}.json','r'))
+	open(f'owner{bot_id}.json','r')
 except FileNotFoundError:
-	f =  json.loads(open(f'owner{bot_id}.json','w'))
+	f = open(f'owner{bot_id}.json','w')
 	f.write(str(owner))
+	
+
 	
 
 	
