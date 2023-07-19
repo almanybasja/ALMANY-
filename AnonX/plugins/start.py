@@ -1121,7 +1121,7 @@ async def AddKey(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudoVII or (user) in owner:
-		ask = await m.chat.ask('**معرف القناه بدون @**')
+		ask = await m.reply('**معرف القناه بدون @**')
 		if ask.text == "الغاء":
 			await ask.request.delete()
 			await ask.delete()
@@ -1161,7 +1161,7 @@ async def AddChannel(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudoVII or (user) in owner:
-		ask = await m.chat.ask('**معرف قناه المطور بدون @**')
+		ask = await m.reply('**معرف قناه المطور بدون @**')
 		if ask.text == "الغاء":
 			await ask.request.delete()
 			await ask.delete()
@@ -1201,7 +1201,7 @@ async def AddDevUser(c:Client,m:Message):
 	user = m.from_user.id
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudoVII or (user) in owner:
-		ask = await m.chat.ask('**معرف المطور بدون @**')
+		ask = await m.reply('**معرف المطور بدون @**')
 		if ask.text == "الغاء":
 			await ask.request.delete()
 			await ask.delete()
@@ -1243,7 +1243,7 @@ async def AddOwner(c:Client,m:Message):
 	user = m.from_user.id
 	if int(user) == owner:
 		
-		ask = await app.ask(chat,"**ارسل ايدي المالك**")
+		ask = await m.reply(chat,"**ارسل ايدي المالك**")
 		if ask.text == "الغاء":
 			await ask.request.delete()
 			await m.delete()
@@ -1273,7 +1273,7 @@ async def DelOwner(c:Client,m:Message):
 	user = m.from_user.id
 	if int(user) == owner:
 		
-		ask = await app.ask(chat,"**ارسل ايدي المالك**")
+		ask = await m.reply(chat,"**ارسل ايدي المالك**")
 		inputText = ask.text
 		if inputText =="الغاء":
 			await ask.request.delete()
@@ -1344,7 +1344,7 @@ async def AddMain(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		
-		ask = await app.ask(chat,"**ارسل ايدي المطور الاساسي ")
+		ask = await m.reply(chat,"**ارسل ايدي المطور الاساسي ")
 		if ask.text == "الغاء":
 			await ask.request.delete()
 			await m.delete()
@@ -1376,10 +1376,10 @@ async def DelMain(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		
-		ask = await app.ask(chat,"**ارسل ايدي المطور الاساسي**")
+		ask = await m.reply(chat,"**ارسل ايدي المطور الاساسي**")
 		inputText = ask.text
 		if inputText =="الغاء":
-			await ask.request.delete()
+			await ask.delete()
 			await m.delete()
 			await m.reply("**تم الالغاء**")
 		else:
@@ -1425,7 +1425,7 @@ async def AddSudo(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		
-		ask = await app.ask(chat,"**ارسل ايدي المطور")
+		ask = await m.reply(chat,"**ارسل ايدي المطور")
 		if ask.text == "الغاء":
 			await ask.request.delete()
 			await m.delete()
@@ -1457,10 +1457,10 @@ async def DelSudo(c:Client,m:Message):
 	mainSudoVII = open(f"maindevsVII{bot_id}.json","r").read()
 	if str(user) in mainSudo or str(user) in mainSudoVII or (user) in owner:
 		
-		ask = await app.ask(chat,"**ارسل ايدي المطور**")
+		ask = await m.reply(chat,"**ارسل ايدي المطور**")
 		inputText = ask.text
 		if inputText =="الغاء":
-			await ask.request.delete()
+			await ask.delete()
 			await m.delete()
 			await m.reply("**تم الالغاء**")
 		else:
@@ -1512,7 +1512,7 @@ async def UnBanUser(c:Client,m:Message):
 	
 	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
-		ask = await app.ask(chat,"**ارسل ايدي العضو**")
+		ask = await m.reply(chat,"**ارسل ايدي العضو**")
 		inputText = ask.text
 		if inputText == "الغاء":
 			await ask.request.delete()
@@ -1678,7 +1678,7 @@ async def memcommands__(c,m):
 	
 	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
-		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
+		ask = await m.reply(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
 		
 		if inputText == "الغاء":
@@ -1710,7 +1710,7 @@ async def memcommands__(c,m):
 	
 	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
-		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
+		ask = await m.reply(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
 		
 		if inputText == "الغاء":
@@ -1743,7 +1743,7 @@ async def AllCommand__(c,m):
 	
 	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
-		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
+		ask = await m.reply(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
 		
 		if inputText == "الغاء":
@@ -1792,7 +1792,7 @@ async def memcommands__(c,m):
 	
 	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
-		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
+		ask = await m.reply(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
 		
 		if inputText == "الغاء":
@@ -1821,7 +1821,7 @@ async def memcommands__(c,m):
 	
 	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or int(user) == owner:
 		await m.delete()
-		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
+		ask = await m.reply(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
 		
 		if inputText == "الغاء":
@@ -1850,7 +1850,7 @@ async def memcommands__(c,m):
 	
 	if str(user) in mainSudo or str(user) in sudo or str(user) in mainSudoVII or (user) in owner:
 		await m.delete()
-		ask = await app.ask(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
+		ask = await m.reply(chat,"**• ارسل الإذاعة الآن ( صورة، ملصق، نص، متحركة، جهة اتصال، ملف )**")
 		inputText = ask.text 
 		
 		if inputText == "الغاء":
