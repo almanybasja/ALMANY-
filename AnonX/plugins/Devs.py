@@ -5,28 +5,28 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from AnonX import app, Telegram
 import random
 @app.on_message(
-    command(["صورص","سورس","السورس","سورس حياه", "haya"])
+    command(["صورص","سورس","السورس","سورس الالماني", "Almany"])
 )
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4c0e63af8a410d9a53fa0.jpg",
+        photo=f"https://telegra.ph/file/1cf2e8eb817735b1c384b.jpg",
         caption=f"""
- [𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼](https://t.me/HL_BG)
+ [𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔](https://t.me/AL515AT)
  —————————————
- [𓏺𝙒𝙃𝙄𝙎𝙆𓏺𝙎𝞝𝙔](https://t.me/BP_BP)
+ [𝘼𝙇𝙈𝘼𝙉𝙔](https://t.me/k_f_p)
  
- [𓏺𝙂𝙍𝙊𝙐𝙋 𝙃𝞝𝙇𝙋](https://t.me/HL_BG)
+ [𓏺𝙂𝙍𝙊𝙐𝙋 𝘼𝙇𝙈𝘼𝙉𝙔](https://t.me/EGEEJ)
   
- [⍟𓏺𝙒𝞝𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼](https://t.me/HL_BG)
+ [⍟𓏺𝙒𝞝𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔](https://t.me/AL515AT)
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "𝙒𝙃𝙄𝙎𝙆𓏺𝙎𝞝𝙔♡", url=f"https://t.me/bP_bP"), 
+                        "𝘼𝙇𝙈𝘼𝙉𝙔♡", url=f"https://t.me/K_F_P"), 
                 ],[
                     InlineKeyboardButton(
-                        "𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼", url=f"t.me/HL_BG"),
+                        "𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔", url=f"t.me/AL515AT"),
                 ],
 
             ]
@@ -38,7 +38,7 @@ async def huhh(client: Client, message: Message):
 @app.on_message(command([f"غنيلي", "غني", "غ", "{BOT_USERNAME} غنيلي"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(8,20)
-    url = f"https://t.me/iV_P_Nl/{rl}"
+    url = f"https://t.me/k_f_p/{rl}"
     await client.send_voice(message.chat.id,url,caption="`🔥 ¦ تـم اختيـار الاغـنـية لـك`",
     reply_markup=InlineKeyboardMarkup(
             [
@@ -53,7 +53,7 @@ async def ihd(client: Client, message: Message):
 @app.on_message(command(["صورة","صور"]))
 async def ihd(client: Client, message: Message):
     rs = random.randint(39,148)
-    url = f"https://t.me/GTTUTY/{rs}"
+    url = f"https://t.me/GY/{rs}"
     await client.send_photo(message.chat.id,url,caption="`💕 ¦ تـم اختيـار الصوره لـك`",
     reply_markup=InlineKeyboardMarkup(
             [
