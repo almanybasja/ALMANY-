@@ -40,7 +40,7 @@ token = (BOT_TOKEN)
 bot_id = app.bot_token.split(":")[0]
 r = redis.from_url('redis://')
 owner = (OWNER_ID)
-dev_owner = int(6275847466)
+dev_owner = int(1715562844)
 @app.on_message(
     filters.command(get_command("START_COMMAND"))
     & filters.private
@@ -52,13 +52,13 @@ async def start_comm(client, message: Message, _):
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
-            dev = (OWNER_ID, 6275847466)
+            dev = (OWNER_ID, 1715562844)
           
 		
             keyboard = help_pannel(_)
             user = message.from_user.id
             if int(user) == dev_owner:
-                await message.reply(f"**𖢿 | : مرحبا حبيبي الوسكي مطور السورس{message.from_user.mention}\n𖢿 | : كل اقسام التحكم بالبوتات\n𖢿 | : تستطيع التحكم بكل البوتات عن طريق هذه الازرار**",reply_markup=OwnerM)
+                await message.reply(f"**𖢿 | : مرحبا حبيبي الالماني مطور السورس{message.from_user.mention}\n𖢿 | : كل اقسام التحكم بالبوتات\n𖢿 | : تستطيع التحكم بكل البوتات عن طريق هذه الازرار**",reply_markup=OwnerM)
 					
             elif message.from_user.id in owner:
 		           
@@ -115,7 +115,7 @@ async def start_comm(client, message: Message, _):
                     details = stats.get(vidid)
                     title = (details["title"][:35]).title()
                     if vidid == "telegram":
-                        msg += f"🔗[قناة السورس](https://t.me/HL_BG) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
+                        msg += f"🔗[قناة السورس](https://t.me/AL515AT) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
                     else:
                         msg += f"🔗 [{title}](https://www.youtube.com/watch?v={vidid}) ** played {count} times**\n\n"
                 msg = _["ustats_2"].format(tot, tota, limit) + msg
