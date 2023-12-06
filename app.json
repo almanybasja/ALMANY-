@@ -39,12 +39,12 @@
       },
       "SUPPORT_CHANNEL": {
         "description": "رابط قناتك",
-        "value": "https://t.me/HL_BG",
+        "value": "https://t.me/AL515AT",
         "required": true
       },
       "BOT_TOKEN": {
         "description": "A Bot's token from Botfather",
-        "value": "6263074417:AAFH170jmvECjc1WaTNNukjSS-Ad50gbhVc",
+        "value": "5319187407:AAFYN-pbn4rZV7blsepob_M90ZyVofdLX4g",
         "required": true
       },
       "MONGO_DB_URI": {
