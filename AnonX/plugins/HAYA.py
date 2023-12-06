@@ -15,33 +15,28 @@ from random import  choice, randint
 
                 
 @app.on_message(
-    command(["مطورين haya","المطورين","مطورين","مطورين حياه"])
+    command(["مطورين ALMANY","المطورين","مطورين","مطورين الالماني"])
 )
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4c0e63af8a410d9a53fa0.jpg",
-        caption=f"""*𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼**\nمرحبا بك عزيزي {message.from_user.mention} في قسم مطورين حياه ميوزك\nللتحدث مع مطورين اضغط علي الازرار بالاسفل👇\n**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼**""",
+        photo=f"https://telegra.ph/file/1cf2e8eb817735b1c384b.jpg",
+        caption=f"""*𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔**\nمرحبا بك عزيزي {message.from_user.mention} في قسم مطورين الالماني ميوزك\nللتحدث مع مطورين اضغط علي الازرار بالاسفل👇\n**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "᳒ᯓ𓆩𓏺᭙ɦᎥ᥉ƙᥱᥡ ˹َّّ ", url=f"https://t.me/bp_bp"), 
+                        "᳒ᯓ𓆩𓏺ALMANY", url=f"https://t.me/K_F_P"), 
                  ],[
                     
                 
-                    InlineKeyboardButton(
-                        "𝘿𝘼𝘿✹⃝‌꙰🇨🇾𝙁𝘼𝙍𝘾𝙊𒀭", url=f"https://t.me/A_XR_0"),
+                
                 ],[
                     
                 
                     InlineKeyboardButton(
-                        "★𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼⚡", url=f"https://t.me/HL_BG"),
+                        "★𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔⚡", url=f"https://t.me/AL515AT"),
                 
-        ],[
-                    
-                
-                    InlineKeyboardButton(
-                        "『𓏺َِ᥉َِꫝُِᎥُِƙَِꪖُِᧁَِ᥆_ŘB 』", url=f"https://t.me/T_N_T_RB"),
+                     ]
                 ],
 
             ]
@@ -67,7 +62,7 @@ async def yas(client, message):
     usr = await client.get_chat("T_N_T_RB")
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"**⌞𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼\nمعلومات مطور السورس2 \n↜︙Dev 𝗡𝗔𝗠𝗘 ↬:{name}\n↜︙Dev 𝐔𝐒𝐄𝐑 ↬ :@{usr.username}\n↜︙Dev 𝐈𝐃 ↬ :`{usr.id}`\n↜︙Dev 𝐁𝐈𝐎 ↬: {usr.bio} \n\n **𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼**", 
+    await message.reply_photo(photo,       caption=f"**⌞𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔\nمعلومات مطور السورس2 \n↜︙Dev 𝗡𝗔𝗠𝗘 ↬:{name}\n↜︙Dev 𝐔𝐒𝐄𝐑 ↬ :@{usr.username}\n↜︙Dev 𝐈𝐃 ↬ :`{usr.id}`\n↜︙Dev 𝐁𝐈𝐎 ↬: {usr.bio} \n\n **𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔**", 
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -84,10 +79,10 @@ async def yas(client, message):
    
 )
 async def yas(client, message):
-    usr = await client.get_chat("BP_BP")
+    usr = await client.get_chat("K_F_P")
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"**⌞𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼\nمعلومات مبرمج السورس \n↜︙Dev Name ↬ :{name} \n↜︙Dev User ↬ :@{usr.username} \n↜︙Dev id ↬ :{usr.id}**", 
+    await message.reply_photo(photo,       caption=f"**⌞𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔\nمعلومات مبرمج السورس \n↜︙Dev Name ↬ :{name} \n↜︙Dev User ↬ :@{usr.username} \n↜︙Dev id ↬ :{usr.id}**", 
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -110,7 +105,7 @@ async def yas(client, message):
     usr = await client.get_chat(USER_OWNER)
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"**⌞𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼 \nمعلومات المطور الاساسي\n↜︙Dev Name ↬ :{name} \n↜︙Dev User ↬ :@{usr.username} \n↜︙Dev id ↬ :{usr.id}**", 
+    await message.reply_photo(photo,       caption=f"**⌞𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔 \nمعلومات المطور الاساسي\n↜︙Dev Name ↬ :{name} \n↜︙Dev User ↬ :@{usr.username} \n↜︙Dev id ↬ :{usr.id}**", 
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -155,17 +150,17 @@ async def yas(client, message):
 )
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4c0e63af8a410d9a53fa0.jpg",
-        caption=f"""**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼**\nمرحبا بك عزيزي {message.from_user.mention} في قسم الذكاء الاصتناعي الخاص بسورس حياه\nلتتمكن من استخدام اوامر الذكاء الاصتناعي اكتب \n سؤال + السؤال بالاسفل 👇\n**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼**""",
+        photo=f"https://telegra.ph/file/1cf2e8eb817735b1c384b.jpg",
+        caption=f"""**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔**\nمرحبا بك عزيزي {message.from_user.mention} في قسم الذكاء الاصتناعي الخاص بسورس الالماني\nلتتمكن من استخدام اوامر الذكاء الاصتناعي اكتب \n سؤال + السؤال بالاسفل 👇\n**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "᳒ᯓ𓆩𓏺᭙ɦᎥ᥉ƙᥱᥡ ˹َّّ", url=f"https://t.me/bp_bp"), 
+                        "᳒ᯓ𓆩𓏺ALMANY", url=f"https://t.me/k_f_p"), 
                  ],[
                 
                     InlineKeyboardButton(
-                        "★𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼⚡", url=f"https://t.me/HL_BG"),
+                        "★𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔⚡", url=f"https://t.me/HL_BG"),
                 ],
 
             ]
@@ -183,17 +178,17 @@ async def huhh(client: Client, message: Message):
 )
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4c0e63af8a410d9a53fa0.jpg",
-        caption=f"""**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼**\nمرحبا بك عزيزي {message.from_user.mention} في قسم تشغيل القرأن الخاص بسورس حياه\nلتتمكن من استخدام اوامر القرأن اكتب \n سورة + اسم السورة بالاسفل👇\n**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼**""",
+        photo=f"https://telegra.ph/file/1cf2e8eb817735b1c384b.jpg",
+        caption=f"""**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔**\nمرحبا بك عزيزي {message.from_user.mention} في قسم تشغيل القرأن الخاص بسورس الالماني\nلتتمكن من استخدام اوامر القرأن اكتب \n سورة + اسم السورة بالاسفل👇\n**𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "᳒ᯓ𓆩𓏺᭙ɦᎥ᥉ƙᥱᥡ ˹َّّ", url=f"https://t.me/bp_bp"), 
+                        "᳒ᯓ𝘼𝙇𝙈𝘼𝙉𝙔 ˹َّّ", url=f"https://t.me/K_F_P"), 
                  ],[
                 
                     InlineKeyboardButton(
-                        "★𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼⚡", url=f"https://t.me/HL_BG"),
+                        "★𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔⚡", url=f"https://t.me/AL515AT"),
                 ],
 
             ]
