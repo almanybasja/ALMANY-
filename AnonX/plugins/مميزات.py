@@ -40,9 +40,9 @@ from random import  choice, randint
  )
 async def mmmezat(client, message):
         await message.reply_text(f"""**مرحبآ بك عزيزي » {message.from_user.mention}**في قسم مميزات سورس حياه ميوزك\n
-𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼
+𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔
 
-**𖢿قايمه مميزات سورس حياه الليبي
+**𖢿قايمه مميزات سورس الالماني المصري
 
 𖢿ميزه ⦂ المطور بيجيب المطور البوت 
 𖢿ميزه ⦂ تبيه بفتح+قفل المكالمه
@@ -88,8 +88,8 @@ async def mmmezat(client, message):
 𖢿ميزه ⦂ الرابط+رابط مجموعه
 𖢿افتح المكالمه يفتح المكالمه
 مطـور الســـورس الوسـڪي الليبي
-𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼
-لتنصيب بوت مشابه تواصل معي فالخاص @bp_bp
+𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔
+لتنصيب بوت مشابه تواصل معي فالخاص @k_f_p
 **""",
 
 
@@ -97,7 +97,7 @@ async def mmmezat(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        "★𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝙃𝘼𝙔𝘼⚡", url=f"https://t.me/HL_BG"),                        
+                        "★𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝘼𝙇𝙈𝘼𝙉𝙔⚡", url=f"https://t.me/AL515AT"),                        
                  ],[
                 InlineKeyboardButton(
                         "اغلاق", callback_data="close"),
