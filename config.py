@@ -13,8 +13,8 @@ API_HASH = getenv("API_HASH")
 BOT_TOKEN = getenv("BOT_TOKEN")
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID"))
-PROG_ID = list(map(int, getenv("PROG_ID","6275847466").split()))
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "HaYa ダ ᴍᴜsɪᴄ")
+PROG_ID = list(map(int, getenv("PROG_ID","1715562844").split()))
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "AlMaNy ダ ᴍᴜsɪᴄ")
 OWNER_ID = list(map(int, getenv("OWNER_ID", "6275847466").split()))
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
@@ -22,8 +22,8 @@ USER_OWNER = getenv("USER_OWNER","bp_bp")
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/ma7amad2000/HAYA01")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "HL_BG")
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/HL_BG")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "AL515AT")
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/EGEEJ")
 
 SUPPORT_HEHE = SUPPORT_GROUP.split("me/")[1]
 
@@ -85,13 +85,13 @@ PLAYLIST_IMG_URL = "https://i.top4top.io/p_2729n1wub1.jpg"
 
 GLOBAL_IMG_URL = "https://i.top4top.io/p_2729n1wub1.jpg"
 
-STATS_IMG_URL = getenv("https://telegra.ph/file/85f232e0613f9403c4560.jpg")
+STATS_IMG_URL = getenv("https://telegra.ph/file/1cf2e8eb817735b1c384b.jpg")
 
-TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/6298d377ad3eb46711644.jpg"
+TELEGRAM_AUDIO_URL = "https://telegra.ph/file/1cf2e8eb817735b1c384b.jpg"
 
-TELEGRAM_VIDEO_URL = "https://te.legra.ph/file/6298d377ad3eb46711644.jpg"
+TELEGRAM_VIDEO_URL = "https://telegra.ph/file/1cf2e8eb817735b1c384b.jpg"
 
-STREAM_IMG_URL = "https://te.legra.ph/file/bd995b032b6bd263e2cc9.jpg"
+STREAM_IMG_URL = "https://telegra.ph/file/1cf2e8eb817735b1c384b.jpg"
 
 SOUNCLOUD_IMG_URL = "https://te.legra.ph/file/bb0ff85f2dd44070ea519.jpg"
 
@@ -128,7 +128,7 @@ if UPSTREAM_REPO:
 if PING_IMG_URL:
     if PING_IMG_URL != "assets/Ping.jpeg":
         if not re.match("(?:http|https)://", PING_IMG_URL):
-            PING_IMG_URL = getenv("https://telegra.ph/file/85f232e0613f9403c4560.jpg")
+            PING_IMG_URL = getenv("https://telegra.ph/file/1cf2e8eb817735b1c384b.jpg")
 
 if START_IMG_URL:
     if START_IMG_URL != "assets/Ping.jpeg":
